@@ -11,4 +11,6 @@ if __name__ == "__main__":
 
     application.add_handlers([welcome_handler, automatic_signal_handler])
 
+    print("RG bot started.")
+
     application.run_polling(allowed_updates=Update.ALL_TYPES)
