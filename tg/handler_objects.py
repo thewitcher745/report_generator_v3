@@ -12,7 +12,10 @@ from tg.handler_functions import (
     get_image,
 )
 from tg.telegram_classes import ForwardedMessageHandler
-from tg.handler_functions.helpers.conversation_stages import GET_EXCHANGE, GET_IMAGE
+from tg.handler_functions.helpers.conversation_stages import (
+    GET_EXCHANGE,
+    GET_IMAGE,
+)
 
 welcome_handler = CommandHandler("start", welcome)
 

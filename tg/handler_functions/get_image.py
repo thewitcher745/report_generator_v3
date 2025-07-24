@@ -10,6 +10,4 @@ async def get_image(update, context):
 
     context.user_data["image_id"] = update.callback_query.data
 
-    print(context.user_data)
-
     return END

@@ -1,0 +1,54 @@
+EXCHANGE_LIST = [
+    {"label": "ByBit", "callback_query": "bybit"},
+    {"label": "Binance", "callback_query": "binance"},
+    {"label": "BitGet", "callback_query": "bitget"},
+    {"label": "MEXC", "callback_query": "mexc"},
+    {"label": "BingX", "callback_query": "bingx"},
+    {"label": "OKX", "callback_query": "okx"},
+    {"label": "LBANK", "callback_query": "lbank"},
+]
+
+IMAGE_LIST = {
+    "binance": [
+        {"label": "Binance 1", "callback_query": "binance_1"},
+        {"label": "Binance 2", "callback_query": "binance_2"},
+        {"label": "Binance 3", "callback_query": "binance_3"},
+        {"label": "Binance 4", "callback_query": "binance_4"},
+        {"label": "Binance 5", "callback_query": "binance_5"},
+    ],
+    "bybit": [
+        {"label": "ByBit 4", "callback_query": "bybit_4"},
+        {"label": "ByBit 5", "callback_query": "bybit_5"},
+    ],
+    "bitget": [
+        {"label": "BitGet 1", "callback_query": "bitget_1"},
+        {"label": "BitGet 2", "callback_query": "bitget_2"},
+        {"label": "BitGet 3", "callback_query": "bitget_3"},
+        {"label": "BitGet 4", "callback_query": "bitget_4"},
+    ],
+    "mexc": [
+        {"label": "MEXC 1", "callback_query": "mexc_1"},
+        {"label": "MEXC 1 Turk", "callback_query": "mexc_2"},
+        {"label": "MEXC 1 Turk - Kapat", "callback_query": "mexc_3"},
+        {"label": "MEXC 2", "callback_query": "mexc_4"},
+        {"label": "MEXC 3", "callback_query": "mexc_5"},
+        {"label": "MEXC 4", "callback_query": "mexc_6"},
+    ],
+    "bingx": [
+        {"label": "BingX 1", "callback_query": "bingx_1"},
+        {"label": "BingX 1 - Ashan", "callback_query": "bingx_2"},
+        {"label": "BingX 2", "callback_query": "bingx_5"},
+        {"label": "BingX 2 - CAN", "callback_query": "bingx_4"},
+        {"label": "BingX 2 - Ashan", "callback_query": "bingx_6"},
+        {"label": "BingX 3", "callback_query": "bingx_9"},
+        {"label": "BingX 3 - CAN", "callback_query": "bingx_7"},
+        {"label": "BingX 3 - Board", "callback_query": "bingx_8"},
+    ],
+    "okx": [
+        {"label": "OKX 1", "callback_query": "okx_1"},
+    ],
+    "lbank": [
+        {"label": "LBANK 1", "callback_query": "lbank_1"},
+        {"label": "LBANK 2", "callback_query": "lbank_2"},
+    ],
+}
