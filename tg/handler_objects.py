@@ -10,11 +10,13 @@ from tg.handler_functions import (
     extract_signal_data,
     get_exchange,
     get_image,
+    get_template,
 )
 from tg.telegram_classes import ForwardedMessageHandler
 from tg.handler_functions.helpers.conversation_stages import (
     GET_EXCHANGE,
     GET_IMAGE,
+    GET_TEMPLATE,
 )
 
 welcome_handler = CommandHandler("start", welcome)
@@ -24,6 +26,7 @@ automatic_signal_handler = ConversationHandler(
     states={
         GET_EXCHANGE: [CallbackQueryHandler(get_exchange)],
         GET_IMAGE: [CallbackQueryHandler(get_image)],
+        GET_TEMPLATE: [CallbackQueryHandler(get_template)],
     },
     fallbacks=[CommandHandler("cancel", cancel)],
 )

@@ -23,3 +23,5 @@ def SIGNAL_CONFIRMATION(symbol, signal_type, leverage, entry, targets, stop):
 GET_EXCHANGE = "❓ Please select an exchange:"
 
 GET_IMAGE = "❓ Please select an image for the selected exchange:"
+
+GET_TEMPLATE = "❓ Please select a template for the selected exchange:"

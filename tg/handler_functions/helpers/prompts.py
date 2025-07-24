@@ -25,3 +25,12 @@ async def prompt_get_image(update, context):
         strings.GET_IMAGE,
         keyboard=keyboards.GET_IMAGE(context.user_data["exchange"]),
     )
+
+
+async def prompt_get_template(update, context):
+    await send_message(
+        context,
+        update,
+        strings.GET_TEMPLATE,
+        keyboard=keyboards.GET_TEMPLATE(context.user_data["exchange"]),
+    )

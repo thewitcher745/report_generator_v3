@@ -5,6 +5,7 @@ This file will contain the keyboards put under each message or prompt.
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
 from tg.handler_functions.helpers import keyboards_statics
+from tg.handler_functions.helpers.templates import TEMPLATES
 
 
 def compose_keyboard_markup(
@@ -55,3 +56,12 @@ GET_EXCHANGE = compose_keyboard_markup(keyboards_statics.EXCHANGE_LIST)
 # Get image selection keyboard for a selected exchange
 def GET_IMAGE(exchange: str):
     return compose_keyboard_markup(keyboards_statics.IMAGE_LIST[exchange])
+
+
+# Get template selection keyboard for a selected exchange
+def GET_TEMPLATE(exchange: str):
+    template_buttons = [
+        {"label": template_label, "callback_query": template_label}
+        for template_label in TEMPLATES[exchange].keys()
+    ]
+    return compose_keyboard_markup(template_buttons)
