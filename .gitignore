@@ -1,6 +1,7 @@
 */__pycache__
 .env.secret
 venv/
+image_outputs/
 __pycache__
 ~*
 *.pyc

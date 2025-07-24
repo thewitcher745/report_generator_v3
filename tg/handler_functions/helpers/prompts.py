@@ -2,6 +2,7 @@
 This file will contain the prompt functions used by the bot to ask for different information.
 """
 
+from image.image_list_composer import create_image_list_collage
 from tg.handler_functions.helpers.utilities import send_message, send_media_group
 from tg.handler_functions.helpers import strings
 from tg.handler_functions.helpers import keyboards
@@ -17,8 +18,9 @@ async def prompt_get_image(update, context):
     await send_media_group(
         context,
         update,
-        "./background_images/" + context.user_data["exchange"] + "_images.png",
+        create_image_list_collage(context.user_data["exchange"]),
     )
+
     await send_message(
         context,
         update,
