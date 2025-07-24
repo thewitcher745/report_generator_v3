@@ -15,9 +15,7 @@ async def get_template(update, context):
         exchange=context.user_data["exchange"], template_name=update.callback_query.data
     )
 
-    context.user_data["qr_code"], context.user_data["referral_code"] = (
-        template_details["qr"],
-        template_details["referral"],
-    )
+    # Extend the context.user_data dict with the template_details dict
+    context.user_data.update(template_details)
 
     return END
