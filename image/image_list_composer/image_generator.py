@@ -56,7 +56,9 @@ def create_image_list_collage(exchange: str):
 
     # Cache the current list of images using SHA256
     list_of_images = get_unique_images_by_exchange(exchange)
-    cache_key = hashlib.sha256(",".join(list_of_images).encode()).hexdigest()
+
+    # Sort the list of images to ensure that the same list of images always has the same hash
+    cache_key = hashlib.sha256(",".join(sorted(list_of_images)).encode()).hexdigest()
     next_cache_filename = f"{exchange}_{cache_key}.png"
 
     # Check if the PNG file in the image_lists directory that begins with the name of the exchange has the same name/hash
