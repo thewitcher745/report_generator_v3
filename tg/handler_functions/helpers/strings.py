@@ -25,3 +25,15 @@ GET_EXCHANGE = "❓ Please select an exchange:"
 GET_IMAGE = "❓ Please select an image for the selected exchange:"
 
 GET_TEMPLATE = "❓ Please select a template for the selected exchange:"
+
+CONFIRM_INTRO = "💭 This is the provided signal and selected settings. If you need to customize the QR, referral or username, use the buttons below. Otherwise, press Confirm to generate the images."
+
+
+def CONFIRM(
+    exchange: str,
+    image_id: str,
+    qr_code: str,
+    template: str,
+    referral_code: str,
+):
+    return f"{CONFIRM_INTRO}\n\n📊 Exchange: {exchange}\n🖼 Image: {image_id}\n📊 Template: {template}\n🖥 QR Code: {qr_code}\n🤝 Referral Code: {referral_code}"

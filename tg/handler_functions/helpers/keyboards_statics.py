@@ -52,3 +52,10 @@ IMAGE_LIST = {
         {"label": "LBANK 2", "callback_query": "lbank_2"},
     ],
 }
+
+CONFIRM_DIALOG = [
+    {"label": "Confirm", "callback_query": "confirm"},
+    {"label": "Customize QR Code", "callback_query": "customize_qr_code"},
+    {"label": "Customize Referral Code", "callback_query": "customize_referral_code"},
+    {"label": "Customize Username", "callback_query": "customize_username"},
+]

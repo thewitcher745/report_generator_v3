@@ -65,3 +65,8 @@ def GET_TEMPLATE(exchange: str):
         for template_label in TEMPLATES[exchange].keys()
     ]
     return compose_keyboard_markup(template_buttons)
+
+
+CONFIRM = compose_keyboard_markup(
+    keyboards_statics.CONFIRM_DIALOG, max_buttons_per_row=1
+)
