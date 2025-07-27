@@ -43,6 +43,14 @@ async def extract_signal_data(update, context):
         )
         return END
 
+    # Assign the extracted data to the user_data dictionary
+    context.user_data["symbol"] = symbol
+    context.user_data["signal_type"] = signal_type
+    context.user_data["leverage"] = leverage
+    context.user_data["entry"] = entry
+    context.user_data["targets"] = targets
+    context.user_data["stop"] = stop
+
     # If the signal is valid, send the confirmation message and the prompt for getting the exchange
     await send_message(
         context,
