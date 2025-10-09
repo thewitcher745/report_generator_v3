@@ -4,11 +4,11 @@ The image composer uses CSS and HTML to put compile the list of images into a co
 
 import os
 
-from image.image_list_composer.utilities import get_image_list_label_by_id
+from .utilities import get_image_list_label_by_id
 
 
 def compose_html_collage(
-    image_list: list[str], output_path: str = None, max_images_per_row: int = 2
+    image_list: list[str], output_path: str = "", max_images_per_row: int = 2
 ) -> str:
     """
     Generates an HTML file displaying a collage of unique images for the given exchange.
@@ -56,9 +56,7 @@ def compose_html_collage(
                 """
             )
 
-        images_html.append(
-            f"<div class='collage-row'>{'\n'.join(row_images_html)}</div>"
-        )
+        images_html.append(f"{'\n'.join(row_images_html)}")
 
     collage_html = f"""
         <!DOCTYPE html>
@@ -71,18 +69,21 @@ def compose_html_collage(
                     display: flex;
                 }}
                 .collage {{
-                    display: inline-block;
+                    display: grid;
+                    width: 100%;
+                    grid-template-columns: repeat(3, 1fr);
                 }}
                 .collage-img-container {{
+                    height: 140px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     position: relative;
                 }}
                 .collage-img {{
-                    height: 140px;
-                    object-fit: cover;
-                    background: #f3f3f3;
+                    height: 100%;
+                    width: 100%;
+                    object-fit: contain;
                 }}
                 .collage-img-container span {{
                     position: absolute;
@@ -97,6 +98,8 @@ def compose_html_collage(
                 body {{
                     padding: 0;
                     margin: 0;
+                    background-color: #555;
+                    width: 600px;
                     font-family: Arial, sans-serif;
                 }}
             </style>

@@ -7,8 +7,8 @@ from selenium.webdriver.chrome.options import Options
 import hashlib
 import os
 
-from image.image_list_composer.utilities import get_unique_images_by_exchange
-from image.image_list_composer.html_composer import compose_html_collage
+from .utilities import get_unique_images_by_exchange
+from .html_composer import compose_html_collage
 
 
 def html_to_image(html_path, output_path="image_outputs/image_lists/image_list.png"):

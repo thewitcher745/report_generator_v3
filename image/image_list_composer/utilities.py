@@ -1,4 +1,4 @@
-from tg.handler_functions.helpers.keyboards_statics import IMAGE_LIST
+from static.keyboards_statics import IMAGE_LIST
 
 
 def get_unique_images_by_exchange(exchange: str) -> list[str]:
