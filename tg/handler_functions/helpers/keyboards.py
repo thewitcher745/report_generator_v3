@@ -4,7 +4,7 @@ This file will contain the keyboards put under each message or prompt.
 
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
-from tg.handler_functions.helpers import keyboards_statics
+from static import keyboards_statics
 from tg.handler_functions.helpers.templates import TEMPLATES
 
 
