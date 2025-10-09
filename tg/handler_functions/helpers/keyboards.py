@@ -67,6 +67,14 @@ def GET_TEMPLATE(exchange: str):
     return compose_keyboard_markup(template_buttons)
 
 
+def GET_MARGIN():
+    return compose_keyboard_markup(keyboards_statics.TYPED_VALUE)
+
+
+def GET_USERNAME():
+    return compose_keyboard_markup(keyboards_statics.TYPED_VALUE)
+
+
 CONFIRM = compose_keyboard_markup(
     keyboards_statics.CONFIRM_DIALOG, max_buttons_per_row=1
 )

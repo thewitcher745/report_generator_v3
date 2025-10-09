@@ -1,5 +1,6 @@
 from tg.handler_functions.helpers.keyboards_statics import IMAGE_LIST
 
+
 def get_unique_images_by_exchange(exchange: str) -> list[str]:
     """
     This functions gets the image_id's for all the images that have a unique image_list_label in the list of images. These images are then composed
@@ -23,7 +24,7 @@ def get_unique_images_by_exchange(exchange: str) -> list[str]:
     return [image["callback_query"] for image in unique_images]
 
 
-def get_image_list_label_by_id(image_id: str) -> int:
+def get_image_list_label_by_id(image_id: str) -> int | None:
     exchange = image_id.split("_")[0]
     exchange_image_list = IMAGE_LIST[exchange]
     for image in exchange_image_list:

@@ -2,8 +2,7 @@
 This file gets the template from the user through a callback query.
 """
 
-from tg.handler_functions.helpers.conversation_stages import CONFIRM
-from tg.handler_functions.helpers.prompts import prompt_confirm
+from tg.handler_functions.check_missing import check_missing
 from tg.handler_functions.helpers.templates import get_template as get_template_details
 
 
@@ -19,6 +18,4 @@ async def get_template(update, context):
     # Extend the context.user_data dict with the template_details dict
     context.user_data.update(template_details)
 
-    await prompt_confirm(update, context)
-
-    return CONFIRM
+    return await check_missing(update, context)

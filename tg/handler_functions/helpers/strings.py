@@ -3,6 +3,9 @@ This file contains the strings returned by the bot to the user, collected in a s
 """
 
 # Welcome message
+import datetime
+
+
 WELCOME = "🙏 Welcome. Forward a signal to continue."
 
 # Cancel message
@@ -26,14 +29,36 @@ GET_IMAGE = "❓ Please select an image for the selected exchange:"
 
 GET_TEMPLATE = "❓ Please select a template for the selected exchange:"
 
+GET_MARGIN = "❓ Please enter the margin, since this image requires it:"
+
+GET_USERNAME = "❓ Please enter the username, since this image requires it:"
+
 CONFIRM_INTRO = "💭 This is the provided signal and selected settings. If you need to customize the QR, referral or username, use the buttons below. Otherwise, press Confirm to generate the images."
 
 
 def CONFIRM(
     exchange: str,
     image_id: str,
-    qr_code: str,
     template: str,
-    referral_code: str,
-):
-    return f"{CONFIRM_INTRO}\n\n📊 Exchange: {exchange}\n🖼 Image: {image_id}\n📊 Template: {template}\n🖥 QR Code: {qr_code}\n🤝 Referral Code: {referral_code}"
+    referral: str = "",
+    qr: str = "",
+    margin: float = 0,
+    username: str = "",
+    date: datetime.datetime | None = None,
+) -> str:
+    message = f"{CONFIRM_INTRO}\n\n📊 Exchange: {exchange}\n🖼 Image: {image_id}\n📊 Template: {template}\n"
+    # For signals that get/require the margin, the margin is also included.
+    if margin:
+        message += f"🖥 Margin: {margin}\n"
+    if username:
+        if len(username) > 0:
+            message += f"👤 Username: {username}\n"
+    if date:
+        message += f"📅 Date: {date}\n"
+    if qr:
+        if len(qr) > 0:
+            message += f"🖥 QR Code: {qr}\n"
+    if referral:
+        if len(referral) > 0:
+            message += f"🤝 Referral Code: {referral}"
+    return message
