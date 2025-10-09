@@ -57,15 +57,7 @@ async def prompt_get_username(update, context):
 
 
 async def prompt_confirm(update, context):
-    prompt_text = strings.CONFIRM(
-        exchange=context.user_data["exchange"],
-        image_id=context.user_data["image_id"],
-        template=context.user_data["template"],
-        qr=context.user_data["qr"],
-        referral=context.user_data["referral"],
-        margin=context.user_data["margin"],
-        date=context.user_data["date"],
-    )
+    prompt_text = strings.CONFIRM(context.user_data)
 
     await send_message(
         context,

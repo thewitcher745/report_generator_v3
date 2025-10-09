@@ -27,12 +27,12 @@ async def extract_signal_data(update, context):
     signal_text: str = update.message.text.lower()
 
     # Process the signal to extract its data
-    symbol = regex_symbol(signal_text)
+    symbol = regex_symbol(signal_text).replace(" Perpetual", "").upper()
     signal_type = regex_signal_type(signal_text)
-    leverage = regex_leverage(signal_text)
-    entry = regex_entry(signal_text)
-    targets = regex_targets(signal_text)
-    stop = regex_stop(signal_text)
+    leverage = int(regex_leverage(signal_text))
+    entry = float(regex_entry(signal_text))
+    targets = [float(target) for target in regex_targets(signal_text)]
+    stop = float(regex_stop(signal_text))
 
     # If any of the sections are not found correctly, return the invalid signal message
     if not all([symbol, signal_type, leverage, entry, targets, stop]):
@@ -57,7 +57,7 @@ async def extract_signal_data(update, context):
         update,
         SIGNAL_CONFIRMATION(symbol, signal_type, leverage, entry, targets, stop),
     )
-
+    
     await prompt_get_exchange(update, context)
 
     return GET_EXCHANGE_STAGE

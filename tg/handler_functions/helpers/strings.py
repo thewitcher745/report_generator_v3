@@ -36,29 +36,20 @@ GET_USERNAME = "❓ Please enter the username, since this image requires it:"
 CONFIRM_INTRO = "💭 This is the provided signal and selected settings. If you need to customize the QR, referral or username, use the buttons below. Otherwise, press Confirm to generate the images."
 
 
-def CONFIRM(
-    exchange: str,
-    image_id: str,
-    template: str,
-    referral: str = "",
-    qr: str = "",
-    margin: float = 0,
-    username: str = "",
-    date: datetime.datetime | None = None,
-) -> str:
-    message = f"{CONFIRM_INTRO}\n\n📊 Exchange: {exchange}\n🖼 Image: {image_id}\n📊 Template: {template}\n"
+def CONFIRM(user_data: dict) -> str:
+    message = f"{CONFIRM_INTRO}\n\n📊 Exchange: {user_data.get('exchange', '')}\n🖼 Image: {user_data.get('image_id', '')}\n📊 Template: {user_data.get('template', '')}\n"
     # For signals that get/require the margin, the margin is also included.
-    if margin:
-        message += f"🖥 Margin: {margin}\n"
-    if username:
-        if len(username) > 0:
-            message += f"👤 Username: {username}\n"
-    if date:
-        message += f"📅 Date: {date}\n"
-    if qr:
-        if len(qr) > 0:
-            message += f"🖥 QR Code: {qr}\n"
-    if referral:
-        if len(referral) > 0:
-            message += f"🤝 Referral Code: {referral}"
+    if user_data.get("margin"):
+        message += f"🖥 Margin: {user_data.get('margin')}\n"
+    if user_data.get("username"):
+        if len(user_data.get("username", "")) > 0:
+            message += f"👤 Username: {user_data.get('username')}\n"
+    if user_data.get("date"):
+        message += f"📅 Date: {user_data.get('date')}\n"
+    if user_data.get("qr"):
+        if len(user_data.get("qr", "")) > 0:
+            message += f"🖥 QR Code: {user_data.get('qr')}\n"
+    if user_data.get("referral"):
+        if len(user_data.get("referral", "")) > 0:
+            message += f"🤝 Referral Code: {user_data.get('referral')}"
     return message

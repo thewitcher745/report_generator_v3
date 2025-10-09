@@ -2,38 +2,44 @@
 This module contains the base class for all reports, including the __init__ method.
 """
 
+import datetime
+
+from tg.handler_functions.helpers.extra_features import get_extra_features
+
 
 class BaseReport:
-    def __init__(self, user_data: dict):
+    def __init__(self, report_data: dict):
         """
         Initializes the BaseReport class.
 
         Args:
-            user_data (dict): The user data, taken from the context.user_data object of the bot.
+            report_data (dict): The user data, taken from the context.report_data object of the bot.
         """
 
-        self.user_data = user_data
+        self.report_data = report_data
 
         # These properties always exist, taken from the signal text.
-        self.symbol: str = user_data["symbol"]
-        self.signal_type: str = user_data["signal_type"]
-        self.leverage: str = user_data["leverage"]
-        self.entry: str = user_data["entry"]
-        self.targets: str = user_data["targets"]
-        self.stop: str = user_data["stop"]
+        self.image_id: str = report_data.get("image_id", "")
 
-        # These properties always exist, taken from the user's inputs.
-        self.exchange: str = user_data["exchange"]
-        self.template: str = user_data["template"]
-        self.image_id: str = user_data["image_id"]
-        self.qr: str = user_data["qr"]
-        self.referral: str = user_data["referral"]
+        self.symbol: str = report_data.get("symbol", "")
+        self.signal_type: str = report_data.get("signal_type", "")
+        self.leverage: int = report_data.get("leverage", 0)
+        self.entry: float = report_data.get("entry", 0)
+        self.target: float = report_data.get("target", 0)
+        self.roi_percent = report_data.get("roi_percent", 0)
+        self.qr: str = report_data.get("qr", "")
+        self.referral: str = report_data.get("referral", "")
 
-        # The following properties may or may not exist in the user_data dictionary.
-        if "username" in user_data:
-            self.username: str = user_data["username"]
-        if "tz" in user_data:
-            self.tz: str = user_data["tz"]
+        # The following properties may or may not exist in the report_data dictionary.
+        if "username" in get_extra_features(self.image_id):
+            self.username: str = report_data.get("username", "")
+        if "date" in get_extra_features(self.image_id):
+            self.tz_delta: int = report_data.get("tz_delta", 0)
+            self.date: datetime.datetime = report_data.get(
+                "date", datetime.datetime.now()
+            )
+        if "margin" in get_extra_features(image_id=self.image_id):
+            self.roi_dollars: float = report_data.get("roi_dollars", 0)
 
     def print_info(self):
         """
