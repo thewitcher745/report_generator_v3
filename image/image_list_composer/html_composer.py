@@ -112,7 +112,7 @@ def compose_html_collage(
         </html>
 """
 
-    if output_path is None:
+    if output_path == "":
         output_path = "image/image_list_composer/collage.html"
 
     with open(output_path, "w", encoding="utf-8") as f:
