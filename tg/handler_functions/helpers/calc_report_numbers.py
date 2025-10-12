@@ -7,17 +7,12 @@ def calc_report_numbers(user_data):
     """
     This function calculates the numbers necessary for the report.
     """
-    image_id = user_data.get("image_id")
-    symbol = user_data.get("symbol")
-    username = user_data.get("username", "")
-    qr = user_data.get("qr", "")
-    referral = user_data.get("referral", "")
-    date = user_data.get("date", datetime.datetime.now())
-
-    signal_type = user_data.get("signal_type", "").lower()
-    entry = user_data.get("entry")
-    targets = user_data.get("targets")
-    leverage = user_data.get("leverage")
+    signal_type = (
+        user_data.get("signal_type").lower() if user_data.get("signal_type") else None
+    )
+    entry = user_data.get("entry", None)
+    targets = user_data.get("targets", [])
+    leverage = user_data.get("leverage", None)
 
     margin = user_data.get("margin", 1000)
 
@@ -34,22 +29,39 @@ def calc_report_numbers(user_data):
             gain = qty * entry
             loss = qty * target
 
-        report_data.append(
-            {
-                "image_id": image_id,
-                "symbol": symbol,
-                "username": username,
-                "qr": qr,
-                "referral": referral,
-                "date": date,
-                "signal_type": signal_type,
-                "entry": entry,
-                "target": target,
-                "leverage": leverage,
-                "roi_dollars": gain - loss,
-                "roi_percent": (gain - loss) / margin * 100,
-                "tz_delta": get_tz_delta(user_data["exchange"]),
-            }
-        )
+        report_data_item = {}
+        key_list = [
+            "image_id",
+            "symbol",
+            "username",
+            "qr",
+            "referral",
+            "date",
+            "input_date",
+            "signal_type",
+            "entry",
+            "target",
+            "leverage",
+            "roi_dollars",
+            "roi_percent",
+            "tz_delta",
+        ]
+
+        for key in key_list:
+            if key == "roi_dollars":
+                if "margin" in user_data.keys():
+                    report_data_item[key] = gain - loss
+            elif key == "tz_delta":
+                report_data_item[key] = get_tz_delta(user_data.get("exchange"))
+            elif key == "roi_percent":
+                report_data_item[key] = (gain - loss) / margin * 100
+            elif key == "target":
+                report_data_item[key] = target
+                
+            else:
+                if user_data.get(key):
+                    report_data_item[key] = user_data.get(key)
+
+        report_data.append(report_data_item)
 
     return report_data
