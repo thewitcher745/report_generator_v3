@@ -31,6 +31,10 @@ GET_TEMPLATE = "❓ Please select a template for the selected exchange:"
 
 GET_MARGIN = "❓ Please enter the margin, since this image requires it:"
 
+GET_INPUT_DATE = "❓ Please enter a date and time, since this image requires it. Format: YYYY-MM-DD HH:MM:SS"
+
+GET_INPUT_DATE_EXAMPLE = "2025-10-08 13:47:22"
+
 GET_USERNAME = "❓ Please enter the username, since this image requires it:"
 
 CONFIRM_INTRO = "💭 This is the provided signal and selected settings. If you need to customize the QR, referral or username, use the buttons below. Otherwise, press Confirm to generate the images."
@@ -45,7 +49,9 @@ def CONFIRM(user_data: dict) -> str:
         if len(user_data.get("username", "")) > 0:
             message += f"👤 Username: {user_data.get('username')}\n"
     if user_data.get("date"):
-        message += f"📅 Date: {user_data.get('date')}\n"
+        message += f"📅 Current time: {user_data.get('date')}\n"
+    if user_data.get("input_date"):
+        message += f"📅 Input time: {user_data.get('input_date')}\n"
     if user_data.get("qr"):
         if len(user_data.get("qr", "")) > 0:
             message += f"🖥 QR Code: {user_data.get('qr')}\n"

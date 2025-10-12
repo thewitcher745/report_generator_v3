@@ -4,5 +4,6 @@ from .get_exchange import get_exchange
 from .get_image import get_image
 from .get_template import get_template
 from .get_margin import get_margin
+from .get_input_date import get_input_date
 from .get_username import get_username
 from .confirm import confirm

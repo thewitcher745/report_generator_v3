@@ -47,6 +47,24 @@ async def prompt_get_margin(update, context):
     )
 
 
+async def prompt_get_input_date(update, context):
+    await send_message(
+        context,
+        update,
+        strings.GET_INPUT_DATE,
+        keyboard=keyboards.GET_DATE(),
+    )
+
+
+async def prompt_get_input_date_example(update, context):
+    await send_message(
+        context,
+        update,
+        strings.GET_INPUT_DATE_EXAMPLE,
+        keyboard=keyboards.GET_DATE(),
+    )
+
+
 async def prompt_get_username(update, context):
     await send_message(
         context,

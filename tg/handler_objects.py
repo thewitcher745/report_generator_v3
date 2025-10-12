@@ -11,6 +11,7 @@ from telegram.ext import (
 )
 from tg.handler_functions import (
     get_margin,
+    get_input_date,
     welcome,
     cancel,
     extract_signal_data,
@@ -21,6 +22,7 @@ from tg.handler_functions import (
 )
 from tg.telegram_classes import ForwardedMessageHandler
 from tg.handler_functions.helpers.conversation_stages import (
+    GET_INPUT_DATE,
     GET_EXCHANGE,
     GET_IMAGE,
     GET_MARGIN,
@@ -37,6 +39,7 @@ automatic_signal_handler = ConversationHandler(
         GET_IMAGE: [CallbackQueryHandler(get_image)],
         GET_TEMPLATE: [CallbackQueryHandler(get_template)],
         GET_MARGIN: [MessageHandler(filters=filters.TEXT, callback=get_margin)],
+        GET_INPUT_DATE: [MessageHandler(filters=filters.TEXT, callback=get_input_date)],
         CONFIRM: [CallbackQueryHandler(confirm)],
     },
     fallbacks=[CommandHandler("cancel", cancel)],

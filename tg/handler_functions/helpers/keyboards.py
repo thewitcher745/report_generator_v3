@@ -71,6 +71,10 @@ def GET_MARGIN():
     return compose_keyboard_markup(keyboards_statics.TYPED_VALUE)
 
 
+def GET_DATE():
+    return compose_keyboard_markup(keyboards_statics.TYPED_VALUE)
+
+
 def GET_USERNAME():
     return compose_keyboard_markup(keyboards_statics.TYPED_VALUE)
 
