@@ -50,14 +50,14 @@ def calc_report_numbers(user_data):
         for key in key_list:
             if key == "roi_dollars":
                 if "margin" in user_data.keys():
-                    report_data_item[key] = gain - loss
+                    report_data_item[key] = round(gain - loss, 2)
             elif key == "tz_delta":
                 report_data_item[key] = get_tz_delta(user_data.get("exchange"))
             elif key == "roi_percent":
-                report_data_item[key] = (gain - loss) / margin * 100
+                report_data_item[key] = round((gain - loss) / margin * 100, 2)
             elif key == "target":
                 report_data_item[key] = target
-                
+
             else:
                 if user_data.get(key):
                     report_data_item[key] = user_data.get(key)
