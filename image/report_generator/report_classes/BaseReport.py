@@ -21,7 +21,7 @@ class BaseReport:
         Args:
             report_data (dict): The user data, taken from the context.report_data object of the bot.
         """
-        
+
         self.report_data = report_data
 
         self.image_id: str = report_data.get("image_id", "")
@@ -52,10 +52,8 @@ class BaseReport:
         self.roi_dollars: float | None = (
             report_data.get("roi_dollars", None) if "margin" in extra_features else None
         )
-        self.input_date: datetime.datetime | None = (
-            report_data.get("input_date", None)
-            if "input_date" in extra_features
-            else None
+        self.input_date: str = (
+            report_data.get("input_date", "") if "input_date" in extra_features else ""
         )
 
         self.report_html = ReportHTML(drag_and_drop=drag_and_drop)

@@ -1236,6 +1236,12 @@ styling_dict = {
             font_size=30,
             color="rgb(113, 113, 113)",
         ),
+        "input_date": ElementStyling(
+            position=Position(x=0.32764576959066066, y=0.7570963621139526),
+            font="Inter-Regular.ttf",
+            font_size=34,
+            color="white",
+        ),
         "referral": ElementStyling(
             position=Position(x=0.353231944965319, y=0.8305989384651185),
             font="Araboto Bold 400.ttf",

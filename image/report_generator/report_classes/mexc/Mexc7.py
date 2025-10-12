@@ -24,6 +24,7 @@ class Mexc7(BaseReport):
             string_function=lambda x: "$" + separate_price(x),
             additional_styles={"letter-spacing": "2px"},
         )
+        self.draw_input_date()
         self.draw_referral(additional_styles={"letter-spacing": "3px"})
         self.draw_qr()
 
@@ -72,4 +73,15 @@ class Mexc7(BaseReport):
             additional_styles={
                 "letter-spacing": "1px",
             },
+        )
+
+    def draw_input_date(self):
+        input_date_styling = self._get_element_styling("input_date")
+        self.report_html.add_text(
+            additional_styles={"letter-spacing": "1px"},
+            text=self.input_date,
+            position=input_date_styling.position,
+            font_name=input_date_styling.font,
+            font_size=input_date_styling.font_size,
+            font_color=input_date_styling.color,
         )
