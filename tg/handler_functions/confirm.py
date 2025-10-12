@@ -10,6 +10,7 @@ from tg.handler_functions.helpers.conversation_stages import (
     CUSTOMIZE_USERNAME,
 )
 from image.report_generator.report_classes.BaseReport import BaseReport
+from tg.handler_functions.helpers.extra_features import get_extra_features
 
 
 async def confirm(update, context):
@@ -28,9 +29,11 @@ async def confirm(update, context):
         print("Customize Username")
 
     # An array made up of different reports for each target
-    report_data_array = calc_report_numbers(context.user_data)
+    report_data_array = calc_report_numbers(
+        context.user_data,
+    )
     for report_data in report_data_array:
-        report = BaseReport(report_data)
+        report = BaseReport(report_data, extra_features=get_extra_features(context.user_data["image_id"]))
         report.print_info()
 
     return END
