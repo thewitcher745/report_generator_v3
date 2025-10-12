@@ -48,8 +48,8 @@ class ReportHTML:
         Args:
             img_src (str): The path to the image file.
         """
-
-        self.body += f"<img src='{img_src}' {StyleStrings.background_img()}>\n"
+        self.body += f"<img id='bg' src='{img_src}' {StyleStrings.background_img()}>\n"
+        self._set_image_size(img_src)
 
     def add_text(
         self,
