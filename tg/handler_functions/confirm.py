@@ -2,6 +2,8 @@
 This is the conversation handler staget  confirm the user inputs and ask if the user needs to customize them.
 """
 
+from image.report_generator.report_classes.BaseReport import BaseReport
+from static.report_class_mapping import MAPPING
 from tg.handler_functions.helpers.calc_report_numbers import calc_report_numbers
 from tg.handler_functions.helpers.conversation_stages import (
     END,
@@ -9,7 +11,6 @@ from tg.handler_functions.helpers.conversation_stages import (
     CUSTOMIZE_REFERRAL,
     CUSTOMIZE_USERNAME,
 )
-from image.report_generator.report_classes.BaseReport import BaseReport
 from tg.handler_functions.helpers.extra_features import get_extra_features
 
 
@@ -32,8 +33,16 @@ async def confirm(update, context):
     report_data_array = calc_report_numbers(
         context.user_data,
     )
+    extra_features = get_extra_features(context.user_data["image_id"])
+    ReportClass: type[BaseReport] | None = MAPPING.get(
+        context.user_data["image_id"], None
+    )
+
+    if ReportClass is None:
+        raise ValueError("Report class not found.")
+
     for report_data in report_data_array:
-        report = BaseReport(report_data, extra_features=get_extra_features(context.user_data["image_id"]))
+        report = ReportClass(report_data, extra_features=extra_features)
         report.print_info()
 
     return END
