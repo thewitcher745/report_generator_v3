@@ -37,7 +37,7 @@ class NumberedListExtractor(SignalExtractor):
                         number_match.group().replace(")", "").replace(" ", "")
                     )
 
-            return str(result[0]) if len(result) == 1 else result
+            return result
 
         return ""
 
@@ -126,7 +126,7 @@ def StopExtractor() -> NumberedListExtractor:
 
 def entry(signal_text: str) -> str:
     """Extracts entry targets as a list from the signal text."""
-    return EntryExtractor().extract(signal_text)
+    return EntryExtractor().extract(signal_text)[0]
 
 
 def targets(signal_text: str) -> list[str]:
@@ -136,4 +136,4 @@ def targets(signal_text: str) -> list[str]:
 
 def stop(signal_text: str) -> str:
     """Extracts stop targets as a list from the signal text."""
-    return StopExtractor().extract(signal_text)
+    return StopExtractor().extract(signal_text)[0]
