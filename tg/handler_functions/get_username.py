@@ -9,6 +9,6 @@ async def get_username(update, context):
     if update.callback_query:
         await update.callback_query.answer()
 
-    context.user_data["username"] = update.callback_query.data
+    context.user_data["username"] = update.message.text
 
-    await check_missing(update, context)
+    return await check_missing(update, context)

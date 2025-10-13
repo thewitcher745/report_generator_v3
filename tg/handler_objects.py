@@ -12,6 +12,7 @@ from telegram.ext import (
 from tg.handler_functions import (
     get_margin,
     get_input_date,
+    get_username,
     welcome,
     cancel,
     extract_signal_data,
@@ -28,6 +29,7 @@ from tg.handler_functions.helpers.conversation_stages import (
     GET_MARGIN,
     GET_TEMPLATE,
     CONFIRM,
+    GET_USERNAME,
 )
 
 welcome_handler = CommandHandler("start", welcome)
@@ -40,6 +42,7 @@ automatic_signal_handler = ConversationHandler(
         GET_TEMPLATE: [CallbackQueryHandler(get_template)],
         GET_MARGIN: [MessageHandler(filters=filters.TEXT, callback=get_margin)],
         GET_INPUT_DATE: [MessageHandler(filters=filters.TEXT, callback=get_input_date)],
+        GET_USERNAME: [MessageHandler(filters=filters.TEXT, callback=get_username)],
         CONFIRM: [CallbackQueryHandler(confirm)],
     },
     fallbacks=[CommandHandler("cancel", cancel)],
