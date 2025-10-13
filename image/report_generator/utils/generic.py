@@ -27,12 +27,12 @@ def style_str(styles: Mapping[str, Any] | None) -> str:
     return "style='" + "; ".join(pairs) + "'"
 
 
-def separate_price(price: float) -> str:
+def separate_price(price_str) -> str:
     """
     Separates the integer part of a price float into groups of three digits.
     """
     # Use Decimal to avoid scientific notation and preserve decimal part
-    s = format(Decimal(str(price)), "f")
+    s = format(Decimal(str(price_str)), "f")
     sign = ""
     if s.startswith("-"):
         sign = "-"

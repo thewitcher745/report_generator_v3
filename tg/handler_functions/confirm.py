@@ -12,6 +12,7 @@ from tg.handler_functions.helpers.conversation_stages import (
     CUSTOMIZE_USERNAME,
 )
 from tg.handler_functions.helpers.extra_features import get_extra_features
+from tg.handler_functions.helpers.utilities import get_pair_precision
 
 
 async def confirm(update, context):

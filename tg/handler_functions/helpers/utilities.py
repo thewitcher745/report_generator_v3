@@ -1,4 +1,5 @@
 from telegram import InputMediaPhoto
+import csv
 
 
 # Send a message to the user requeting the update, depending on the type of update (callback or message)
@@ -24,3 +25,31 @@ async def send_media_group(context, update, file_address, caption=None):
     await context.bot.send_media_group(
         chat_id=chat_id, media=media_group, caption=caption
     )
+
+
+def strip_pair(pair: str) -> str:
+    return pair.replace("USDT", "").replace(" Perpetual", "")
+
+
+def get_pair_precision(symbol: str, exchange: str) -> int | None:
+    """
+    Get the precision of a symbol for a specific exchange. Returns None if the symbol is not found for that exchange or in the list in general.
+    """
+    symbol = strip_pair(symbol)
+    with open("./static/precisions.csv", "r") as f:
+        column_numbers = {
+            "binance": 1,
+            "bybit": 2,
+            "lbank": 3,
+            "mexc": 4,
+            "okx": 5,
+        }
+        reader = csv.reader(f)
+        for row in reader:
+            if row[0] == symbol:
+                field_string = row[column_numbers[exchange]]
+                if field_string:
+                    return int(field_string)
+                return None
+
+        return None

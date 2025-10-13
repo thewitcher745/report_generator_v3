@@ -38,6 +38,7 @@ class BaseReport:
         self.roi_percent = report_data.get("roi_percent", 0)
         self.qr: str = report_data.get("qr", "")
         self.referral: str = report_data.get("referral", "")
+        self.precision: int | None = report_data.get("precision", None)
 
         # The following properties may or may not exist in the report_data dictionary.
         self.username: str | None = (
@@ -59,6 +60,14 @@ class BaseReport:
         self.report_html = ReportHTML(drag_and_drop=drag_and_drop)
         self.add_report_fonts()
         self.draw_background()
+
+        # Cast entry and target to the exact precision given by self.precision
+        if self.precision:
+            self.entry_str = f"{self.entry:.{self.precision}f}"
+            self.target_str = f"{self.target:.{self.precision}f}"
+        else:
+            self.entry_str = str(self.entry)
+            self.target_str = str(self.target)
 
     def print_info(self):
         """
@@ -181,11 +190,11 @@ class BaseReport:
 
     def draw_entry(
         self,
-        string_function: Callable[[float], str] = lambda x: separate_price(x),
+        string_function: Callable[[str], str] = lambda x: separate_price(x),
         additional_styles: dict = {},
     ):
         entry_styling = self._get_element_styling("entry")
-        entry_string = string_function(self.entry)
+        entry_string = string_function(self.entry_str)
         self.report_html.add_text(
             additional_styles=additional_styles,
             text=entry_string,
@@ -197,11 +206,11 @@ class BaseReport:
 
     def draw_target(
         self,
-        string_function: Callable[[float], str] = lambda x: separate_price(x),
+        string_function: Callable[[str], str] = lambda x: separate_price(x),
         additional_styles: dict = {},
     ):
         target_styling = self._get_element_styling("target")
-        target_string = string_function(self.target)
+        target_string = string_function(self.target_str)
         self.report_html.add_text(
             additional_styles=additional_styles,
             text=target_string,

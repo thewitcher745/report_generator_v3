@@ -37,6 +37,8 @@ GET_INPUT_DATE_EXAMPLE = "2025-10-08 13:47:22"
 
 GET_USERNAME = "❓ Please enter the username, since this image requires it:"
 
+PRECISION_NOT_FOUND = "⚠️ Warning: Precision not found for the selected coin. Using the precision given by the signal text."
+
 CONFIRM_INTRO = "💭 This is the provided signal and selected settings. If you need to customize the QR, referral or username, use the buttons below. Otherwise, press Confirm to generate the images."
 
 

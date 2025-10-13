@@ -45,6 +45,7 @@ def calc_report_numbers(user_data):
             "roi_dollars",
             "roi_percent",
             "tz_delta",
+            "precision",
         ]
 
         for key in key_list:
@@ -59,7 +60,7 @@ def calc_report_numbers(user_data):
                 report_data_item[key] = target
 
             else:
-                if user_data.get(key):
+                if key in user_data:
                     report_data_item[key] = user_data.get(key)
 
         report_data.append(report_data_item)

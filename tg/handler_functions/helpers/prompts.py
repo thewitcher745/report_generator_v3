@@ -74,6 +74,14 @@ async def prompt_get_username(update, context):
     )
 
 
+async def prompt_precision_not_found(update, context):
+    await send_message(
+        context,
+        update,
+        strings.PRECISION_NOT_FOUND,
+    )
+
+
 async def prompt_confirm(update, context):
     prompt_text = strings.CONFIRM(context.user_data)
 
