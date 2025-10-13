@@ -4,7 +4,10 @@ signal information and nothing else. Otherwise, "margin", "referral", "qr", "use
 As
 """
 
-extra_features = {"mexc_7": ["margin", "date", "input_date"]}
+extra_features = {
+    "mexc_7": ["margin", "date", "input_date"],
+    "binance_6": ["margin", "date"],
+}
 
 
 def get_extra_features(image_id: str) -> list[str]:
