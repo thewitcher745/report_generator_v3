@@ -12,7 +12,7 @@ from tg.handler_functions.helpers.conversation_stages import (
     CUSTOMIZE_USERNAME,
 )
 from tg.handler_functions.helpers.extra_features import get_extra_features
-from tg.handler_functions.helpers.utilities import get_pair_precision
+from tg.handler_functions.helpers.utilities import send_media_group
 
 
 async def confirm(update, context):
@@ -42,8 +42,15 @@ async def confirm(update, context):
     if ReportClass is None:
         raise ValueError("Report class not found.")
 
-    for report_data in report_data_array:
+    driver = None
+
+    for counter, report_data in enumerate(report_data_array):
+        print(report_data)
         report = ReportClass(report_data, extra_features=extra_features)
-        report.print_info()
+        image_path, driver = report.save_image(counter=counter)
+        await send_media_group(context, update, file_address=image_path)
+
+    if driver:
+        driver.quit()
 
     return END

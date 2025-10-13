@@ -31,12 +31,13 @@ class ReportHTML:
         </style>
     </head>
     <body>
+        <div id='report'>
     """
         self.body: str = ""
         if drag_and_drop:
-            self.tail = "<script src='./dragging.js'></script>\n</body>\n</html>"
+            self.tail = "<script src='./dragging.js'></script>\n</div></body>\n</html>"
         else:
-            self.tail = "</body>\n</html>"
+            self.tail = "</div></body>\n</html>"
 
     def add_font(self, font_filename: str) -> None:
         """Returns the body of an HTML file with the given font as a background."""
@@ -58,6 +59,10 @@ class ReportHTML:
         size = Image.open(f"./background_images/{img_filename}").size
         self.width = size[0]
         self.height = size[1]
+        self.head = self.head.replace(
+            "id='report'",
+            f"id='report' style='width: {self.width}px; height: {self.height}px; padding: 0; margin: 0;'",
+        )
 
     def _convert_element_position(self, position: Position | None) -> Position:
         """Converts the position of an element to pixels from fractions (0-1)."""
@@ -210,8 +215,10 @@ class ReportHTML:
         )
         self.body += f"\t<img src='{img_src}' {img_styling}/>\n"
 
-    def save_html(self) -> None:
+    def save_html(self) -> str:
         """Saves the HTML file to the specified path."""
 
         with open(self.output_path, "w") as f:
             f.write(self.head + self.body + self.tail)
+
+        return self.output_path

@@ -4,7 +4,7 @@ from image.report_generator.utils.generic import style_str
 class StyleStrings:
     @staticmethod
     def background_img():
-        return style_str(styles={"position": "absolute", "top": 0, "left": 0})
+        return style_str(styles={"top": 0, "left": 0})
 
     @staticmethod
     def text(additional_styles: dict = {}, **kwargs):

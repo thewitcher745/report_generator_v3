@@ -8,6 +8,8 @@ class Mexc7(BaseReport):
     ) -> None:
         super().__init__(report_data, extra_features, drag_and_drop)
 
+        print("USING MEXC7")
+
         self.draw_date(
             string_function=lambda x: x.strftime("Shared on %Y-%m-%d %H:%M:%S"),
             additional_styles={"letter-spacing": "0px"},
@@ -15,7 +17,7 @@ class Mexc7(BaseReport):
         self.draw_symbol()
         self.draw_signal_type_leverage()
         self.draw_roi(additional_styles={"letter-spacing": "1px"})
-        self.draw_roi_dollars()
+        self.draw_roi_dollars(additional_styles={"letter-spacing": "1px"})
         self.draw_entry(
             string_function=lambda x: "$" + separate_price(x),
             additional_styles={"letter-spacing": "2px"},
@@ -28,13 +30,11 @@ class Mexc7(BaseReport):
         self.draw_referral(additional_styles={"letter-spacing": "3px"})
         self.draw_qr()
 
-        self.save_html()
-
-    def draw_roi_dollars(self):
+    def draw_roi_dollars(self, additional_styles: dict[str, str] = {}):
         roi_dollars_styling = self._get_element_styling("roi_dollars")
         roi_dollars_string = f"{self.roi_dollars} USDT"
         self.report_html.add_text(
-            additional_styles={"letter-spacing": "1px"},
+            additional_styles=additional_styles,
             text=roi_dollars_string,
             position=roi_dollars_styling.position,
             font_name=roi_dollars_styling.font,

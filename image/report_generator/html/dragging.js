@@ -65,7 +65,7 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
-          document.body.querySelectorAll('*:not(#bg):not(script)').forEach(enableDrag);
+          document.body.querySelectorAll('*:not(#bg):not(script):not(#report)').forEach(enableDrag);
         });
     }
 )();

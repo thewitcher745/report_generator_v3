@@ -4,7 +4,10 @@ It also created the background, and adds the fonts to the report_html object.
 """
 
 import datetime
+import os
 from typing import Callable
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 
 from image.report_generator.utils.elements import ReportHTML
 from image.report_generator.utils.generic import separate_price
@@ -23,6 +26,7 @@ class BaseReport:
         """
 
         self.report_data = report_data
+        self.html_path: str | None = None
 
         self.image_id: str = report_data.get("image_id", "")
         if self.image_id not in styling_dict:
@@ -251,3 +255,44 @@ class BaseReport:
         Saves the HTML of the report to a file.
         """
         self.report_html.save_html()
+
+    def save_image(self, output_path: str | None = None, counter: int = 0):
+        """
+        Saves the image of the report to a file.
+
+        Uses Selenium and headless Chrome to render an HTML file and take a screenshot.
+
+        Args:
+            html_path (str): Path to the HTML file.
+            output_path (str): Path to save the screenshot image.
+
+        Returns:
+            str: Path to the generated image.
+        """
+
+        if not output_path:
+            output_path = f"image_outputs/reports/{self.image_id}_{counter}.png"
+
+        self.save_html()
+
+        chrome_options = Options()
+        chrome_options.add_argument("--log-level=3")
+        chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--disable-gpu")
+        chrome_options.add_argument("--allow-file-access-from-files")
+        chrome_options.add_argument("--enable-local-file-accesses")
+        chrome_options.add_argument("--window-size=2000,2000")
+        driver = webdriver.Chrome(options=chrome_options)
+
+        # Convert the HTML path to an absolute path and convert backslashes to forward slashes
+        abs_html_path = os.path.abspath(self.report_html.output_path)
+        file_url = f"file:///{abs_html_path.replace(os.sep, '/')}"
+
+        driver.get(file_url)
+
+        # Locate the report div
+        report_div = driver.find_element("css selector", "#report")
+        # Screenshot only the report div
+        report_div.screenshot(output_path)
+
+        return os.path.abspath(output_path), driver
