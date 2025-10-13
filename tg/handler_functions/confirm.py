@@ -19,16 +19,17 @@ async def confirm(update, context):
     if update.callback_query:
         await update.callback_query.answer()
 
-    confirmation_dialog_answer = update.callback_query.data
+    if update.callback_query:
+        confirmation_dialog_answer = update.callback_query.data
 
-    if confirmation_dialog_answer == "confirm":
-        print("Data acquired successfully!")
-    elif confirmation_dialog_answer == "customize_qr":
-        print("Customize QR")
-    elif confirmation_dialog_answer == "customize_referral":
-        print("Customize Referral")
-    elif confirmation_dialog_answer == "customize_username":
-        print("Customize Username")
+        if confirmation_dialog_answer == "confirm":
+            print("Data acquired successfully!")
+        elif confirmation_dialog_answer == "customize_qr":
+            print("Customize QR")
+        elif confirmation_dialog_answer == "customize_referral":
+            print("Customize Referral")
+        elif confirmation_dialog_answer == "customize_username":
+            print("Customize Username")
 
     # An array made up of different reports for each target
     report_data_array = calc_report_numbers(

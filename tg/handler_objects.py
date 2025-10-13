@@ -43,7 +43,7 @@ automatic_signal_handler = ConversationHandler(
         GET_MARGIN: [MessageHandler(filters=filters.TEXT, callback=get_margin)],
         GET_INPUT_DATE: [MessageHandler(filters=filters.TEXT, callback=get_input_date)],
         GET_USERNAME: [MessageHandler(filters=filters.TEXT, callback=get_username)],
-        CONFIRM: [CallbackQueryHandler(confirm)],
+        # CONFIRM: [CallbackQueryHandler(confirm)],
     },
     fallbacks=[CommandHandler("cancel", cancel)],
 )

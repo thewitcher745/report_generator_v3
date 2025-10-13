@@ -3,6 +3,7 @@ This handler checks if any of the extra features are missing and redirects the i
 """
 
 import datetime
+from tg.handler_functions.confirm import confirm
 from tg.handler_functions.helpers.conversation_stages import (
     GET_MARGIN,
     GET_INPUT_DATE,
@@ -36,5 +37,5 @@ async def check_missing(update, context):
         await prompt_get_username(update, context)
         return GET_USERNAME
 
-    await prompt_confirm(update, context)
-    return CONFIRM
+    # await prompt_confirm(update, context)
+    return await confirm(update, context)
