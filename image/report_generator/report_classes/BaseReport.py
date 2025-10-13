@@ -240,7 +240,7 @@ class BaseReport:
     def draw_qr(self):
         qr_styling = self._get_element_styling("qr")
         self.report_html.add_img(
-            img_src=f"../../../qr/{self.qr}",
+            img_src=f"../../../qr/{self.qr}.png",
             position=qr_styling.position,
             width=qr_styling.size,
             height=qr_styling.size,
