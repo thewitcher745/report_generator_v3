@@ -3,7 +3,7 @@ EXCHANGE_LIST = [
     {"label": "Binance", "callback_query": "binance"},
     # {"label": "BitGet", "callback_query": "bitget"},
     {"label": "MEXC", "callback_query": "mexc"},
-    # {"label": "BingX", "callback_query": "bingx"},
+    {"label": "BingX", "callback_query": "bingx"},
     # {"label": "OKX", "callback_query": "okx"},
     # {"label": "LBANK", "callback_query": "lbank"},
 ]
@@ -57,6 +57,11 @@ IMAGE_LIST = {
         #     "callback_query": "bingx_8",
         #     "image_list_label": 3,
         # },
+        {
+            "label": "BingX 4",
+            "callback_query": "bingx_10",
+            "image_list_label": 4,
+        }
     ],
     "okx": [
         # {"label": "OKX 1", "callback_query": "okx_1", "image_list_label": 1},

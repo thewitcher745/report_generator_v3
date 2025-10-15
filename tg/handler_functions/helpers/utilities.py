@@ -39,14 +39,18 @@ def get_pair_precision(symbol: str, exchange: str) -> int | None:
     with open("./static/precisions.csv", "r") as f:
         column_numbers = {
             "binance": 1,
-            "bybit": 2,
-            "lbank": 3,
-            "mexc": 4,
-            "okx": 5,
+            "bitget": 2,
+            "bybit": 3,
+            "lbank": 4,
+            "mexc": 5,
+            "okx": 6,
+            "bingx": 7,
         }
         reader = csv.reader(f)
         for row in reader:
             if row[0] == symbol:
+                print(row)
+                print(column_numbers[exchange])
                 field_string = row[column_numbers[exchange]]
                 if field_string:
                     return int(field_string)

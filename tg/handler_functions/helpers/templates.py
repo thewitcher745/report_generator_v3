@@ -24,7 +24,44 @@ TEMPLATES = {
         "Turk Free": {"qr": "binance_4", "referral": "53h6r"},
         "Extra 1": {"qr": "binance_4", "referral": "79g2q"},
     },
-    "bingx": {},
+    "bingx": {
+        "Board Main": {
+            "qr": "binance_2",
+            "referral": "NKE6GL",
+            "username": "al**7@gmail.com",
+            "avatar": "bingx_board",
+        },
+        "Board Free": {
+            "qr": "binance_6",
+            "referral": "HRB7WN",
+            "username": "al**7@gmail.com",
+            "avatar": "bingx_board",
+        },
+        "CAN Main": {
+            "qr": "binance_2",
+            "referral": "NKE6GL",
+            "username": "CAN PREMIUM",
+            "avatar": "bingx_can",
+        },
+        "CAN Free": {
+            "qr": "binance_6",
+            "referral": "HRB7WN",
+            "username": "CAN PREMIUM",
+            "avatar": "bingx_can",
+        },
+        "Turk Main": {
+            "qr": "binance_3",
+            "referral": "SOV2XR",
+            "username": "ta***1@gmail.com",
+            "avatar": "bingx_turk",
+        },
+        "Turk Free": {
+            "qr": "binance_4",
+            "referral": "WMT6QJ",
+            "username": "ta***1@gmail.com",
+            "avatar": "bingx_turk",
+        },
+    },
     "okx": {},
     "lbank": {},
 }
