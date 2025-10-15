@@ -34,6 +34,7 @@ def calc_report_numbers(user_data):
             "image_id",
             "symbol",
             "username",
+            "avatar",
             "qr",
             "referral",
             "date",

@@ -42,12 +42,11 @@ class BaseReport:
         self.roi_percent = report_data.get("roi_percent", 0)
         self.qr: str = report_data.get("qr", "")
         self.referral: str = report_data.get("referral", "")
+        self.username: str = report_data.get("username", "")
+        self.avatar: str = report_data.get("avatar", "")
         self.precision: int | None = report_data.get("precision", None)
 
         # The following properties may or may not exist in the report_data dictionary.
-        self.username: str | None = (
-            report_data.get("username", None) if "username" in extra_features else None
-        )
         self.tz_delta: int | None = (
             report_data.get("tz_delta", None) if "date" in extra_features else None
         )
@@ -249,6 +248,32 @@ class BaseReport:
             width=qr_styling.size,
             height=qr_styling.size,
         )
+
+    def draw_avatar(self):
+        avatar_styling = self._get_element_styling("avatar")
+        self.report_html.add_img(
+            img_src=f"../../../avatars/{self.avatar}.png",
+            position=avatar_styling.position,
+            width=avatar_styling.size,
+            height=avatar_styling.size,
+        )
+
+    def draw_username(
+        self,
+        string_function: Callable[[str], str] = lambda x: x,
+        additional_styles: dict = {},
+    ):
+        if self.username:
+            username_styling = self._get_element_styling("username")
+            username_text = string_function(self.username)
+            self.report_html.add_text(
+                additional_styles=additional_styles,
+                text=username_text,
+                position=username_styling.position,
+                font_name=username_styling.font,
+                font_size=username_styling.font_size,
+                font_color=username_styling.color,
+            )
 
     def save_html(self):
         """
