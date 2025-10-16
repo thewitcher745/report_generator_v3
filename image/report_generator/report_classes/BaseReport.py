@@ -47,7 +47,7 @@ class BaseReport:
         self.precision: int | None = report_data.get("precision", None)
 
         # The following properties may or may not exist in the report_data dictionary.
-        self.tz_delta: int | None = (
+        self.tz_delta: datetime.timedelta | None = (
             report_data.get("tz_delta", None) if "date" in extra_features else None
         )
         self.date: datetime.datetime | None = (
