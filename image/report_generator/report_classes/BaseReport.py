@@ -10,7 +10,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 from image.report_generator.utils.elements import ReportHTML
-from image.report_generator.utils.generic import separate_price
+from image.report_generator.utils.generic import get_logo_link, separate_price
 from static.styling_dict import styling_dict
 
 
@@ -274,6 +274,19 @@ class BaseReport:
                 font_size=username_styling.font_size,
                 font_color=username_styling.color,
             )
+
+    def draw_logo(self, additional_styles: dict = {}):
+        logo_styling = self._get_element_styling("logo")
+
+        additional_styles.update({"aspect-ratio": "1/1"})
+
+        self.report_html.add_img(
+            additional_styles=additional_styles,
+            img_src=get_logo_link(self.symbol),
+            position=logo_styling.position,
+            width=logo_styling.size,
+            height=logo_styling.size,
+        )
 
     def save_html(self):
         """
