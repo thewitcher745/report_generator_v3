@@ -2,6 +2,7 @@
 This module contains generic utility functions used in composing report images.
 """
 
+import json
 from typing import Any, Mapping
 from decimal import Decimal
 
@@ -43,3 +44,11 @@ def separate_price(price_str) -> str:
         int_part, frac_part = s, ""
     int_formatted = f"{int(int_part):,}" if int_part else "0"
     return sign + int_formatted + (f".{frac_part}" if frac_part != "" else "")
+
+
+def get_logo_link(symbol: str) -> str:
+    with open("./image/report_generator/utils/logo_links.json", "r") as fs:
+        logo_links: dict = json.load(fs)
+
+    symbol = symbol.replace(" Perpetual", "").replace("USDT", "").upper()
+    return logo_links[symbol]

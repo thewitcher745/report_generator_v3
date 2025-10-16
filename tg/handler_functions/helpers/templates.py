@@ -93,7 +93,14 @@ TEMPLATES = {
             "avatar": "bingx_turk",
         },
     },
-    "okx": {},
+    "okx": {
+        "Board Main": {"qr": "okx_1", "referral": "45618387"},
+        "Board Free": {"qr": "okx_1", "referral": "15698429"},
+        "CAN Main": {"qr": "okx_1", "referral": "46021351"},
+        "CAN Free": {"qr": "okx_1", "referral": "19480578"},
+        "Turk Main": {"qr": "okx_1", "referral": "34679461"},
+        "Turk Free": {"qr": "okx_1", "referral": "15486230"},
+    },
     "lbank": {},
     "kcex": {
         "Board Main": {"qr": "kcex_1", "referral": "421HBE"},

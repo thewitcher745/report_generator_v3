@@ -1923,6 +1923,56 @@ styling_dict = {
         "draw_datetime": True,
         "draw_qr_referral": True,
     },
+    "okx_2": {
+        "symbol": ElementStyling(
+            position=Position(x=0.1877777862548828, y=0.5929873500551496),
+            font="OkxRegular.woff2",
+            font_size=26,
+            color="white",
+        ),
+        "logo": ElementStyling(
+            position=Position(x=0.06350001017252604, y=0.5934337718146188),
+            size=55,
+        ),
+        "signal_type_leverage": ElementStyling(
+            position=Position(x=0.1890833282470703, y=0.6294642857142857),
+            font="OkxRegular.woff2",
+            font_size=20,
+            gap=30,
+            separator_color="#2b2b2b",
+            separator_length=18,
+            separator_width=1,
+            color="#535353",
+        ),
+        "roi": ElementStyling(
+            position=Position(x=0.05611109415690104, y=0.478515625),
+            font="OkxBold.woff2",
+            font_size=68,
+            color="#befc23",
+        ),
+        "entry": ElementStyling(
+            position=Position(x=0.9304444376627604, y=0.6961495535714286),
+            font="OkxRegular.woff2",
+            font_size=23,
+            color="white",
+        ),
+        "target": ElementStyling(
+            position=Position(x=0.9304444376627604, y=0.7413876226970127),
+            font="OkxRegular.woff2",
+            font_size=23,
+            color="white",
+        ),
+        "referral": ElementStyling(
+            position=Position(x=0.06108332316080729, y=0.9177455220903669),
+            font="OkxMedium.woff2",
+            font_size=23,
+            color="white",
+        ),
+        "qr": ElementStyling(
+            position=Position(x=0.7701666768391927, y=0.8680059569222587),
+            size=90,
+        ),
+    },
     "lbank_1": {
         "symbol": ElementStyling(
             position=Position(0.069, 0.163),
