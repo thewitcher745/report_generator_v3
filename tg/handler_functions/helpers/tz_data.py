@@ -12,6 +12,7 @@ tz_deltas = {
     "lbank": datetime.timedelta(hours=3, minutes=30),
     "mexc": datetime.timedelta(hours=-1),
     "okx": datetime.timedelta(hours=-2),
+    "kcex": datetime.timedelta(hours=3),
 }
 
 

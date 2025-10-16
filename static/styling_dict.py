@@ -2046,4 +2046,57 @@ styling_dict = {
         "draw_datetime": True,
         "draw_qr_referral": True,
     },
+    "kcex_1": {
+        "symbol": ElementStyling(
+            position=Position(x=0.06203090170887659, y=0.24236979484558105),
+            font="Inter-Bold.ttf",
+            font_size=36,
+            color="white",
+        ),
+        "signal_type": ElementStyling(
+            position=Position(x=0.06423840722764039, y=0.28890624046325686),
+            font="Inter-Medium.ttf",
+            font_size=37,
+            short_color="#d95374",
+            long_color="#07bb75",
+        ),
+        "leverage": ElementStyling(
+            font="Inter-Medium.ttf",
+            font_size=37,
+            color="white",
+        ),
+        "roi": ElementStyling(
+            position=Position(x=0.051214121298547875, y=0.33924479484558107),
+            font="Inter-Bold.ttf",
+            font_size=85,
+            color="#07bb75",
+        ),
+        "entry": ElementStyling(
+            position=Position(x=0.4109087474561948, y=0.7104036808013916),
+            font="Inter-Medium.ttf",
+            font_size=33,
+            color="white",
+        ),
+        "target": ElementStyling(
+            position=Position(x=0.41022813135951297, y=0.7463411808013916),
+            font="Inter-Medium.ttf",
+            font_size=33,
+            color="white",
+        ),
+        "referral": ElementStyling(
+            position=Position(x=0.48007725932477063, y=0.858033812046051),
+            font="Inter-Bold.ttf",
+            font_size=42,
+            color="white",
+        ),
+        "qr": ElementStyling(
+            position=Position(x=0.06788079470198675, y=0.8579036235809326), size=148
+        ),
+        "date": ElementStyling(
+            position=Position(x=0.41022811451758245, y=0.7838802099227905),
+            font="Inter-Regular.ttf",
+            font_size=32,
+            color="#c3c3c3",
+        ),
+    },
 }

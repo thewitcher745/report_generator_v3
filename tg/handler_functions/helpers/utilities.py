@@ -45,6 +45,7 @@ def get_pair_precision(symbol: str, exchange: str) -> int | None:
             "mexc": 5,
             "okx": 6,
             "bingx": 7,
+            "kcex": 8,
         }
         reader = csv.reader(f)
         for row in reader:

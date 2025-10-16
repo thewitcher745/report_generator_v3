@@ -6,6 +6,7 @@ EXCHANGE_LIST = [
     {"label": "BingX", "callback_query": "bingx"},
     # {"label": "OKX", "callback_query": "okx"},
     # {"label": "LBANK", "callback_query": "lbank"},
+    {"label": "KCEX", "callback_query": "kcex"},
 ]
 
 IMAGE_LIST = {
@@ -70,6 +71,9 @@ IMAGE_LIST = {
     "lbank": [
         # {"label": "LBANK 1", "callback_query": "lbank_1", "image_list_label": 1},
         # {"label": "LBANK 2", "callback_query": "lbank_2", "image_list_label": 2},
+    ],
+    "kcex": [
+        {"label": "KCEX 1", "callback_query": "kcex_1", "image_list_label": 1},
     ],
 }
 

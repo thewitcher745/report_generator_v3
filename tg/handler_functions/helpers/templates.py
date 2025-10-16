@@ -95,6 +95,14 @@ TEMPLATES = {
     },
     "okx": {},
     "lbank": {},
+    "kcex": {
+        "Board Main": {"qr": "kcex_1", "referral": "421HBE"},
+        "Board Free": {"qr": "kcex_2", "referral": "496KBR"},
+        "CAN Main": {"qr": "kcex_1", "referral": "673HEQ"},
+        "CAN Free": {"qr": "kcex_2", "referral": "743KEM"},
+        "Turk Main": {"qr": "kcex_1", "referral": "276OLN"},
+        "Turk Free": {"qr": "kcex_2", "referral": "962HRN"},
+    },
 }
 
 
