@@ -49,8 +49,6 @@ def get_pair_precision(symbol: str, exchange: str) -> int | None:
         reader = csv.reader(f)
         for row in reader:
             if row[0] == symbol:
-                print(row)
-                print(column_numbers[exchange])
                 field_string = row[column_numbers[exchange]]
                 if field_string:
                     return int(field_string)

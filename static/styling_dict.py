@@ -688,6 +688,77 @@ styling_dict = {
         "draw_datetime": True,
         "draw_username": True,
     },
+    "bitget_5": {
+        "symbol": ElementStyling(
+            position=Position(x=0.06277776647497106, y=0.3452256917953491),
+            font="Switzer-Medium.otf",
+            font_size=38,
+            color="white",
+        ),
+        "signal_type": ElementStyling(
+            position=Position(x=0.05907406277126736, y=0.4040147662162781),
+            font="Switzer-Medium.otf",
+            font_size=35,
+            gap=32,
+            separator_color="#999999",
+            separator_length=23,
+            separator_width=2,
+            short_color="#d95374",
+            long_color="#02add6",
+            leverage_color="#999999",
+        ),
+        "leverage": ElementStyling(
+            font="Switzer-Medium.otf",
+            font_size=33.75,
+            color="#999999",
+        ),
+        "roi": ElementStyling(
+            position=Position(x=0.06083334463614005, y=0.4746527870496114),
+            font="Switzer-Medium.otf",
+            font_size=98.4,
+            color="#02add6",
+        ),
+        "entry": ElementStyling(
+            position=Position(x=0.35276679841897235, y=0.6046296155011213),
+            font="Switzer-Medium.otf",
+            font_size=33.75,
+            color="white",
+        ),
+        "target": ElementStyling(
+            position=Position(x=0.35439174888319336, y=0.6643826943856699),
+            font="Switzer-Medium.otf",
+            font_size=33.75,
+            color="white",
+        ),
+        "referral": ElementStyling(
+            position=Position(x=0.297746898509838, y=0.8619357546170553),
+            font="Switzer-Medium.otf",
+            font_size=28.125,
+            color="black",
+        ),
+        "qr": ElementStyling(
+            position=Position(x=0.7701800400403491, y=0.8568364178692853),
+            size=130,
+        ),
+        "username": ElementStyling(
+            position=Position(x=0.23987655639648436, y=0.19079862038294473),
+            font="Switzer-Semibold.otf",
+            font_size=50.625,
+            color="white",
+        ),
+        "user_at": ElementStyling(
+            position=Position(x=0.2380247045446325, y=0.24939237038294473),
+            font="Switzer-Regular.otf",
+            font_size=30.9375,
+            color="#7b7b7b",
+        ),
+        "date": ElementStyling(
+            position=Position(x=0.053580248797381366, y=0.09637586275736491),
+            font="Switzer-Regular.otf",
+            font_size=30.9375,
+            color="#999999",
+        ),
+    },
     "mexc_1": {
         "symbol": ElementStyling(
             position=Position(0.058, 0.3),

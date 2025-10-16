@@ -14,7 +14,38 @@ TEMPLATES = {
         "Extra 2": {"qr": "binance_8", "referral": "8463691712"},
     },
     "bybit": {},
-    "bitget": {},
+    "bitget": {
+        "Board Main": {
+            "qr": "bitget_1",
+            "referral": "2BI76BMK",
+            "username": "BGUSER-2BI76BMK",
+        },
+        "Board Free": {
+            "qr": "bitget_1",
+            "referral": "8LR12MLD",
+            "username": "BGUSER-8LR12MLD",
+        },
+        "CAN Main": {
+            "qr": "bitget_4",
+            "referral": "1HN38KYX",
+            "username": "BGUSER-1HN38KYX",
+        },
+        "CAN Free": {
+            "qr": "bitget_5",
+            "referral": "1WC67QCZ",
+            "username": "BGUSER-1WC67QCZ",
+        },
+        "Turk Main": {
+            "qr": "bitget_5",
+            "referral": "SOV2XR",
+            "username": "ta***1@gmail.com",
+        },
+        "Turk Free": {
+            "qr": "bitget_4",
+            "referral": "3VH98ACX",
+            "username": "BGUSER-3VH98ACX",
+        },
+    },
     "mexc": {
         "Board Main": {"qr": "binance_1", "referral": "69r4f"},
         "Board Free": {"qr": "binance_5", "referral": "67x8w"},
@@ -27,13 +58,13 @@ TEMPLATES = {
     "bingx": {
         "Board Main": {
             "qr": "binance_2",
-            "referral": "NKE6GL",
+            "referral": "HS9GWL",
             "username": "al**7@gmail.com",
             "avatar": "bingx_board",
         },
         "Board Free": {
             "qr": "binance_6",
-            "referral": "HRB7WN",
+            "referral": "FP4L5G",
             "username": "al**7@gmail.com",
             "avatar": "bingx_board",
         },

@@ -5,6 +5,7 @@ As
 """
 
 extra_features = {
+    "bitget_5": ["date"],
     "bingx_10": ["date"],
     "mexc_7": ["margin", "date", "input_date"],
     "binance_6": ["margin", "date"],
