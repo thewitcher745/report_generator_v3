@@ -179,9 +179,9 @@ class BaseReport:
         ),
         additional_styles: dict = {},
     ):
-        if self.date:
+        if self.date and self.tz_delta:
             date_styling = self._get_element_styling("date")
-            date_string = string_function(self.date)
+            date_string = string_function(self.date + self.tz_delta)
             self.report_html.add_text(
                 additional_styles=additional_styles,
                 text=date_string,
