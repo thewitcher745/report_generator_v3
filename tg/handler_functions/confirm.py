@@ -53,6 +53,7 @@ async def confirm(update, context):
 
     if driver:
         driver.quit()
+        context.user_data = {}
 
         context.user_data.clear()
 
