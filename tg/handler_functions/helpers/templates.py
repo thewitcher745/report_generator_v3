@@ -57,37 +57,37 @@ TEMPLATES = {
     },
     "bingx": {
         "Board Main": {
-            "qr": "binance_2",
+            "qr": "bitget_1",
             "referral": "HS9GWL",
             "username": "al**7@gmail.com",
             "avatar": "bingx_board",
         },
         "Board Free": {
-            "qr": "binance_6",
+            "qr": "bitget_2",
             "referral": "FP4L5G",
             "username": "al**7@gmail.com",
             "avatar": "bingx_board",
         },
         "CAN Main": {
-            "qr": "binance_2",
+            "qr": "bitget_1",
             "referral": "NKE6GL",
             "username": "CAN PREMIUM",
             "avatar": "bingx_can",
         },
         "CAN Free": {
-            "qr": "binance_6",
+            "qr": "bitget_2",
             "referral": "HRB7WN",
             "username": "CAN PREMIUM",
             "avatar": "bingx_can",
         },
         "Turk Main": {
-            "qr": "binance_3",
+            "qr": "bitget_3",
             "referral": "SOV2XR",
             "username": "ta***1@gmail.com",
             "avatar": "bingx_turk",
         },
         "Turk Free": {
-            "qr": "binance_4",
+            "qr": "bitget_4",
             "referral": "WMT6QJ",
             "username": "ta***1@gmail.com",
             "avatar": "bingx_turk",
