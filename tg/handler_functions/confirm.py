@@ -46,14 +46,12 @@ async def confirm(update, context):
     driver = None
 
     for counter, report_data in enumerate(report_data_array):
-        print(report_data)
         report = ReportClass(report_data, extra_features=extra_features)
         image_path, driver = report.save_image(counter=counter)
         await send_media_group(context, update, file_address=image_path)
 
     if driver:
         driver.quit()
-        context.user_data = {}
 
         context.user_data.clear()
 
