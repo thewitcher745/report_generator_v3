@@ -58,13 +58,13 @@ TEMPLATES = {
     "bingx": {
         "Board Main": {
             "qr": "bitget_1",
-            "referral": "HS9GWL",
+            "referral": "XJLYOF",
             "username": "al**7@gmail.com",
             "avatar": "bingx_board",
         },
         "Board Free": {
             "qr": "bitget_2",
-            "referral": "FP4L5G",
+            "referral": "XJLYOF",
             "username": "al**7@gmail.com",
             "avatar": "bingx_board",
         },
