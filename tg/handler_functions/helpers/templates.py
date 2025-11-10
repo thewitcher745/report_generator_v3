@@ -58,7 +58,7 @@ TEMPLATES = {
     "bingx": {
         "Board Main": {
             "qr": "bitget_1",
-            "referral": "HS9GWL",
+            "referral": "XJLYOF",
             "username": "al**7@gmail.com",
             "avatar": "bingx_board",
         },
@@ -70,7 +70,7 @@ TEMPLATES = {
         },
         "CAN Main": {
             "qr": "bitget_1",
-            "referral": "NKE6GL",
+            "referral": "YQOTZM",
             "username": "CAN PREMIUM",
             "avatar": "bingx_can",
         },
@@ -82,7 +82,7 @@ TEMPLATES = {
         },
         "Turk Main": {
             "qr": "bitget_3",
-            "referral": "SOV2XR",
+            "referral": "OTYPQG",
             "username": "ta***1@gmail.com",
             "avatar": "bingx_turk",
         },
