@@ -64,7 +64,7 @@ TEMPLATES = {
         },
         "Board Free": {
             "qr": "bitget_2",
-            "referral": "FP4L5G",
+            "referral": "XJLYOF",
             "username": "al**7@gmail.com",
             "avatar": "bingx_board",
         },
