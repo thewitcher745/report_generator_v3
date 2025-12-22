@@ -11,7 +11,10 @@ class Mexc8(BaseReport):
     ) -> None:
         super().__init__(report_data, extra_features, drag_and_drop)
 
-        self.draw_symbol()
+        self.draw_symbol(
+            string_function=lambda x: x.lower().replace("perpetual", "").strip().upper()
+            + " Perpetual",
+        )
         self.draw_signal_type_leverage()
         self.draw_roi()
         self.draw_entry(string_function=lambda x: "$" + separate_price(x))
@@ -23,7 +26,9 @@ class Mexc8(BaseReport):
     def draw_gen_date(self):
         if self.date and self.tz_delta:
             date_styling = self._get_element_styling("date")
-            date_string = (self.date + self.tz_delta).strftime("Shared on %Y-%m-%d %H:%M:%S")
+            date_string = (self.date + self.tz_delta).strftime(
+                "Shared on %Y-%m-%d %H:%M:%S"
+            )
             self.report_html.add_text(
                 text=date_string,
                 position=date_styling.position,

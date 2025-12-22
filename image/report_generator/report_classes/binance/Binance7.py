@@ -16,7 +16,11 @@ class Binance7(BaseReport):
             string_function=lambda x: x.strftime("%Y-%m-%d %H:%M"),
             additional_styles={"letter-spacing": "1px"},
         )
-        self.draw_symbol(additional_styles={"letter-spacing": "-1px"})
+        self.draw_symbol(
+            string_function=lambda x: x.lower().replace("perpetual", "").strip().upper()
+            + " Perpetual",
+            additional_styles={"letter-spacing": "-1px"},
+        )
         self.draw_signal_type_leverage()
         self.draw_roi()
         self.draw_entry(
