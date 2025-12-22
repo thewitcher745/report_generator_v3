@@ -317,6 +317,66 @@ styling_dict = {
             color="white",
         ),
     },
+    "binance_7": {
+        "avatar": ElementStyling(position=Position(0.063, 0.105), size=64),
+        "username": ElementStyling(
+            position=Position(x=0.1735367540118526, y=0.061119794845581055),
+            font="Metropolis-Medium.otf",
+            font_size=43,
+            color="white",
+        ),
+        "date": ElementStyling(
+            position=Position(x=0.17032476257716309, y=0.10828125476837158),
+            font="Metropolis-Regular.otf",
+            font_size=32,
+            color="white",
+        ),
+        "symbol": ElementStyling(
+            position=Position(x=0.057708772908441515, y=0.3244010448455811),
+            font="Metropolis-Bold.otf",
+            font_size=47,
+            color="white",
+        ),
+        "signal_type_leverage": ElementStyling(
+            position=Position(x=0.056638109096878345, y=0.37328126430511477),
+            font="Metropolis-Medium.otf",
+            font_size=33,
+            gap=40,
+            separator_color="#464646",
+            separator_length=33,
+            separator_width=2,
+            short_color="#34b785",
+            long_color="#34b785",
+            leverage_color="#737373",
+        ),
+        "roi": ElementStyling(
+            position=Position(x=0.05235545385062567, y=0.44393229484558105),
+            font="Pretendard-SemiBold.otf",
+            font_size=80,
+            color="#2ebd88",
+        ),
+        "entry": ElementStyling(
+            position=Position(x=0.056638109096878345, y=0.6018098831176758),
+            font="Metropolis-Medium.otf",
+            font_size=37,
+            color="white",
+        ),
+        "target": ElementStyling(
+            position=Position(x=0.5226445330797477, y=0.6025911331176758),
+            font="Metropolis-Medium.otf",
+            font_size=37,
+            color="white",
+        ),
+        "referral": ElementStyling(
+            position=Position(x=0.41347253705500536, y=0.9344400882720947),
+            font="Metropolis-Medium.otf",
+            font_size=32,
+            color="white",
+        ),
+        "qr": ElementStyling(
+            position=Position(x=0.7968237017155715, y=0.8553124904632569), size=140
+        ),
+    },
     "bybit_1": {
         "symbol": ElementStyling(
             position=Position(0.045, 0.2),

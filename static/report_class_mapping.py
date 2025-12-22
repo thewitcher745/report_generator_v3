@@ -9,6 +9,7 @@ from image.report_generator.report_classes.bingx.Bingx10 import Bingx10
 from image.report_generator.report_classes.mexc.Mexc7 import Mexc7
 from image.report_generator.report_classes.mexc.Mexc8 import Mexc8
 from image.report_generator.report_classes.binance.Binance6 import Binance6
+from image.report_generator.report_classes.binance.Binance7 import Binance7
 from image.report_generator.report_classes.kcex.Kcex1 import Kcex1
 
 MAPPING: dict[str, type[BaseReport]] = {
@@ -18,5 +19,6 @@ MAPPING: dict[str, type[BaseReport]] = {
     "mexc_7": Mexc7,
     "mexc_8": Mexc8,
     "binance_6": Binance6,
+    "binance_7": Binance7,
     "kcex_1": Kcex1,
 }
