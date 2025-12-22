@@ -37,6 +37,7 @@ IMAGE_LIST = {
         # {"label": "MEXC 3", "callback_query": "mexc_5", "image_list_label": 3},
         # {"label": "MEXC 4", "callback_query": "mexc_6", "image_list_label": 4},
         {"label": "MEXC 5", "callback_query": "mexc_7", "image_list_label": 5},
+        {"label": "MEXC 6", "callback_query": "mexc_8", "image_list_label": 6},
     ],
     "bingx": [
         # {"label": "BingX 1", "callback_query": "bingx_1", "image_list_label": 1},
