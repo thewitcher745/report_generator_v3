@@ -819,6 +819,67 @@ styling_dict = {
             color="#999999",
         ),
     },
+    "bitget_6": {
+        "symbol": ElementStyling(
+            position=Position(x=0.1505388784078197, y=0.22282524196985962),
+            font="Switzer-Medium.otf",
+            font_size=38,
+            color="white",
+        ),
+        "signal_type_leverage": ElementStyling(
+            position=Position(x=0.1514434109659173, y=0.28046574052982465),
+            font="Switzer-Regular.otf",
+            font_size=30,
+            gap=44,
+            separator_color="#3c3c3c",
+            separator_length=25,
+            separator_width=3,
+            short_color="#d95374",
+            long_color="#02add6",
+            leverage_color="#02add6",
+        ),
+        "roi": ElementStyling(
+            position=Position(x=0.050442649365572675, y=0.3603348588833357),
+            font="BinancePlex.otf",
+            font_size=90,
+            color="white",
+        ),
+        "entry": ElementStyling(
+            position=Position(x=0.04907621247113164, y=0.5919361246650819),
+            font="BinancePlex.otf",
+            font_size=33.75,
+            color="white",
+        ),
+        "target": ElementStyling(
+            position=Position(x=0.35785218694744153, y=0.5904734305366357),
+            font="BinancePlex.otf",
+            font_size=33.75,
+            color="white",
+        ),
+        "referral": ElementStyling(
+            position=Position(x=0.4143764504659534, y=0.8192071187854089),
+            font="BinancePlex.otf",
+            font_size=30,
+            color="white",
+        ),
+        "qr": ElementStyling(
+            position=Position(x=0.06002694850155167, y=0.8337375209182845),
+            size=83,
+        ),
+        "username": ElementStyling(
+            position=Position(x=0.14980754896344545, y=0.05107775681563943),
+            font="Switzer-Medium.otf",
+            font_size=31,
+            color="white",
+        ),
+        "date": ElementStyling(
+            position=Position(x=0.15173209456868866, y=0.10561969924468642),
+            font="DINNextCYR-Regular.ttf",
+            font_size=31,
+            timezone_font_size=31,
+            color="#999999",
+        ),
+    },
     "mexc_1": {
         "symbol": ElementStyling(
             position=Position(0.058, 0.3),

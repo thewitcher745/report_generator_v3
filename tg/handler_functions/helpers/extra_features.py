@@ -6,6 +6,7 @@ As
 
 extra_features = {
     "bitget_5": ["date"],
+    "bitget_6": ["date"],
     "bingx_10": ["date"],
     "mexc_7": ["margin", "date", "input_date"],
     "mexc_8": ["date"],

@@ -29,6 +29,7 @@ IMAGE_LIST = {
         # {"label": "BitGet 3", "callback_query": "bitget_3", "image_list_label": 3},
         # {"label": "BitGet 4", "callback_query": "bitget_4", "image_list_label": 4},
         {"label": "BitGet 5", "callback_query": "bitget_5", "image_list_label": 5},
+        {"label": "BitGet 6", "callback_query": "bitget_6", "image_list_label": 6},
     ],
     "mexc": [
         # {"label": "MEXC 1", "callback_query": "mexc_1", "image_list_label": 1},
