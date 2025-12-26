@@ -5,7 +5,7 @@ EXCHANGE_LIST = [
     {"label": "MEXC", "callback_query": "mexc"},
     {"label": "BingX", "callback_query": "bingx"},
     {"label": "OKX", "callback_query": "okx"},
-    # {"label": "LBANK", "callback_query": "lbank"},
+    {"label": "LBANK", "callback_query": "lbank"},
     {"label": "KCEX", "callback_query": "kcex"},
 ]
 
