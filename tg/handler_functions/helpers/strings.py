@@ -33,7 +33,7 @@ GET_MARGIN = "❓ Please enter the margin, since this image requires it:"
 
 GET_INPUT_DATE = "❓ Please enter a date and time, since this image requires it. Format: YYYY-MM-DD HH:MM:SS"
 
-GET_INPUT_DATE_EXAMPLE = "2025-10-08 13:47:22"
+GET_INPUT_DATE_EXAMPLE = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 GET_USERNAME = "❓ Please enter the username, since this image requires it:"
 
