@@ -101,7 +101,14 @@ TEMPLATES = {
         "Turk Main": {"qr": "okx_1", "referral": "34679461"},
         "Turk Free": {"qr": "okx_1", "referral": "15486230"},
     },
-    "lbank": {},
+    "lbank": {
+        "Board Main": {"qr": "lbank_1", "referral": "2SH6L"},
+        "Board Free": {"qr": "lbank_1", "referral": "3CL4A"},
+        "CAN Main": {"qr": "lbank_1", "referral": "3MG8F"},
+        "CAN Free": {"qr": "lbank_1", "referral": "5KN7R"},
+        "Turk Main": {"qr": "lbank_1", "referral": "9LS6N"},
+        "Turk Free": {"qr": "lbank_1", "referral": "7NT9L"},
+    },
     "kcex": {
         "Board Main": {"qr": "kcex_1", "referral": "421HBE"},
         "Board Free": {"qr": "kcex_2", "referral": "496KBR"},

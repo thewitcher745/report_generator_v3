@@ -2267,6 +2267,54 @@ styling_dict = {
         "draw_datetime": True,
         "draw_qr_referral": True,
     },
+    "lbank_3": {
+        "symbol_signal_type_leverage": ElementStyling(
+            position=Position(x=0.06674199508408368, y=0.2262178493055021),
+            font="HarmonyOS_Sans_Regular.woff2",
+            font_size=30,
+            gap=52,
+            separator_color="#4a4a4a",
+            separator_length=35,
+            separator_width=1,
+            short_color="#bb5c71",
+            long_color="#23b584",
+            leverage_color="white",
+            symbol_color="white",
+        ),
+        "roi": ElementStyling(
+            position=Position(x=0.06774010954603638, y=0.32461685656718237),
+            font="HarmonyOS_Sans_Bold.woff2",
+            font_size=72,
+            color="#2eaa62",
+        ),
+        "entry": ElementStyling(
+            position=Position(x=0.06774010954603638, y=0.4799124305862903),
+            font="HarmonyOS_Sans_Regular.woff2",
+            font_size=30,
+            color="white",
+        ),
+        "target": ElementStyling(
+            position=Position(x=0.06774010954603638, y=0.5916256207746434),
+            font="HarmonyOS_Sans_Regular.woff2",
+            font_size=30,
+            color="white",
+        ),
+        "date": ElementStyling(
+            position=Position(x=0.059736348814883475, y=0.9308566013580473),
+            font="HarmonyOS_Sans_Regular.woff2",
+            font_size=25,
+            color="#919191",
+        ),
+        "referral": ElementStyling(
+            position=Position(x=0.3158003812455862, y=0.8874794845706332),
+            font="HarmonyOS_Sans_Medium.woff2",
+            font_size=33,
+            color="white",
+        ),
+        "qr": ElementStyling(
+            position=Position(x=0.7969303109551553, y=0.8750273856427674), size=120
+        ),
+    },
     "kcex_1": {
         "symbol": ElementStyling(
             position=Position(x=0.06203090170887659, y=0.24236979484558105),
