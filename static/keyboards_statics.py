@@ -75,6 +75,7 @@ IMAGE_LIST = {
     "lbank": [
         # {"label": "LBANK 1", "callback_query": "lbank_1", "image_list_label": 1},
         # {"label": "LBANK 2", "callback_query": "lbank_2", "image_list_label": 2},
+        {"label": "LBANK 3", "callback_query": "lbank_3", "image_list_label": 3},
     ],
     "kcex": [
         {"label": "KCEX 1", "callback_query": "kcex_1", "image_list_label": 1},
