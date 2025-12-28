@@ -45,7 +45,12 @@ TEMPLATES = {
             "username": "User-34o2r",
         },
     },
-    "bybit": {},
+    "bybit": {
+        "CAN Main": {"qr": "bybit_1", "referral": "3YML5X"},
+        "CAN Free": {"qr": "bybit_1", "referral": "6KXM2L"},
+        "Turk Main": {"qr": "bybit_1", "referral": "5SQG2M"},
+        "Turk Free": {"qr": "bybit_1", "referral": "8TWN9E"},
+    },
     "bitget": {
         "Board Main": {
             "qr": "bitget_1",
