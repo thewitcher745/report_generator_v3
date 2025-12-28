@@ -90,7 +90,6 @@ class BaseReport:
         for element_styling in self.styling.values():
             for attribute in element_styling.__dict__:
                 if attribute.endswith("font"):
-                    print(attribute)
                     if hasattr(element_styling, attribute):
                         font_filename = getattr(element_styling, attribute).split("/")[
                             -1
