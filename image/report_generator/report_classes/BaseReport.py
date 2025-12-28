@@ -88,11 +88,16 @@ class BaseReport:
         # Don't add duplicates
         added_fonts = set()
         for element_styling in self.styling.values():
-            if hasattr(element_styling, "font") and element_styling.font:
-                font_filename = element_styling.font.split("/")[-1]
-                if font_filename not in added_fonts:
-                    self.report_html.add_font(font_filename)
-                    added_fonts.add(font_filename)
+            for attribute in element_styling.__dict__:
+                if attribute.endswith("font"):
+                    print(attribute)
+                    if hasattr(element_styling, attribute):
+                        font_filename = getattr(element_styling, attribute).split("/")[
+                            -1
+                        ]
+                        if font_filename not in added_fonts:
+                            self.report_html.add_font(font_filename)
+                            added_fonts.add(font_filename)
 
     def draw_background(self):
         """
