@@ -420,32 +420,26 @@ styling_dict = {
         "qr": ElementStyling(position=Position(722 / 930, 1084 / 1280), size=161),
     },
     "bybit_5": {
-        "symbol": ElementStyling(
-            position=Position(0.062, 0.17),
-            font="IBMPlexSans-SemiBold.ttf",
-            font_size=60,
-            color=(255, 255, 255),
+        "symbol_signal_type_leverage": ElementStyling(
+            position=Position(x=0.06378472646077474, y=0.16853534814083215),
+            symbol_font="IBMPlexSans-SemiBold.ttf",
+            symbol_font_size=60,
+            gap=23,
+            signal_type_leverage_font="IBMPlexSans-Regular.ttf",
+            signal_type_leverage_font_size=30,
+            box_padding_x=9,
+            box_padding_y=6,
+            box_radius=5,
+            short_font_color="#dc425a",
+            long_font_color="#21b672",
+            short_box_color="#40262755",
+            long_box_color="#2f483355",
         ),
-        "signal_type": ElementStyling(
-            position=Position(0.116, 0.18),
-            font="IBMPlexSans-Regular.ttf",
-            font_size=30,
-            margin_x=8,
-            margin_y=6,
-            margin_y_mult=0.5,
-            spacing=25,
-            rect_radius=5,
-            short_color=(220, 66, 90),
-            long_color=(33, 182, 114),
-            short_box_color=(64, 38, 39),
-            # long_box_color=(34, 51, 45)),
-            long_box_color=(47, 72, 51),
-        ),
-        "roi": ElementStyling(
+        "roi_dollars": ElementStyling(
             position=Position(0.065, 0.3),
             font="IBMPlexSans-SemiBold.ttf",
             font_size=95,
-            color=(33, 182, 114),
+            color="#21b672",
         ),
         "entry": ElementStyling(
             position=Position(0.063, 0.468),
@@ -465,7 +459,9 @@ styling_dict = {
             font_size=50,
             color="black",
         ),
-        "qr_code": ElementStyling(position=Position(722 / 930, 1084 / 1280), size=161),
+        "qr": ElementStyling(
+            position=Position(x=0.7794617970784505, y=0.8483964399857955), size=161
+        ),
     },
     "bitget_1": {
         "symbol": ElementStyling(

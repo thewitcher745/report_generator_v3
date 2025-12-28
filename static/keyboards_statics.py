@@ -1,5 +1,5 @@
 EXCHANGE_LIST = [
-    # {"label": "ByBit", "callback_query": "bybit"},
+    {"label": "ByBit", "callback_query": "bybit"},
     {"label": "Binance", "callback_query": "binance"},
     {"label": "BitGet", "callback_query": "bitget"},
     {"label": "MEXC", "callback_query": "mexc"},

@@ -8,6 +8,7 @@ extra_features = {
     "bitget_5": ["date"],
     "bitget_6": ["date"],
     "bingx_10": ["date"],
+    "bybit_5": ["margin"],
     "mexc_7": ["margin", "date", "input_date"],
     "mexc_8": ["date"],
     "lbank_3": ["date"],

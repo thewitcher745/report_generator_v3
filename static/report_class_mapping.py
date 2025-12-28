@@ -5,6 +5,7 @@ This dict contains a mapping of each image id to its relevant report class.
 from image.report_generator.report_classes.BaseReport import BaseReport
 from image.report_generator.report_classes.okx.Okx2 import Okx2
 from image.report_generator.report_classes.bybit.Bybit4 import Bybit4
+from image.report_generator.report_classes.bybit.Bybit5 import Bybit5
 from image.report_generator.report_classes.bitget.Bitget5 import Bitget5
 from image.report_generator.report_classes.bitget.Bitget6 import Bitget6
 from image.report_generator.report_classes.bingx.Bingx10 import Bingx10
@@ -18,6 +19,7 @@ from image.report_generator.report_classes.lbank.Lbank3 import Lbank3
 MAPPING: dict[str, type[BaseReport]] = {
     "okx_2": Okx2,
     "bybit_4": Bybit4,
+    "bybit_5": Bybit5,
     "bitget_5": Bitget5,
     "bitget_6": Bitget6,
     "bingx_10": Bingx10,
