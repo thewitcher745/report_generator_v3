@@ -24,10 +24,7 @@ IMAGE_LIST = {
         {"label": "ByBit 5", "callback_query": "bybit_5", "image_list_label": 5},
     ],
     "bitget": [
-        # {"label": "BitGet 1", "callback_query": "bitget_1", "image_list_label": 1},
-        # {"label": "BitGet 2", "callback_query": "bitget_2", "image_list_label": 2},
-        # {"label": "BitGet 3", "callback_query": "bitget_3", "image_list_label": 3},
-        # {"label": "BitGet 4", "callback_query": "bitget_4", "image_list_label": 4},
+        {"label": "BitGet 1", "callback_query": "bitget_1", "image_list_label": 1},
         {"label": "BitGet 5", "callback_query": "bitget_5", "image_list_label": 5},
         {"label": "BitGet 6", "callback_query": "bitget_6", "image_list_label": 6},
     ],
