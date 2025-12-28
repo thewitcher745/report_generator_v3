@@ -20,8 +20,8 @@ IMAGE_LIST = {
         {"label": "Binance 7", "callback_query": "binance_7", "image_list_label": 7},
     ],
     "bybit": [
-        # {"label": "ByBit 4", "callback_query": "bybit_4", "image_list_label": 4},
-        # {"label": "ByBit 5", "callback_query": "bybit_5", "image_list_label": 5},
+        {"label": "ByBit 4", "callback_query": "bybit_4", "image_list_label": 4},
+        {"label": "ByBit 5", "callback_query": "bybit_5", "image_list_label": 5},
     ],
     "bitget": [
         # {"label": "BitGet 1", "callback_query": "bitget_1", "image_list_label": 1},
@@ -67,6 +67,11 @@ IMAGE_LIST = {
             "callback_query": "bingx_10",
             "image_list_label": 4,
         }
+        # {
+        #     "label": "BingX Pos - 1",
+        #     "callback_query": "bingx_pos_1",
+        #     "image_list_label": "Pos - 1",
+        # }
     ],
     "okx": [
         # {"label": "OKX 1", "callback_query": "okx_1", "image_list_label": 1},
