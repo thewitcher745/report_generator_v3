@@ -13,8 +13,8 @@ IMAGE_LIST = {
     "binance": [
         {"label": "Binance 1", "callback_query": "binance_1", "image_list_label": 1},
         {"label": "Binance 2", "callback_query": "binance_2", "image_list_label": 2},
-        # {"label": "Binance 3", "callback_query": "binance_3", "image_list_label": 3},
-        # {"label": "Binance 4", "callback_query": "binance_4", "image_list_label": 4},
+        {"label": "Binance 3", "callback_query": "binance_3", "image_list_label": 3},
+        {"label": "Binance 4", "callback_query": "binance_4", "image_list_label": 4},
         # {"label": "Binance 5", "callback_query": "binance_5", "image_list_label": 5},
         {"label": "Binance 6", "callback_query": "binance_6", "image_list_label": 6},
         {"label": "Binance 7", "callback_query": "binance_7", "image_list_label": 7},

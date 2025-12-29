@@ -61,7 +61,7 @@ class ReportHTML:
         self.height = size[1]
         self.head = self.head.replace(
             "id='report'",
-            f"id='report' style='width: {self.width}px; height: {self.height}px; padding: 0; margin: 0;'",
+            f"id='report' style='width: {self.width}px; height: {self.height}px; padding: 0; margin: 0; position: relative;'",
         )
 
     def _convert_element_position(self, position: Position | None) -> Position:
