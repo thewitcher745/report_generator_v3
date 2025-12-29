@@ -105,7 +105,20 @@
                       e.preventDefault();
                       lastClickedElement.style.left = toPx(currentLeft + 0.5);
                       break;
+                  default:
+                      return; // Don't log if it's not an arrow key
               }
+              
+              // Log position after movement (same format as onMouseUp)
+              const bBox = document.querySelector("img").getBoundingClientRect();
+              const imageWidth = bBox.width;
+              const imageHeight = bBox.height;
+              
+              const rect = lastClickedElement.getBoundingClientRect();
+              const parentRect = lastClickedElement.parentElement.getBoundingClientRect();
+              const x = (rect.left - parentRect.left) / imageWidth;
+              const y = (rect.top - parentRect.top) / imageHeight;
+              console.log(`x=${x}, y=${y}`);
           });
         });
     }
