@@ -450,7 +450,7 @@ styling_dict = {
         ),
         "referral": ElementStyling(
             position=Position(x=0.434962419126779, y=0.9164713382720947),
-            font="Pretendard-Medium.otf",
+            font="Pretendard-Semibold.otf",
             font_size=54,
             color="black",
         ),
