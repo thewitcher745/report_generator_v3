@@ -75,6 +75,10 @@ def GET_DATE():
     return compose_keyboard_markup(keyboards_statics.TYPED_VALUE)
 
 
+def GET_PNL_USD():
+    return compose_keyboard_markup(keyboards_statics.TYPED_VALUE)
+
+
 def GET_USERNAME():
     return compose_keyboard_markup(keyboards_statics.TYPED_VALUE)
 

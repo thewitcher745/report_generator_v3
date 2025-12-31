@@ -65,6 +65,15 @@ async def prompt_get_input_date_example(update, context):
     )
 
 
+async def prompt_get_pnl_usd(update, context):
+    await send_message(
+        context,
+        update,
+        strings.GET_PNL_USD,
+        keyboard=keyboards.GET_PNL_USD(),
+    )
+
+
 async def prompt_get_username(update, context):
     await send_message(
         context,

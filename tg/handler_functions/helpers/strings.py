@@ -35,6 +35,8 @@ GET_INPUT_DATE = "❓ Please enter a date and time, since this image requires it
 
 GET_INPUT_DATE_EXAMPLE = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
+GET_PNL_USD = "❓ Please enter the PnL in USD, since this image requires it:"
+
 GET_USERNAME = "❓ Please enter the username, since this image requires it:"
 
 PRECISION_NOT_FOUND = "⚠️ Warning: Precision not found for the selected coin. Using the precision given by the signal text."

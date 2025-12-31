@@ -39,6 +39,7 @@ def calc_report_numbers(user_data):
             "referral",
             "date",
             "input_date",
+            "pnl_usd",
             "signal_type",
             "entry",
             "target",

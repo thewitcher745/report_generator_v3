@@ -59,6 +59,10 @@ class BaseReport:
         self.input_date: str = (
             report_data.get("input_date", "") if "input_date" in extra_features else ""
         )
+        self.pnl_usd: float | None = (
+            report_data.get("pnl_usd", None) if "pnl_usd" in extra_features else None
+        )
+        print(self.pnl_usd)
 
         self.report_html = ReportHTML(drag_and_drop=drag_and_drop)
         self.add_report_fonts()

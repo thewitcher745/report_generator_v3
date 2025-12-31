@@ -11,11 +11,12 @@ from telegram.ext import ConversationHandler
     GET_TEMPLATE,
     GET_MARGIN,
     GET_INPUT_DATE,
+    GET_PNL_USD,
     GET_USERNAME,
     CONFIRM,
     CUSTOMIZE_QR,
     CUSTOMIZE_REFERRAL,
     CUSTOMIZE_USERNAME,
-) = range(11)
+) = range(12)
 
 END = ConversationHandler.END

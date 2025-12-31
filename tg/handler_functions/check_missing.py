@@ -8,6 +8,7 @@ from tg.handler_functions.helpers.conversation_stages import (
     GET_MARGIN,
     GET_INPUT_DATE,
     GET_USERNAME,
+    GET_PNL_USD,
     CONFIRM,
 )
 from tg.handler_functions.helpers.extra_features import (
@@ -19,6 +20,7 @@ from tg.handler_functions.helpers.prompts import (
     prompt_get_input_date_example,
     prompt_get_margin,
     prompt_get_username,
+    prompt_get_pnl_usd,
 )
 
 
@@ -33,6 +35,9 @@ async def check_missing(update, context):
         await prompt_get_input_date(update, context)
         await prompt_get_input_date_example(update, context)
         return GET_INPUT_DATE
+    elif is_extra_feature_missing(context, "pnl_usd"):
+        await prompt_get_pnl_usd(update, context)
+        return GET_PNL_USD
     elif is_extra_feature_missing(context, "username"):
         await prompt_get_username(update, context)
         return GET_USERNAME

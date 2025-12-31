@@ -435,6 +435,29 @@ styling_dict = {
             position=Position(x=0.7794617970784505, y=0.8483964399857955), size=161
         ),
     },
+    "bybit_todays_pnl": {
+        "input_date": ElementStyling(
+            position=Position(x=0.06262084108674308, y=0.5987239599227905),
+            font="Pretendard-Regular.otf",
+            font_size=36,
+            color="white",
+        ),
+        "pnl_usd": ElementStyling(
+            position=Position(x=0.06315789801477746, y=0.27919270992279055),
+            font="Pretendard-SemiBold.otf",
+            font_size=102,
+            color="#13bd65",
+        ),
+        "referral": ElementStyling(
+            position=Position(x=0.434962419126779, y=0.9164713382720947),
+            font="Pretendard-Medium.otf",
+            font_size=54,
+            color="black",
+        ),
+        "qr": ElementStyling(
+            position=Position(x=0.7721267192115333, y=0.8435937404632569), size=168
+        ),
+    },
     "bitget_1": {
         "symbol_signal_type": ElementStyling(
             position=Position(x=0.06452674394772377, y=0.3482638994852702),

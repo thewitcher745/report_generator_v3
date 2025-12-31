@@ -22,6 +22,7 @@ IMAGE_LIST = {
     "bybit": [
         {"label": "ByBit 4", "callback_query": "bybit_4", "image_list_label": 4},
         {"label": "ByBit 5", "callback_query": "bybit_5", "image_list_label": 5},
+        {"label": "ByBit 6 - Today's P&L", "callback_query": "bybit_todays_pnl", "image_list_label": "6"},
     ],
     "bitget": [
         {"label": "BitGet 1", "callback_query": "bitget_1", "image_list_label": 1},
