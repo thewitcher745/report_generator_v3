@@ -74,6 +74,33 @@ async def prompt_get_pnl_usd(update, context):
     )
 
 
+async def prompt_get_pnl_percent(update, context):
+    await send_message(
+        context,
+        update,
+        strings.GET_PNL_PERCENT,
+        keyboard=keyboards.GET_PNL_PERCENT(),
+    )
+
+
+async def prompt_get_period_start(update, context):
+    await send_message(
+        context,
+        update,
+        strings.GET_PERIOD_START,
+        keyboard=keyboards.GET_DATE(),
+    )
+
+
+async def prompt_get_period_end(update, context):
+    await send_message(
+        context,
+        update,
+        strings.GET_PERIOD_END,
+        keyboard=keyboards.GET_DATE(),
+    )
+
+
 async def prompt_get_username(update, context):
     await send_message(
         context,

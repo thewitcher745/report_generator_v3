@@ -458,6 +458,41 @@ styling_dict = {
             position=Position(x=0.7721267192115333, y=0.8435937404632569), size=168
         ),
     },
+    "bybit_cumulative_pnl": {
+        "pnl_percent": ElementStyling(
+            position=Position(x=0.06100967030263997, y=0.2779166579246521),
+            font="Pretendard-SemiBold.otf",
+            font_size=103,
+            color="#13bd65",
+        ),
+        "pnl_usd": ElementStyling(
+            position=Position(x=0.0642320118708462, y=0.4885416626930237),
+            font="Pretendard-SemiBold.otf",
+            font_size=49,
+            color="white",
+        ),
+        "period_start": ElementStyling(
+            position=Position(x=0.06262084108674308, y=0.5983333349227905),
+            font="Pretendard-Regular.otf",
+            font_size=36,
+            color="white",
+        ),
+        "period_end": ElementStyling(
+            position=Position(x=0.07282492271939614, y=0.6369661569595337),
+            font="Pretendard-Regular.otf",
+            font_size=36,
+            color="white",
+        ),
+        "referral": ElementStyling(
+            position=Position(x=0.43388830527071026, y=0.9168619990348816),
+            font="Pretendard-Semibold.otf",
+            font_size=53,
+            color="black",
+        ),
+        "qr": ElementStyling(
+            position=Position(x=0.7721267192115333, y=0.8435937404632569), size=168
+        ),
+    },
     "bitget_1": {
         "symbol_signal_type": ElementStyling(
             position=Position(x=0.06452674394772377, y=0.3482638994852702),

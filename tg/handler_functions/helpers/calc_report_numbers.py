@@ -1,5 +1,3 @@
-import datetime
-
 from tg.handler_functions.helpers.tz_data import get_tz_delta
 
 
@@ -39,7 +37,10 @@ def calc_report_numbers(user_data):
             "referral",
             "date",
             "input_date",
+            "period_start",
+            "period_end",
             "pnl_usd",
+            "pnl_percent",
             "signal_type",
             "entry",
             "target",

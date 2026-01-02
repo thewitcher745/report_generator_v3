@@ -11,6 +11,7 @@ extra_features = {
     "bingx_10": ["date"],
     "bybit_5": ["margin"],
     "bybit_todays_pnl": ["input_date", "pnl_usd"],
+    "bybit_cumulative_pnl": ["pnl_percent", "pnl_usd", "period_start", "period_end"],
     "mexc_5": ["date"],
     "mexc_6": ["date"],
     "mexc_7": ["margin", "date", "input_date"],

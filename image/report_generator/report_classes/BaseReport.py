@@ -62,7 +62,19 @@ class BaseReport:
         self.pnl_usd: float | None = (
             report_data.get("pnl_usd", None) if "pnl_usd" in extra_features else None
         )
-        print(self.pnl_usd)
+        self.pnl_percent: float | None = (
+            report_data.get("pnl_percent", None)
+            if "pnl_percent" in extra_features
+            else None
+        )
+        self.period_start: str = (
+            report_data.get("period_start", "")
+            if "period_start" in extra_features
+            else ""
+        )
+        self.period_end: str = (
+            report_data.get("period_end", "") if "period_end" in extra_features else ""
+        )
 
         self.report_html = ReportHTML(drag_and_drop=drag_and_drop)
         self.add_report_fonts()

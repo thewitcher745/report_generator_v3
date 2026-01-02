@@ -35,7 +35,15 @@ GET_INPUT_DATE = "❓ Please enter a date and time, since this image requires it
 
 GET_INPUT_DATE_EXAMPLE = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-GET_PNL_USD = "❓ Please enter the PnL in USD, since this image requires it:"
+GET_PNL_USD = "❓ Please enter the PnL in USD (e.g. 12.34), since this image requires it:"
+
+GET_PNL_PERCENT = (
+    "❓ Please enter the PnL in percent (e.g. 12.34), since this image requires it:"
+)
+
+GET_PERIOD_START = "❓ Please enter the period start (date/time), since this image requires it. Format: YYYY-MM-DD HH:MM:SS"
+
+GET_PERIOD_END = "❓ Please enter the period end (date/time), since this image requires it. Format: YYYY-MM-DD HH:MM:SS"
 
 GET_USERNAME = "❓ Please enter the username, since this image requires it:"
 
@@ -56,6 +64,12 @@ def CONFIRM(user_data: dict) -> str:
         message += f"📅 Current time: {user_data.get('date')}\n"
     if user_data.get("input_date"):
         message += f"📅 Input time: {user_data.get('input_date')}\n"
+    if user_data.get("period_start"):
+        message += f"📅 Period start: {user_data.get('period_start')}\n"
+    if user_data.get("period_end"):
+        message += f"📅 Period end: {user_data.get('period_end')}\n"
+    if user_data.get("pnl_percent") is not None:
+        message += f"📈 PnL %: {user_data.get('pnl_percent')}\n"
     if user_data.get("qr"):
         if len(user_data.get("qr", "")) > 0:
             message += f"🖥 QR Code: {user_data.get('qr')}\n"

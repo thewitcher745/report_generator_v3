@@ -7,6 +7,9 @@ from image.report_generator.report_classes.okx.Okx2 import Okx2
 from image.report_generator.report_classes.bybit.Bybit4 import Bybit4
 from image.report_generator.report_classes.bybit.Bybit5 import Bybit5
 from image.report_generator.report_classes.bybit.BybitTodaysPnl import BybitTodaysPnl
+from image.report_generator.report_classes.bybit.BybitCumulativePnl import (
+    BybitCumulativePnl,
+)
 from image.report_generator.report_classes.bitget.Bitget1 import Bitget1
 from image.report_generator.report_classes.bitget.Bitget5 import Bitget5
 from image.report_generator.report_classes.bitget.Bitget6 import Bitget6
@@ -30,6 +33,7 @@ MAPPING: dict[str, type[BaseReport]] = {
     "bybit_4": Bybit4,
     "bybit_5": Bybit5,
     "bybit_todays_pnl": BybitTodaysPnl,
+    "bybit_cumulative_pnl": BybitCumulativePnl,
     "bitget_1": Bitget1,
     "bitget_5": Bitget5,
     "bitget_6": Bitget6,

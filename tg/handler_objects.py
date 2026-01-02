@@ -13,6 +13,9 @@ from tg.handler_functions import (
     get_margin,
     get_input_date,
     get_pnl_usd,
+    get_pnl_percent,
+    get_period_start,
+    get_period_end,
     get_username,
     welcome,
     cancel,
@@ -20,7 +23,6 @@ from tg.handler_functions import (
     get_exchange,
     get_image,
     get_template,
-    confirm,
 )
 from tg.telegram_classes import ForwardedMessageHandler
 from tg.handler_functions.helpers.conversation_stages import (
@@ -30,7 +32,9 @@ from tg.handler_functions.helpers.conversation_stages import (
     GET_MARGIN,
     GET_TEMPLATE,
     GET_PNL_USD,
-    CONFIRM,
+    GET_PNL_PERCENT,
+    GET_PERIOD_START,
+    GET_PERIOD_END,
     GET_USERNAME,
 )
 
@@ -45,6 +49,13 @@ automatic_signal_handler = ConversationHandler(
         GET_MARGIN: [MessageHandler(filters=filters.TEXT, callback=get_margin)],
         GET_INPUT_DATE: [MessageHandler(filters=filters.TEXT, callback=get_input_date)],
         GET_PNL_USD: [MessageHandler(filters=filters.TEXT, callback=get_pnl_usd)],
+        GET_PNL_PERCENT: [
+            MessageHandler(filters=filters.TEXT, callback=get_pnl_percent)
+        ],
+        GET_PERIOD_START: [
+            MessageHandler(filters=filters.TEXT, callback=get_period_start)
+        ],
+        GET_PERIOD_END: [MessageHandler(filters=filters.TEXT, callback=get_period_end)],
         GET_USERNAME: [MessageHandler(filters=filters.TEXT, callback=get_username)],
         # CONFIRM: [CallbackQueryHandler(confirm)],
     },
