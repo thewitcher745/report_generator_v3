@@ -1,28 +1,30 @@
-from telegram import InputMediaPhoto
+from telegram import InputMediaPhoto, Message
 import csv
 
 
 # Send a message to the user requeting the update, depending on the type of update (callback or message)
-async def send_message(context, update, message_text, keyboard=None):
+async def send_message(context, update, message_text, keyboard=None) -> Message:
     if update.callback_query:
         chat_id = update.callback_query.message.chat_id
     else:
         chat_id = update.message.chat_id
 
-    await context.bot.send_message(
+    return await context.bot.send_message(
         chat_id=chat_id, text=message_text, reply_markup=keyboard
     )
 
 
 # Send a media group to the user
-async def send_media_group(context, update, file_address, caption=None):
+async def send_media_group(
+    context, update, file_address, caption=None
+) -> list[Message]:
     media_group = [InputMediaPhoto(open(file_address, "rb"))]
     if update.callback_query:
         chat_id = update.callback_query.message.chat_id
     else:
         chat_id = update.message.chat_id
 
-    await context.bot.send_media_group(
+    return await context.bot.send_media_group(
         chat_id=chat_id, media=media_group, caption=caption
     )
 
