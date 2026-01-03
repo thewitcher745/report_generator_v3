@@ -282,6 +282,15 @@ styling_dict = {
             color="white",
         ),
         "qr": ElementStyling(position=Position(0.782, 0.854), size=132),
+        "username": ElementStyling(
+            position=Position(x=0.18345825064616234, y=0.06200520992279053),
+            font="Metropolis-Bold.otf",
+            font_size=44,
+            color="white",
+        ),
+        "avatar": ElementStyling(
+            position=Position(x=0.06036759239703225, y=0.06180989742279053), size=92
+        ),
         "date": ElementStyling(
             position=Position(x=0.1850642463635071, y=0.11200520992279053),
             font="Metropolis-Regular.otf",
@@ -347,6 +356,71 @@ styling_dict = {
         ),
         "qr": ElementStyling(
             position=Position(x=0.7968237017155715, y=0.8553124904632569), size=140
+        ),
+    },
+    "binance_8": {
+        "symbol": ElementStyling(
+            position=Position(x=0.060920764343131026, y=0.3087760448455811),
+            font="Metropolis-Bold.otf",
+            font_size=48,
+            color="white",
+        ),
+        "signal_type": ElementStyling(
+            position=Position(x=0.060920764343131026, y=0.3584375143051147),
+            font="Metropolis-Medium.otf",
+            font_size=33,
+            gap=53,
+            separator_color="#999999",
+            separator_length=33,
+            separator_width=2,
+            short_color="#d95374",
+            long_color="#34b785",
+            leverage_color="#999999",
+        ),
+        "leverage": ElementStyling(
+            font="Inter-Regular.ttf",
+            font_size=32,
+            color="#999999",
+        ),
+        "roi": ElementStyling(
+            position=Position(x=0.05342611766218884, y=0.42518229484558107),
+            font="Pretendard-SemiBold.otf",
+            font_size=110,
+            color="#2ebd88",
+        ),
+        "entry": ElementStyling(
+            position=Position(x=0.057708772908441515, y=0.6158723831176758),
+            font="Metropolis-Medium.otf",
+            font_size=38,
+            color="white",
+        ),
+        "target": ElementStyling(
+            position=Position(x=0.5172912140219319, y=0.6166536331176757),
+            font="Metropolis-Medium.otf",
+            font_size=38,
+            color="white",
+        ),
+        "referral": ElementStyling(
+            position=Position(x=0.3310671036452757, y=0.9244400978088378),
+            font="Metropolis-Medium.otf",
+            font_size=34,
+            color="white",
+        ),
+        "qr": ElementStyling(position=Position(0.782, 0.854), size=132),
+        "date": ElementStyling(
+            position=Position(x=0.1850642463635071, y=0.11200520992279053),
+            font="Metropolis-Regular.otf",
+            font_size=33,
+            color="white",
+        ),
+        "username": ElementStyling(
+            position=Position(x=0.18345825064616234, y=0.06200520992279053),
+            font="Metropolis-Bold.otf",
+            font_size=44,
+            color="white",
+        ),
+        "avatar": ElementStyling(
+            position=Position(x=0.06036759239703225, y=0.06180989742279053), size=92
         ),
     },
     "bybit_4": {

@@ -16,14 +16,31 @@ IMAGE_LIST = {
         {"label": "Binance 3", "callback_query": "binance_3", "image_list_label": 3},
         {"label": "Binance 4", "callback_query": "binance_4", "image_list_label": 4},
         {"label": "Binance 5", "callback_query": "binance_5", "image_list_label": 5},
-        {"label": "Binance 6", "callback_query": "binance_6", "image_list_label": 6},
+        {
+            "label": "Binance 6 - Percent",
+            "callback_query": "binance_6",
+            "image_list_label": 6,
+        },
+        {
+            "label": "Binance 6 - USDT",
+            "callback_query": "binance_8",
+            "image_list_label": 6,
+        },
         {"label": "Binance 7", "callback_query": "binance_7", "image_list_label": 7},
     ],
     "bybit": [
         {"label": "ByBit 4", "callback_query": "bybit_4", "image_list_label": 4},
         {"label": "ByBit 5", "callback_query": "bybit_5", "image_list_label": 5},
-        {"label": "ByBit 6 - Today's P&L", "callback_query": "bybit_todays_pnl", "image_list_label": 6},
-        {"label": "ByBit 7 - Cumulative P&L", "callback_query": "bybit_cumulative_pnl", "image_list_label": 7},
+        {
+            "label": "ByBit 6 - Today's P&L",
+            "callback_query": "bybit_todays_pnl",
+            "image_list_label": 6,
+        },
+        {
+            "label": "ByBit 7 - Cumulative P&L",
+            "callback_query": "bybit_cumulative_pnl",
+            "image_list_label": 7,
+        },
     ],
     "bitget": [
         {"label": "BitGet 1", "callback_query": "bitget_1", "image_list_label": 1},
