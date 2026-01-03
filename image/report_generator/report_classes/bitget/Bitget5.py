@@ -7,7 +7,7 @@ class Bitget5(BaseReport):
         self, report_data: dict, extra_features: list[str] = [], drag_and_drop=False
     ) -> None:
         super().__init__(report_data, extra_features, drag_and_drop)
-        print((self.tz_delta.days * 86400 + self.tz_delta.seconds) // 3600)  # pyright: ignore[reportOptionalMemberAccess]
+        
         self.draw_date(
             string_function=lambda x: x.strftime("Shared on: %Y-%m-%d %H:%M (UTC")
             + ("+" if self.tz_delta.days >= 0 else "")  # pyright: ignore[reportOptionalMemberAccess]

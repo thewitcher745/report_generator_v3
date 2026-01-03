@@ -46,7 +46,7 @@ class Bybit4(BaseReport):
                 "margin-right": f"{symbol_signal_type_leverage_style.gap}px"
             },
         )
-        print(symbol_signal_type_leverage_style.signal_type_leverage_font)
+        
         # Create signal type text
         signal_type_leverage_element = self.report_html.create_inline_text(
             text=f"{self.signal_type.capitalize()} {self.leverage:.1f}X",

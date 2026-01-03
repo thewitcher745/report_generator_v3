@@ -8,8 +8,6 @@ class Mexc7(BaseReport):
     ) -> None:
         super().__init__(report_data, extra_features, drag_and_drop)
 
-        print("USING MEXC7")
-
         self.draw_date(
             string_function=lambda x: x.strftime("Shared on %Y-%m-%d %H:%M:%S"),
             additional_styles={"letter-spacing": "0px"},
