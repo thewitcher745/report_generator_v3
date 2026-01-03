@@ -9,17 +9,11 @@ from telegram.ext import ConversationHandler
     GET_EXCHANGE,
     GET_IMAGE,
     GET_TEMPLATE,
-    GET_MARGIN,
-    GET_INPUT_DATE,
-    GET_PNL_USD,
-    GET_PNL_PERCENT,
-    GET_PERIOD_START,
-    GET_PERIOD_END,
-    GET_USERNAME,
+    GET_EXTRA_FEATURE,
     CONFIRM,
     CUSTOMIZE_QR,
     CUSTOMIZE_REFERRAL,
     CUSTOMIZE_USERNAME,
-) = range(15)
+) = range(9)
 
 END = ConversationHandler.END

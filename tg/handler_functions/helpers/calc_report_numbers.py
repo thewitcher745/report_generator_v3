@@ -1,4 +1,5 @@
 from tg.handler_functions.helpers.tz_data import get_tz_delta
+from tg.handler_functions.helpers.extra_features import get_extra_features
 
 
 def calc_report_numbers(user_data):
@@ -50,6 +51,14 @@ def calc_report_numbers(user_data):
             "tz_delta",
             "precision",
         ]
+
+        # Also include any extra features required by this image so they are available during processing
+        image_id_for_keys = user_data.get("image_id")
+        if image_id_for_keys:
+            extras = [
+                f for f in get_extra_features(image_id_for_keys) if f not in key_list
+            ]
+            key_list.extend(extras)
 
         for key in key_list:
             if key == "roi_dollars":

@@ -3,8 +3,6 @@ This file contains the strings returned by the bot to the user, collected in a s
 """
 
 # Welcome message
-import datetime
-
 
 WELCOME = "🙏 Welcome. Forward a signal to continue."
 
@@ -28,24 +26,6 @@ GET_EXCHANGE = "❓ Please select an exchange:"
 GET_IMAGE = "❓ Please select an image for the selected exchange:"
 
 GET_TEMPLATE = "❓ Please select a template for the selected exchange:"
-
-GET_MARGIN = "❓ Please enter the margin, since this image requires it:"
-
-GET_INPUT_DATE = "❓ Please enter a date and time, since this image requires it. Format: YYYY-MM-DD HH:MM:SS"
-
-GET_INPUT_DATE_EXAMPLE = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-GET_PNL_USD = "❓ Please enter the PnL in USD (e.g. 12.34), since this image requires it:"
-
-GET_PNL_PERCENT = (
-    "❓ Please enter the PnL in percent (e.g. 12.34), since this image requires it:"
-)
-
-GET_PERIOD_START = "❓ Please enter the period start (date/time), since this image requires it. Format: YYYY-MM-DD HH:MM:SS"
-
-GET_PERIOD_END = "❓ Please enter the period end (date/time), since this image requires it. Format: YYYY-MM-DD HH:MM:SS"
-
-GET_USERNAME = "❓ Please enter the username, since this image requires it:"
 
 PRECISION_NOT_FOUND = "⚠️ Warning: Precision not found for the selected coin. Using the precision given by the signal text."
 

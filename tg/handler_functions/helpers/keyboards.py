@@ -67,23 +67,11 @@ def GET_TEMPLATE(exchange: str):
     return compose_keyboard_markup(template_buttons)
 
 
-def GET_MARGIN():
-    return compose_keyboard_markup(keyboards_statics.TYPED_VALUE)
-
-
 def GET_DATE():
     return compose_keyboard_markup(keyboards_statics.TYPED_VALUE)
 
 
-def GET_PNL_USD():
-    return compose_keyboard_markup(keyboards_statics.TYPED_VALUE)
-
-
-def GET_PNL_PERCENT():
-    return compose_keyboard_markup(keyboards_statics.TYPED_VALUE)
-
-
-def GET_USERNAME():
+def GET_TYPED_VALUE():
     return compose_keyboard_markup(keyboards_statics.TYPED_VALUE)
 
 
