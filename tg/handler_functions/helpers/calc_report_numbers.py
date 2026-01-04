@@ -2,10 +2,51 @@ from tg.handler_functions.helpers.tz_data import get_tz_delta
 from tg.handler_functions.helpers.extra_features import get_extra_features
 
 
-def calc_report_numbers(user_data):
-    """
-    This function calculates the numbers necessary for the report.
-    """
+def _compute_bingx_misc_position(user_data):
+    margin = float(user_data.get("margin", 0) or 0)
+    leverage = float(user_data.get("input_leverage", 0) or 0)
+    entry_price = float(user_data.get("input_entry_price", 0) or 0)
+    target_price = float(user_data.get("input_target_price", 0) or 0)
+    signal_type = (user_data.get("input_signal_type") or "").lower()
+
+    position_amount = leverage * margin
+    qty = (leverage * margin / entry_price) if entry_price else 0
+
+    if signal_type == "short":
+        unrealized_pnl = position_amount - qty * target_price
+    else:  # default to long
+        unrealized_pnl = qty * target_price - position_amount
+
+    pnl_percent = (unrealized_pnl / margin * 100) if margin else 0
+
+    report_data_item = {
+        "image_id": user_data.get("image_id"),
+        # Symbol and common decorations
+        "symbol": user_data.get("input_symbol", user_data.get("symbol")),
+        "username": user_data.get("username"),
+        "avatar": user_data.get("avatar"),
+        "qr": user_data.get("qr"),
+        "referral": user_data.get("referral"),
+        # Position specifics
+        "signal_type": signal_type,
+        "leverage_type": user_data.get("leverage_type"),
+        "leverage": leverage,
+        "margin": margin,
+        # Prices
+        "entry": entry_price,
+        "target": target_price,
+        # Derived metrics
+        "position_amount": position_amount,
+        "pnl_usd": round(unrealized_pnl, 4),
+        "pnl_percent": round(pnl_percent, 2),
+        # Risk percent for rendering
+        "risk_percent": user_data.get("risk_percent"),
+    }
+
+    return [report_data_item]
+
+
+def _compute_standard(user_data):
     signal_type = (
         user_data.get("signal_type").lower() if user_data.get("signal_type") else None
     )
@@ -78,3 +119,14 @@ def calc_report_numbers(user_data):
         report_data.append(report_data_item)
 
     return report_data
+
+
+def calc_report_numbers(user_data):
+    """
+    Calculates the numbers necessary for the report.
+    Delegates to a specialized flow when needed.
+    """
+    image_id = user_data.get("image_id")
+    if image_id == "bingx_misc_position_1":
+        return _compute_bingx_misc_position(user_data)
+    return _compute_standard(user_data)

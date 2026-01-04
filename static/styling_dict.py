@@ -88,6 +88,75 @@ styling_dict = {
             position=Position(x=0.11331723715372131, y=0.7382745987329727), size=94
         ),
     },
+    "bingx_misc_position_1": {
+        "symbol": ElementStyling(
+            position=Position(0.054, 0.068),
+            font="Inter-Medium.ttf",
+            font_size=40,
+            color="black",
+        ),
+        "signal_type_leverage_type_leverage_risk_bars": ElementStyling(
+            position=Position(x=0.05353394967538339, y=0.1408477783203125),
+            box_height=57,
+            box_radius=2,
+            spacing=12,
+            padding_x=23,
+            padding_y=10,
+            font="Inter-Regular.ttf",
+            font_size=32,
+            # signal_type colors
+            color_long="#419F7B",
+            color_short="#C27984",
+            box_color_long="#E8F7F0",
+            box_color_short="#FFEDF0",
+            # leverage/leverage_type colors
+            color="#4C4D4F",
+            box_color="#F4F4F4",
+            risk_bars_size=60,
+        ),
+        "pnl_usd": ElementStyling(
+            position=Position(0.053, 0.323),
+            font="Rubik-Regular.ttf",
+            font_size=37,
+            color="#479E7E",
+        ),
+        "pnl_percent": ElementStyling(
+            position=Position(x=0.9472685354727286, y=0.32757226139134754),
+            font="Rubik-Regular.ttf",
+            font_size=37,
+            color="#479E7E",
+        ),
+        "position_amount": ElementStyling(
+            position=Position(0.053, 0.48),
+            font="Rubik-Regular.ttf",
+            font_size=37,
+            color="black",
+        ),
+        "margin": ElementStyling(
+            position=Position(0.393, 0.48),
+            font="Rubik-Regular.ttf",
+            font_size=36,
+            color="black",
+        ),
+        "risk": ElementStyling(
+            position=Position(0.944, 0.48),
+            font="Rubik-Regular.ttf",
+            font_size=39,
+            color="#479E7E",
+        ),
+        "entry": ElementStyling(
+            position=Position(0.053, 0.637),
+            font="Rubik-Regular.ttf",
+            font_size=37,
+            color="black",
+        ),
+        "target": ElementStyling(
+            position=Position(0.392, 0.637),
+            font="Rubik-Regular.ttf",
+            font_size=37,
+            color="black",
+        ),
+    },
     "binance_3": {
         "symbol_signal_type_leverage": ElementStyling(
             position=Position(x=0.11557822714046556, y=0.28236403950581834),

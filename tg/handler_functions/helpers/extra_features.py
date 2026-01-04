@@ -10,8 +10,6 @@ extra_features = {
     "bitget_6": ["date"],
     "bingx_10": ["date"],
     "bybit_5": ["margin"],
-    "bybit_todays_pnl": ["input_date", "pnl_usd"],
-    "bybit_cumulative_pnl": ["pnl_percent", "pnl_usd", "period_start", "period_end"],
     "mexc_5": ["date"],
     "mexc_6": ["date"],
     "mexc_7": ["margin", "date", "input_date"],
@@ -22,6 +20,19 @@ extra_features = {
     "binance_7": ["date"],
     "binance_8": ["date"],
     "kcex_1": ["date"],
+    # Fully manual images
+    "bingx_misc_position_1": [
+        "input_symbol",
+        "margin",
+        "input_signal_type",
+        "leverage_type",
+        "input_leverage",
+        "risk_percent",
+        "input_entry_price",
+        "input_target_price",
+    ],
+    "bybit_todays_pnl": ["input_date", "pnl_usd"],
+    "bybit_cumulative_pnl": ["pnl_percent", "pnl_usd", "period_start", "period_end"],
 }
 
 

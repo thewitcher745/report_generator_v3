@@ -24,6 +24,30 @@ def sanitize_float(text: str) -> float:
     return float(text.replace(",", "").strip())
 
 
+def sanitize_percent(text: str) -> float:
+    t = text.strip().replace("%", "").replace(",", "")
+    return float(t)
+
+
+def sanitize_symbol(text: str) -> str:
+    # Keep quote currency (e.g., CHZUSDT); remove trailing " Perpetual" if present
+    return text.upper().replace(" PERPETUAL", "").replace(" Perpetual", "").strip()
+
+
+def sanitize_choice(valid: set[str]):
+    def _inner(text: str) -> str:
+        v = text.strip().lower()
+        # Accept only known values; otherwise return as-is lowercased
+        return v if v in valid else v
+
+    return _inner
+
+
+def sanitize_leverage_value(text: str) -> float:
+    # Accept formats like "10", "10x", "10X"
+    return float(text.strip().lower().replace("x", ""))
+
+
 # Helper to generate a current datetime example string
 def current_datetime_example() -> str:
     return datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -69,6 +93,42 @@ EXTRA_FEATURES_CONFIG: Dict[str, Dict[str, Any]] = {
     },
     "pnl_percent": {
         "prompt": "❓ Please enter the PnL in percent (e.g. 12.34):",
+        "keyboard_id": "TYPED",
+        "sanitize": sanitize_float,
+    },
+    # BingX Misc Position custom inputs
+    "input_symbol": {
+        "prompt": "❓ Please enter the pair name (e.g. CHZUSDT):",
+        "keyboard_id": "TYPED",
+        "sanitize": sanitize_symbol,
+    },
+    "input_signal_type": {
+        "prompt": "❓ Please enter the signal type (long/short):",
+        "keyboard_id": "TYPED",
+        "sanitize": sanitize_choice({"long", "short"}),
+    },
+    "leverage_type": {
+        "prompt": "❓ Please enter the leverage type (cross/isolated):",
+        "keyboard_id": "TYPED",
+        "sanitize": sanitize_choice({"cross", "isolated"}),
+    },
+    "input_leverage": {
+        "prompt": "❓ Please enter the leverage (e.g. 10x):",
+        "keyboard_id": "TYPED",
+        "sanitize": sanitize_leverage_value,
+    },
+    "risk_percent": {
+        "prompt": "❓ Please enter the risk percent (e.g. 16):",
+        "keyboard_id": "TYPED",
+        "sanitize": sanitize_percent,
+    },
+    "input_entry_price": {
+        "prompt": "❓ Please enter the entry price:",
+        "keyboard_id": "TYPED",
+        "sanitize": sanitize_float,
+    },
+    "input_target_price": {
+        "prompt": "❓ Please enter the target/mark price:",
         "keyboard_id": "TYPED",
         "sanitize": sanitize_float,
     },

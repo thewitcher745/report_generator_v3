@@ -103,6 +103,16 @@ class ReportHTML:
         )
         return f"\t<p {style_string}>{text}</p>\n"
 
+    def create_inline_img(
+        self, img_src: str, size: int, additional_styles: dict = {}
+    ) -> str:
+        """Returns an inline <img> element."""
+        style_string = StyleStrings.inline_img(
+            additional_styles=additional_styles,
+            size=size,
+        )
+        return f"<img {style_string} src='{img_src}'>"
+
     def add_text(
         self,
         text: str,

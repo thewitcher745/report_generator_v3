@@ -40,6 +40,17 @@ class StyleStrings:
         )
 
     @staticmethod
+    def inline_img(additional_styles: dict = {}, **kwargs):
+        return style_str(
+            styles={
+                "padding": 0,
+                "margin": 0,
+                "width": kwargs["size"],
+                **additional_styles,
+            }
+        )
+
+    @staticmethod
     def inline_elements(additional_styles: dict = {}, **kwargs):
         return style_str(
             styles={
