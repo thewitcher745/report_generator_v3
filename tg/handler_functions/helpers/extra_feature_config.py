@@ -96,7 +96,6 @@ EXTRA_FEATURES_CONFIG: Dict[str, Dict[str, Any]] = {
         "keyboard_id": "TYPED",
         "sanitize": sanitize_float,
     },
-    # BingX Misc Position custom inputs
     "input_symbol": {
         "prompt": "❓ Please enter the pair name (e.g. CHZUSDT):",
         "keyboard_id": "TYPED",
@@ -132,6 +131,16 @@ EXTRA_FEATURES_CONFIG: Dict[str, Dict[str, Any]] = {
         "keyboard_id": "TYPED",
         "sanitize": sanitize_float,
     },
+    "liq_price": {
+        "prompt": "❓ Please enter the liquidation price:",
+        "keyboard_id": "TYPED",
+        "sanitize": sanitize_float,
+    },
+    "position_size": {
+        "prompt": "❓ Please enter the position size:",
+        "keyboard_id": "TYPED",
+        "sanitize": sanitize_float,
+    }
 }
 
 

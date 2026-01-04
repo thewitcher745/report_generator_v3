@@ -83,6 +83,11 @@ IMAGE_LIST = {
             "label": "M1 - Misc Position 1",
             "callback_query": "bingx_misc_position_1",
             "image_list_label": "M1",
+        },
+        {
+            "label": "M2 - Misc Position 2",
+            "callback_query": "bingx_misc_position_2",
+            "image_list_label": "M2",
         }
         # {
         #     "label": "BingX Pos - 1",

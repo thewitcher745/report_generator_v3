@@ -1,8 +1,9 @@
 from tg.handler_functions.helpers.tz_data import get_tz_delta
 from tg.handler_functions.helpers.extra_features import get_extra_features
+from tg.handler_functions.helpers.utilities import get_pair_precision
 
 
-def _compute_bingx_misc_position(user_data):
+def _compute_bingx_misc_position_1(user_data):
     margin = float(user_data.get("margin", 0) or 0)
     leverage = float(user_data.get("input_leverage", 0) or 0)
     entry_price = float(user_data.get("input_entry_price", 0) or 0)
@@ -40,6 +41,51 @@ def _compute_bingx_misc_position(user_data):
         "pnl_usd": round(unrealized_pnl, 4),
         "pnl_percent": round(pnl_percent, 2),
         # Risk percent for rendering
+        "risk_percent": user_data.get("risk_percent"),
+    }
+
+    return [report_data_item]
+
+
+def _compute_bingx_misc_position_2(user_data):
+    position = float(user_data.get("position_size", 0) or 0)
+    leverage = float(user_data.get("input_leverage", 0) or 0)
+    entry_price = float(user_data.get("input_entry_price", 0) or 0)
+    mark_price = float(user_data.get("input_target_price", 0) or 0)
+    liq_price = float(user_data.get("liq_price", 0) or 0)
+    commission_fee_rate = 0.0005
+
+    coin_precision = get_pair_precision(
+        user_data["input_symbol"], user_data["exchange"]
+    )
+    user_data["precision"] = coin_precision
+    if coin_precision is None:
+        user_data["precision"] = None
+    else:
+        entry_price = round(entry_price, coin_precision)
+        mark_price = round(mark_price, coin_precision)
+        liq_price = round(liq_price, coin_precision)
+
+    opening_fee = position * commission_fee_rate
+    margin = position / leverage - opening_fee
+    qty = position / entry_price
+    pnl = qty * abs(mark_price - entry_price)
+    pnl_percent = (pnl / margin) * 10
+    displayed_position = position + pnl
+
+    report_data_item = {
+        "image_id": user_data.get("image_id"),
+        "symbol": user_data.get("input_symbol"),
+        "liq_price": liq_price,
+        "signal_type": user_data.get("input_signal_type"),
+        "leverage_type": user_data.get("leverage_type"),
+        "leverage": leverage,
+        "margin": margin,
+        "entry": entry_price,
+        "target": mark_price,
+        "pnl_usd": round(pnl, 4),
+        "pnl_percent": round(pnl_percent, 2),
+        "position_amount": round(displayed_position, 4),
         "risk_percent": user_data.get("risk_percent"),
     }
 
@@ -128,5 +174,7 @@ def calc_report_numbers(user_data):
     """
     image_id = user_data.get("image_id")
     if image_id == "bingx_misc_position_1":
-        return _compute_bingx_misc_position(user_data)
+        return _compute_bingx_misc_position_1(user_data)
+    elif image_id == "bingx_misc_position_2":
+        return _compute_bingx_misc_position_2(user_data)
     return _compute_standard(user_data)
