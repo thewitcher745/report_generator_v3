@@ -41,6 +41,7 @@ async def confirm(update, context):
     )
 
     if ReportClass is None:
+        print("Invalid report class definition for ", context.user_data["image_id"])
         raise ValueError("Report class not found.")
 
     driver = None
