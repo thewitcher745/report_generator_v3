@@ -26,6 +26,7 @@ from image.report_generator.report_classes.mexc.Mexc5 import Mexc5
 from image.report_generator.report_classes.mexc.Mexc6 import Mexc6
 from image.report_generator.report_classes.mexc.Mexc7 import Mexc7
 from image.report_generator.report_classes.mexc.Mexc8 import Mexc8
+from image.report_generator.report_classes.mexc.Mexc9 import Mexc9
 from image.report_generator.report_classes.binance.Binance1 import Binance1
 from image.report_generator.report_classes.binance.Binance2 import Binance2
 from image.report_generator.report_classes.binance.Binance3 import Binance3
@@ -55,6 +56,7 @@ MAPPING: dict[str, type[BaseReport]] = {
     "mexc_6": Mexc6,
     "mexc_7": Mexc7,
     "mexc_8": Mexc8,
+    "mexc_9": Mexc9,
     "binance_1": Binance1,
     "binance_2": Binance2,
     "binance_3": Binance3,

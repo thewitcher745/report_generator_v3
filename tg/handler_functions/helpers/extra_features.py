@@ -16,6 +16,7 @@ extra_features = {
     "mexc_6": ["date"],
     "mexc_7": ["margin", "date", "input_date"],
     "mexc_8": ["date"],
+    "mexc_9": ["date", "margin"],
     "lbank_3": ["date"],
     "binance_4": ["date"],
     "binance_6": ["margin", "date"],
