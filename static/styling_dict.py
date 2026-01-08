@@ -620,7 +620,7 @@ styling_dict = {
     },
     "bybit_5": {
         "symbol_signal_type_leverage": ElementStyling(
-            position=Position(x=0.11557822714046556, y=0.28155628506316893),
+            position=Position(x=0.061272405808971774, y=0.16906249523162842),
             symbol_font="IBMPlexSans-SemiBold.ttf",
             symbol_font_size=60,
             gap=23,
@@ -635,31 +635,31 @@ styling_dict = {
             long_box_color="#2f483355",
         ),
         "roi_dollars": ElementStyling(
-            position=Position(0.065, 0.3),
+            position=Position(x=0.06231182467552923, y=0.299609375),
             font="IBMPlexSans-SemiBold.ttf",
-            font_size=95,
+            font_size=93,
             color="#21b672",
         ),
         "entry": ElementStyling(
-            position=Position(0.063, 0.468),
+            position=Position(x=0.06353046048072077, y=0.4691666722297668),
             font="IBMPlexSans-SemiBold.ttf",
-            font_size=45,
+            font_size=43,
             color="white",
         ),
         "target": ElementStyling(
-            position=Position(0.063, 0.57),
+            position=Position(x=0.06299282607211862, y=0.5707812547683716),
             font="IBMPlexSans-SemiBold.ttf",
-            font_size=45,
+            font_size=43,
             color="white",
         ),
         "referral": ElementStyling(
-            position=Position(0.425, 0.919),
+            position=Position(x=0.4244623655913978, y=0.9193880081176757),
             font="IBMPlexSans-Medium.ttf",
-            font_size=50,
+            font_size=49,
             color="black",
         ),
         "qr": ElementStyling(
-            position=Position(x=0.7794617970784505, y=0.8483964399857955), size=161
+            position=Position(x=0.7746236821656586, y=0.8460546851158142), size=161
         ),
     },
     "bybit_todays_pnl": {
