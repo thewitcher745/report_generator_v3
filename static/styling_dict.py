@@ -1113,6 +1113,62 @@ styling_dict = {
             position=Position(x=0.8285782221934241, y=0.8538411617279053), size=127
         ),
     },
+    "mexc_9": {
+        "symbol": ElementStyling(
+            position=Position(x=0.04541864621130776, y=0.35531249046325686),
+            font="Basier Square SemiBold.otf",
+            font_size=40,
+            color="white",
+        ),
+        "signal_type_leverage": ElementStyling(
+            position=Position(x=0.04352291161415136, y=0.4035677075386047),
+            font="Basier Square Regular.otf",
+            separator_color="#6a6a6a",
+            leverage_color="#6a6a6a",
+            font_size=41,
+            short_color="#f44363",
+            long_color="#18b37a",
+        ),
+        "roi": ElementStyling(
+            position=Position(x=0.05230647805742743, y=0.4491927146911621),
+            font="Basier Square SemiBold.otf",
+            font_size=98,
+            color="#11b67a",
+        ),
+        "roi_dollars": ElementStyling(
+            position=Position(x=0.05230647805742743, y=0.4491927146911621),
+            font="Basier Square SemiBold.otf",
+            font_size=50,
+            color="#11b67a",
+        ),
+        "entry": ElementStyling(
+            position=Position(x=0.2531121565832346, y=0.7223437428474426),
+            font="Basier Square Regular.otf",
+            font_size=35,
+            color="white",
+        ),
+        "target": ElementStyling(
+            position=Position(x=0.2540600238818128, y=0.7684635281562805),
+            font="Basier Square Regular.otf",
+            font_size=35,
+            color="white",
+        ),
+        "date": ElementStyling(
+            position=Position(x=0.040884674216898696, y=0.10087239742279053),
+            font="Basier Square Regular.otf",
+            font_size=30,
+            color="#6c6c6c",
+        ),
+        "referral": ElementStyling(
+            position=Position(x=0.3502211728932168, y=0.8385937571525574),
+            font="Araboto Bold 400.ttf",
+            font_size=67,
+            color="white",
+        ),
+        "qr_code": ElementStyling(
+            position=Position(x=0.8285782221934241, y=0.8538411617279053), size=127
+        ),
+    },
     "bingx_1": {
         "symbol": ElementStyling(
             position=Position(0.058, 0.232),
@@ -1221,8 +1277,12 @@ styling_dict = {
             font_size=50,
             color="white",
         ),
-        "qr": ElementStyling(position=Position(x=0.8413541793823243, y=0.83671875), size=118),
-        "avatar": ElementStyling(position=Position(x=0.058776044845581056, y=0.8279687404632569), size=140),
+        "qr": ElementStyling(
+            position=Position(x=0.8413541793823243, y=0.83671875), size=118
+        ),
+        "avatar": ElementStyling(
+            position=Position(x=0.058776044845581056, y=0.8279687404632569), size=140
+        ),
         "username": ElementStyling(
             position=Position(x=0.18843749761581421, y=0.8305468559265137),
             font="Inter-Medium.ttf",
@@ -1276,8 +1336,12 @@ styling_dict = {
             font_size=50,
             color="white",
         ),
-        "qr": ElementStyling(position=Position(x=0.8413541793823243, y=0.83671875), size=118),
-        "avatar": ElementStyling(position=Position(x=0.058776044845581056, y=0.8279687404632569), size=140),
+        "qr": ElementStyling(
+            position=Position(x=0.8413541793823243, y=0.83671875), size=118
+        ),
+        "avatar": ElementStyling(
+            position=Position(x=0.058776044845581056, y=0.8279687404632569), size=140
+        ),
         "username": ElementStyling(
             position=Position(x=0.18843749761581421, y=0.8305468559265137),
             font="Inter-Medium.ttf",
