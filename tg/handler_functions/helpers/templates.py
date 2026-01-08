@@ -102,37 +102,37 @@ TEMPLATES = {
     },
     "bingx": {
         "Board Main": {
-            "qr": "bitget_1",
+            "qr": "bingx_1",
             "referral": "XJLYOF",
             "username": "al**7@gmail.com",
             "avatar": "bingx_board",
         },
         "Board Free": {
-            "qr": "bitget_2",
+            "qr": "bingx_1",
             "referral": "XJLYOF",
             "username": "al**7@gmail.com",
             "avatar": "bingx_board",
         },
         "CAN Main": {
-            "qr": "bitget_1",
+            "qr": "bingx_1",
             "referral": "YQOTZM",
             "username": "CAN PREMIUM",
             "avatar": "bingx_can",
         },
         "CAN Free": {
-            "qr": "bitget_2",
+            "qr": "bingx_1",
             "referral": "HRB7WN",
             "username": "CAN PREMIUM",
             "avatar": "bingx_can",
         },
         "Turk Main": {
-            "qr": "bitget_3",
+            "qr": "bingx_1",
             "referral": "OTYPQG",
             "username": "ta***1@gmail.com",
             "avatar": "bingx_turk",
         },
         "Turk Free": {
-            "qr": "bitget_4",
+            "qr": "bingx_1",
             "referral": "WMT6QJ",
             "username": "ta***1@gmail.com",
             "avatar": "bingx_turk",

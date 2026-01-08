@@ -54,26 +54,8 @@ IMAGE_LIST = {
         {"label": "MEXC 6", "callback_query": "mexc_8", "image_list_label": 6},
     ],
     "bingx": [
-        # {"label": "BingX 1", "callback_query": "bingx_1", "image_list_label": 1},
-        # {
-        #     "label": "BingX 1 - Ashan",
-        #     "callback_query": "bingx_2",
-        #     "image_list_label": 1,
-        # },
-        # {"label": "BingX 2", "callback_query": "bingx_5", "image_list_label": 2},
-        # {"label": "BingX 2 - CAN", "callback_query": "bingx_4", "image_list_label": 2},
-        # {
-        #     "label": "BingX 2 - Ashan",
-        #     "callback_query": "bingx_6",
-        #     "image_list_label": 2,
-        # },
-        # {"label": "BingX 3", "callback_query": "bingx_9", "image_list_label": 3},
-        # {"label": "BingX 3 - CAN", "callback_query": "bingx_7", "image_list_label": 3},
-        # {
-        #     "label": "BingX 3 - Board",
-        #     "callback_query": "bingx_8",
-        #     "image_list_label": 3,
-        # },
+        {"label": "BingX 2", "callback_query": "bingx_2", "image_list_label": 2},
+        {"label": "BingX 3", "callback_query": "bingx_3", "image_list_label": 3},
         {
             "label": "BingX 4",
             "callback_query": "bingx_10",

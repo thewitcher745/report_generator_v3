@@ -13,6 +13,8 @@ from image.report_generator.report_classes.bybit.BybitCumulativePnl import (
 from image.report_generator.report_classes.bitget.Bitget1 import Bitget1
 from image.report_generator.report_classes.bitget.Bitget5 import Bitget5
 from image.report_generator.report_classes.bitget.Bitget6 import Bitget6
+from image.report_generator.report_classes.bingx.Bingx2 import Bingx2
+from image.report_generator.report_classes.bingx.Bingx3 import Bingx3
 from image.report_generator.report_classes.bingx.Bingx10 import Bingx10
 from image.report_generator.report_classes.bingx.BingxMiscPosition1 import (
     BingxMiscPosition1,
@@ -44,6 +46,8 @@ MAPPING: dict[str, type[BaseReport]] = {
     "bitget_1": Bitget1,
     "bitget_5": Bitget5,
     "bitget_6": Bitget6,
+    "bingx_2": Bingx2,
+    "bingx_3": Bingx3,
     "bingx_10": Bingx10,
     "bingx_misc_position_1": BingxMiscPosition1,
     "bingx_misc_position_2": BingxMiscPosition2,
