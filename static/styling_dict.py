@@ -1136,7 +1136,7 @@ styling_dict = {
             color="#11b67a",
         ),
         "roi_dollars": ElementStyling(
-            position=Position(x=0.05230647805742743, y=0.4491927146911621),
+            position=Position(x=0.05230647805742743, y=0.5292708396911621),
             font="Basier Square SemiBold.otf",
             font_size=50,
             color="#11b67a",
