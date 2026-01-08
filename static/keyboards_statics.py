@@ -83,8 +83,8 @@ IMAGE_LIST = {
         {"label": "OKX 2", "callback_query": "okx_2", "image_list_label": 2},
     ],
     "lbank": [
-        # {"label": "LBANK 1", "callback_query": "lbank_1", "image_list_label": 1},
-        # {"label": "LBANK 2", "callback_query": "lbank_2", "image_list_label": 2},
+        {"label": "LBANK 1", "callback_query": "lbank_1", "image_list_label": 1},
+        {"label": "LBANK 2", "callback_query": "lbank_2", "image_list_label": 2},
         {"label": "LBANK 3", "callback_query": "lbank_3", "image_list_label": 3},
     ],
     "kcex": [
