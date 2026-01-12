@@ -29,6 +29,17 @@ GET_TEMPLATE = "❓ Please select a template for the selected exchange:"
 
 PRECISION_NOT_FOUND = "⚠️ Warning: Precision not found for the selected coin. Using the precision given by the signal text."
 
+MULTIPLE_NEED_SIGNAL = "❌ Please forward a signal first, then use /multiple."
+MULTIPLE_GET_N_REPORTS = "❓ Enter total number of images to generate:"
+MULTIPLE_INVALID_N_REPORTS = "❌ Invalid number. Please enter a valid integer."
+
+
+def MULTIPLE_GET_CHANNEL(current_index: int, n_reports: int) -> str:
+    return f"❓ Select channel for report {current_index}/{n_reports}:"
+
+
+MULTIPLE_INVALID_CHANNEL = "❌ Invalid channel selection. Please select again."
+
 CONFIRM_INTRO = "💭 This is the provided signal and selected settings. If you need to customize the QR, referral or username, use the buttons below. Otherwise, press Confirm to generate the images."
 
 

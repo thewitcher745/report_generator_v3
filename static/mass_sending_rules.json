@@ -1,0 +1,16 @@
+{
+  "rules": [
+    {
+      "channel": "CAN",
+      "exchange": "binance",
+      "image_id": "binance_1",
+      "template": "CAN Main",
+      "user_id": 77688268,
+      "message_body": "This is the message for binance_1"
+    }
+  ],
+  "default": {
+    "user_id": 77688268,
+    "message_body": "This is the default message."
+  }
+}

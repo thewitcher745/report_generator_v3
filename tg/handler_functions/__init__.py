@@ -5,6 +5,7 @@ from .get_image import get_image
 from .get_template import get_template
 from .get_extra_feature import get_extra_feature
 from .confirm import confirm
+from .multiple import start_multiple, get_n_reports, get_channel
 
 __all__ = [
     "welcome",
@@ -15,4 +16,7 @@ __all__ = [
     "get_template",
     "get_extra_feature",
     "confirm",
+    "start_multiple",
+    "get_n_reports",
+    "get_channel",
 ]

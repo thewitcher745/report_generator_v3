@@ -75,6 +75,16 @@ def GET_TYPED_VALUE():
     return compose_keyboard_markup(keyboards_statics.TYPED_VALUE)
 
 
+def GET_CHANNELS():
+    from tg.handler_functions.helpers.multiple_config import CHANNELS
+
+    channel_buttons = [
+        {"label": channel_label, "callback_query": channel_label}
+        for channel_label in CHANNELS
+    ]
+    return compose_keyboard_markup(channel_buttons, max_buttons_per_row=3)
+
+
 CONFIRM = compose_keyboard_markup(
     keyboards_statics.CONFIRM_DIALOG, max_buttons_per_row=1
 )

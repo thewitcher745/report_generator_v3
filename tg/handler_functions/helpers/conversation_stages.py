@@ -14,6 +14,8 @@ from telegram.ext import ConversationHandler
     CUSTOMIZE_QR,
     CUSTOMIZE_REFERRAL,
     CUSTOMIZE_USERNAME,
-) = range(9)
+    GET_N_REPORTS,
+    GET_CHANNEL,
+) = range(11)
 
 END = ConversationHandler.END
