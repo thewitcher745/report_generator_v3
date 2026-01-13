@@ -107,7 +107,6 @@ async def confirm(update, context):
             rule = resolve_mass_sending_rule(
                 channel=channel,
                 exchange=exchange,
-                image_id=image_id,
                 template=template,
             )
             destination_chat_id = rule.user_id or requester_chat_id

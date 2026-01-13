@@ -227,6 +227,6 @@
   ],
   "default": {
     "user_id": 171978461,
-    "message_body": "This is the default message."
+    "message_body": "This message was sent as a default rule."
   }
 }
