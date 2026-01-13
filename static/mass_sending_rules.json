@@ -3,14 +3,230 @@
     {
       "channel": "CAN",
       "exchange": "binance",
-      "image_id": "binance_1",
+      "template": "CAN Free",
+      "user_id": 171978461,
+      "message_body": "@Giannisali"
+    },
+    {
+      "channel": "CAN",
+      "exchange": "okx",
       "template": "CAN Main",
-      "user_id": 77688268,
-      "message_body": "This is the message for binance_1"
+      "user_id": 171978461,
+      "message_body": "@VIPTRASERS"
+    },
+    {
+      "channel": "CAN",
+      "exchange": "mexc",
+      "template": "CAN Main",
+      "user_id": 171978461,
+      "message_body": "@HectorBTC07"
+    },
+    {
+      "channel": "CAN",
+      "exchange": "kcex",
+      "template": "CAN Main",
+      "user_id": 171978461,
+      "message_body": "@AEPU36"
+    },
+    {
+      "channel": "CAN",
+      "exchange": "bitget",
+      "template": "CAN Free",
+      "user_id": 171978461,
+      "message_body": "@GGtrader20"
+    },
+    {
+      "channel": "CAN",
+      "exchange": "binance",
+      "template": "Board Free",
+      "user_id": 171978461,
+      "message_body": "@pumpmanager9"
+    },
+    {
+      "channel": "CAN",
+      "exchange": "lbank",
+      "template": "CAN Main",
+      "user_id": 171978461,
+      "message_body": "@Luukvris"
+    },
+    {
+      "channel": "CAN",
+      "exchange": "mexc",
+      "template": "Board Main",
+      "user_id": 171978461,
+      "message_body": "@Nikolasgalanis"
+    },
+    {
+      "channel": "CAN",
+      "exchange": "binance",
+      "template": "Board Free",
+      "user_id": 171978461,
+      "message_body": "@nightraven99"
+    },
+    {
+      "channel": "CAN",
+      "exchange": "bitget",
+      "template": "CAN Main",
+      "user_id": 171978461,
+      "message_body": "@Cryptomenci"
+    },
+    {
+      "channel": "CAN",
+      "exchange": "binance",
+      "template": "Extra 1",
+      "user_id": 171978461,
+      "message_body": "@Tiegomacha"
+    },
+    {
+      "channel": "CAN",
+      "exchange": "binance",
+      "template": "Extra 2",
+      "user_id": 171978461,
+      "message_body": "@yusufbali"
+    },
+    {
+      "channel": "CAN",
+      "exchange": "okx",
+      "template": "CAN Free",
+      "user_id": 171978461,
+      "message_body": "@Adam54j"
+    },
+    {
+      "channel": "CAN",
+      "exchange": "mexc",
+      "template": "CAN Free",
+      "user_id": 171978461,
+      "message_body": "@Lukas65b"
+    },
+    {
+      "channel": "CAN",
+      "exchange": "bybit",
+      "template": "CAN Main",
+      "user_id": 171978461,
+      "message_body": "@CANsupport"
+    },
+    {
+      "channel": "Turk",
+      "exchange": "okx",
+      "template": "Turk Main",
+      "user_id": 171978461,
+      "message_body": "@Giannisali"
+    },
+    {
+      "channel": "Turk",
+      "exchange": "kcex",
+      "template": "Turk Main",
+      "user_id": 171978461,
+      "message_body": "@HectorBTC07"
+    },
+    {
+      "channel": "Turk",
+      "exchange": "bitget",
+      "template": "Turk Free",
+      "user_id": 171978461,
+      "message_body": "@GGtrader20"
+    },
+    {
+      "channel": "Turk",
+      "exchange": "bybit",
+      "template": "Turk Main",
+      "user_id": 171978461,
+      "message_body": "@Cryptoboardmanager"
+    },
+    {
+      "channel": "Turk",
+      "exchange": "okx",
+      "template": "Turk Free",
+      "user_id": 171978461,
+      "message_body": "@Luukvris"
+    },
+    {
+      "channel": "Turk",
+      "exchange": "bitget",
+      "template": "Turk Main",
+      "user_id": 171978461,
+      "message_body": "@Cryptomenci"
+    },
+    {
+      "channel": "Turk",
+      "exchange": "bybit",
+      "template": "Turk Free",
+      "user_id": 171978461,
+      "message_body": "@Adam54j"
+    },
+    {
+      "channel": "Turk",
+      "exchange": "mexc",
+      "template": "Turk Main",
+      "user_id": 171978461,
+      "message_body": "@AEPU36"
+    },
+    {
+      "channel": "Turk",
+      "exchange": "mexc",
+      "template": "Board Main",
+      "user_id": 171978461,
+      "message_body": "@Nikolasgalanis"
+    },
+    {
+      "channel": "Turk",
+      "exchange": "mex",
+      "template": "Board Free",
+      "user_id": 171978461,
+      "message_body": "@misternobodyatall"
+    },
+    {
+      "channel": "Turk",
+      "exchange": "mexc",
+      "template": "Turk Free",
+      "user_id": 171978461,
+      "message_body": "@Lukas65b"
+    },
+    {
+      "channel": "Turk",
+      "exchange": "binance",
+      "template": "Turk Main",
+      "user_id": 171978461,
+      "message_body": "Turk Main"
+    },
+    {
+      "channel": "Turk",
+      "exchange": "binance",
+      "template": "Turk Free",
+      "user_id": 171978461,
+      "message_body": "@VIPTRASERS"
+    },
+    {
+      "channel": "Turk",
+      "exchange": "binance",
+      "template": "Board Main",
+      "user_id": 171978461,
+      "message_body": "@nightraven99"
+    },
+    {
+      "channel": "Turk",
+      "exchange": "binance",
+      "template": "Board Free",
+      "user_id": 171978461,
+      "message_body": "@pumpmanager9"
+    },
+    {
+      "channel": "Turk",
+      "exchange": "binance",
+      "template": "Extra 2",
+      "user_id": 171978461,
+      "message_body": "@yusufbali"
+    },
+    {
+      "channel": "Turk",
+      "exchange": "binance",
+      "template": "Extra 1",
+      "user_id": 171978461,
+      "message_body": "@Tiegomacha"
     }
   ],
   "default": {
-    "user_id": 77688268,
+    "user_id": 171978461,
     "message_body": "This is the default message."
   }
 }

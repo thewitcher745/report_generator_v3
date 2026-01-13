@@ -1,3 +1,3 @@
 CHANNELS = ["CAN", "Turk", "Board"]
 
-MAX_N_REPORTS = 20
+MAX_N_REPORTS = 50

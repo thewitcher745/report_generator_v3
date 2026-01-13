@@ -11,7 +11,7 @@ class MassSendingRule:
 
 
 def _rule_matches(
-    rule: dict[str, Any], *, channel: str, exchange: str, image_id: str, template: str
+    rule: dict[str, Any], *, channel: str, exchange: str, template: str
 ) -> bool:
     def _eq_or_wildcard(rule_value: Any, actual: str) -> bool:
         if rule_value in (None, "", "*", "any", "default"):
@@ -21,7 +21,6 @@ def _rule_matches(
     return (
         _eq_or_wildcard(rule.get("channel"), channel)
         and _eq_or_wildcard(rule.get("exchange"), exchange)
-        and _eq_or_wildcard(rule.get("image_id"), image_id)
         and _eq_or_wildcard(rule.get("template"), template)
     )
 
@@ -35,7 +34,7 @@ def load_mass_sending_rules() -> dict[str, Any]:
 
 
 def resolve_mass_sending_rule(
-    *, channel: str, exchange: str, image_id: str, template: str
+    *, channel: str, exchange: str, template: str
 ) -> MassSendingRule:
     data = load_mass_sending_rules()
 
@@ -44,7 +43,6 @@ def resolve_mass_sending_rule(
             rule,
             channel=channel,
             exchange=exchange,
-            image_id=image_id,
             template=template,
         ):
             return MassSendingRule(
