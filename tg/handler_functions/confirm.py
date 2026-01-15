@@ -118,6 +118,12 @@ async def confirm(update, context):
                 if ReportClass is None:
                     raise ValueError("Report class not found.")
 
+                if rule.message_body:
+                    await context.bot.send_message(
+                        chat_id=destination_chat_id,
+                        text=rule.message_body,
+                    )
+
                 for counter, report_data in enumerate(report_data_array):
                     driver = None
                     try:
@@ -136,11 +142,6 @@ async def confirm(update, context):
                         if driver:
                             driver.quit()
 
-                if rule.message_body:
-                    await context.bot.send_message(
-                        chat_id=destination_chat_id,
-                        text=rule.message_body,
-                    )
             except Exception as exc:
                 await context.bot.send_message(
                     chat_id=requester_chat_id,
