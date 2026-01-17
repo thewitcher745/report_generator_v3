@@ -3,29 +3,25 @@ This is the conversation handler staget  confirm the user inputs and ask if the 
 """
 
 from tg.handler_functions.helpers.confirm_helpers import (
+    apply_multiple_mode_leverage_override,
     build_multiple_snapshot,
     build_report_inputs,
     get_mass_sending_destination,
     get_requester_chat_id,
     maybe_adjust_targets_inplace,
     reset_user_data_for_next_multiple_report,
-    resolve_report_class,
 )
 from telegram import InputMediaPhoto
 
-from tg.handler_functions.helpers.calc_report_numbers import calc_report_numbers
 from tg.handler_functions.helpers.prompts import (
-    prompt_get_image,
-    prompt_precision_not_found,
     prompt_get_exchange,
 )
 from tg.handler_functions.helpers.conversation_stages import (
     END,
     GET_EXCHANGE,
 )
-from tg.handler_functions.helpers.extra_features import get_extra_features
 from tg.handler_functions.helpers.utilities import send_media_group, send_message
-from tg.handler_functions.helpers import strings, keyboards
+from tg.handler_functions.helpers import strings
 
 
 async def confirm(update, context):
@@ -51,6 +47,10 @@ async def confirm(update, context):
         n_reports = int(context.user_data.get("multiple_n_reports") or 0)
         current_index = int(context.user_data.get("multiple_current_index") or 0)
 
+        leverage_counters: dict[str, int] = context.user_data.setdefault(
+            "multiple_leverage_counters", {}
+        )
+
         queue.append(build_multiple_snapshot(context.user_data))
 
         current_index += 1
@@ -74,7 +74,11 @@ async def confirm(update, context):
             )
 
             try:
-                maybe_adjust_targets_inplace(queued=queued, report_data_array=[])
+                maybe_adjust_targets_inplace(queued=queued)
+                apply_multiple_mode_leverage_override(
+                    queued=queued,
+                    counters=leverage_counters,
+                )
                 report_data_array, extra_features, ReportClassCurrent = (
                     build_report_inputs(queued)
                 )
@@ -114,9 +118,9 @@ async def confirm(update, context):
         context.user_data.clear()
         return END
 
-    report_data_array = calc_report_numbers(context.user_data)
-    extra_features = get_extra_features(context.user_data["image_id"])
-    ReportClass = resolve_report_class(str(context.user_data["image_id"]))
+    report_data_array, extra_features, ReportClass = build_report_inputs(
+        context.user_data
+    )
 
     for counter, report_data in enumerate(report_data_array):
         driver = None

@@ -23,37 +23,17 @@ async def start_multiple(update, context):
         await send_message(context, update, strings.MULTIPLE_NEED_SIGNAL)
         return END
 
+    # Reset multiple mode state
     context.user_data["multiple_mode"] = True
     context.user_data["multiple_queue"] = []
     context.user_data["multiple_current_index"] = 0
     context.user_data.pop("multiple_n_reports", None)
 
     for key in [
-        "channel",
-        "exchange",
-        "image_id",
-        "template",
-        "precision",
-        "qr",
-        "referral",
-        "username",
-        "avatar",
-        "date",
-        "input_date",
-        "period_start",
-        "period_end",
-        "pnl_usd",
-        "pnl_percent",
-        "input_symbol",
-        "input_signal_type",
-        "leverage_type",
-        "input_leverage",
-        "risk_percent",
-        "input_entry_price",
-        "input_target_price",
-        "liq_price",
-        "position_size",
-        "margin",
+        "multiple_queue",
+        "multiple_n_reports",
+        "multiple_current_index",
+        "multiple_leverage_counters",
         "current_feature",
     ]:
         context.user_data.pop(key, None)

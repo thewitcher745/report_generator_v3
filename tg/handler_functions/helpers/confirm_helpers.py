@@ -1,6 +1,5 @@
 import copy
 import random
-from collections.abc import Iterable
 from typing import Any
 
 from image.report_generator.report_classes.BaseReport import BaseReport
@@ -14,6 +13,7 @@ from tg.handler_functions.helpers.mass_sending import (
 from tg.handler_functions.helpers.multiple_config import (
     MIN_TARGET_ADJUSTMENT,
     MAX_TARGET_ADJUSTMENT,
+    LEVERAGE_SEQUENCE,
 )
 
 
@@ -97,6 +97,21 @@ def get_mass_sending_destination(
     return destination_chat_id, rule
 
 
+def apply_multiple_mode_leverage_override(
+    *, queued: dict[str, Any], counters: dict[str, int]
+) -> None:
+    if not LEVERAGE_SEQUENCE:
+        return
+    bundle_index = int(counters.get("global", 0) or 0)
+
+    leverage = LEVERAGE_SEQUENCE[bundle_index % len(LEVERAGE_SEQUENCE)]
+
+    queued["leverage"] = leverage
+    queued["input_leverage"] = leverage
+
+    counters["global"] = bundle_index + 1
+
+
 def build_report_inputs(
     queued: dict[str, Any],
 ) -> tuple[list[dict[str, Any]], Any, type[BaseReport]]:
@@ -108,7 +123,8 @@ def build_report_inputs(
 
 
 def maybe_adjust_targets_inplace(
-    *, queued: dict[str, Any], report_data_array: Iterable[dict[str, Any]]
+    *,
+    queued: dict[str, Any],
 ) -> None:
     precision = queued.get("precision")
     signal_type = (queued.get("signal_type") or "").lower()
@@ -143,22 +159,3 @@ def maybe_adjust_targets_inplace(
                 adjusted_targets.append(t)
         queued["targets"] = adjusted_targets
         return
-
-    for report_data in report_data_array:
-        target = report_data.get("target")
-        if target is None:
-            continue
-
-        try:
-            adjustment_pips = random.randint(
-                MIN_TARGET_ADJUSTMENT, MAX_TARGET_ADJUSTMENT
-            )
-            adjustment = adjustment_pips * pip_size
-            adjusted_target = (
-                float(target) - adjustment
-                if signal_type == "long"
-                else float(target) + adjustment
-            )
-            report_data["target"] = round(adjusted_target, precision)
-        except Exception:
-            continue
