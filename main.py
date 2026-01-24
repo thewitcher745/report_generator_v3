@@ -5,7 +5,6 @@ from telegram.ext import Application
 from tg.handler_objects import (
     welcome_handler,
     automatic_signal_handler,
-    multiple_handler,
 )
 
 if __name__ == "__main__":
@@ -15,7 +14,6 @@ if __name__ == "__main__":
     application = Application.builder().token(token).build()
 
     application.add_handlers([welcome_handler, automatic_signal_handler])
-    application.add_handler(multiple_handler)
 
     print("RG bot started.")
 

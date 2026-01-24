@@ -33,8 +33,6 @@ from tg.handler_functions.helpers.conversation_stages import (
 
 welcome_handler = CommandHandler("start", welcome)
 
-multiple_handler = CommandHandler("multiple", start_multiple)
-
 automatic_signal_handler = ConversationHandler(
     entry_points=[ForwardedMessageHandler(extract_signal_data)],
     states={

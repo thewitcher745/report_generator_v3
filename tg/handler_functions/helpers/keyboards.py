@@ -53,6 +53,15 @@ def compose_keyboard_markup(
 GET_EXCHANGE = compose_keyboard_markup(keyboards_statics.EXCHANGE_LIST)
 
 
+# Get initial exchange keyboard (includes Multiple button)
+def INITIAL_GET_EXCHANGE():
+    buttons = keyboards_statics.EXCHANGE_LIST.copy()
+    buttons.append(
+        {"label": "📤 Multiple (Mass Sending)", "callback_query": "start_multiple"}
+    )
+    return compose_keyboard_markup(buttons, max_buttons_per_row=2)
+
+
 # Get image selection keyboard for a selected exchange
 def GET_IMAGE(exchange: str):
     return compose_keyboard_markup(keyboards_statics.IMAGE_LIST[exchange])

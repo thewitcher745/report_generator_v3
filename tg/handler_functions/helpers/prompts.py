@@ -14,9 +14,12 @@ from tg.handler_functions.helpers.extra_feature_config import (
 
 
 async def prompt_get_exchange(update, context):
-    await send_message(
-        context, update, strings.GET_EXCHANGE, keyboard=keyboards.GET_EXCHANGE
-    )
+    if context.user_data.get("multiple_mode"):
+        keyboard = keyboards.GET_EXCHANGE
+    else:
+        keyboard = keyboards.INITIAL_GET_EXCHANGE()
+
+    await send_message(context, update, strings.GET_EXCHANGE, keyboard=keyboard)
 
 
 async def prompt_get_feature(update, context, feature: str):

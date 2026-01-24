@@ -12,11 +12,16 @@ from tg.handler_functions.helpers.utilities import get_pair_precision
 
 async def get_exchange(update, context):
     # Gets the exchange and also sets the precision for the report's prices
+    from tg.handler_functions.multiple import start_multiple
 
     if update.callback_query:
         await update.callback_query.answer()
 
-    context.user_data["exchange"] = update.callback_query.data
+    callback_data = update.callback_query.data
+    if callback_data == "start_multiple":
+        return await start_multiple(update, context)
+
+    context.user_data["exchange"] = callback_data
 
     # See if the precision is available for the coin. If so, round the entry and targets to that precision.
     coin_precision = get_pair_precision(
