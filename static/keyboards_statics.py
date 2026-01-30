@@ -17,12 +17,12 @@ IMAGE_LIST = {
         {"label": "Binance 4", "callback_query": "binance_4", "image_list_label": 4},
         {"label": "Binance 5", "callback_query": "binance_5", "image_list_label": 5},
         {
-            "label": "Binance 6 - Percent",
+            "label": "Binance 6 - USDT",
             "callback_query": "binance_6",
             "image_list_label": 6,
         },
         {
-            "label": "Binance 6 - USDT",
+            "label": "Binance 6 - Percent",
             "callback_query": "binance_8",
             "image_list_label": 6,
         },
