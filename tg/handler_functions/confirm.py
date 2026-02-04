@@ -115,6 +115,10 @@ async def confirm(update, context):
                     text=f"❌ Failed processing queued report ({image_id}): {exc}",
                 )
 
+        await context.bot.send_message(
+            chat_id=requester_chat_id,
+            text=strings.MULTIPLE_DONE,
+        )
         context.user_data.clear()
         return END
 

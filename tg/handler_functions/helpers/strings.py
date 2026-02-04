@@ -30,6 +30,7 @@ PRECISION_NOT_FOUND = "⚠️ Warning: Precision not found for the selected coin
 MULTIPLE_NEED_SIGNAL = "❌ Please forward a signal first, then use /multiple."
 MULTIPLE_GET_N_REPORTS = "❓ Enter total number of images to generate:"
 MULTIPLE_INVALID_N_REPORTS = "❌ Invalid number. Please enter a valid integer."
+MULTIPLE_DONE = "✅ Mass sending process completed!"
 
 
 def MULTIPLE_REPORT_PROGRESS(current: int, total: int) -> str:
