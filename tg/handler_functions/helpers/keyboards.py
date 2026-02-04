@@ -50,7 +50,13 @@ def compose_keyboard_markup(
 
 
 # Get exchange keyboard
-GET_EXCHANGE = compose_keyboard_markup(keyboards_statics.EXCHANGE_LIST)
+def GET_EXCHANGE(multiple_mode: bool = False):
+    buttons = keyboards_statics.EXCHANGE_LIST.copy()
+    if multiple_mode:
+        buttons.append(
+            {"label": "✅ Finish & Generate", "callback_query": "finish_multiple"}
+        )
+    return compose_keyboard_markup(buttons)
 
 
 # Get initial exchange keyboard (includes Multiple button)

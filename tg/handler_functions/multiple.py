@@ -85,3 +85,24 @@ async def get_n_reports(update, context):
 
     await prompt_get_exchange(update, context)
     return GET_EXCHANGE
+
+
+async def finish_multiple(update, context):
+    from tg.handler_functions.confirm import confirm
+
+    if not context.user_data.get("multiple_queue"):
+        await send_message(context, update, "❌ No reports were added to the queue.")
+        context.user_data.clear()
+        return END
+
+    # Force immediate generation of queued items
+    context.user_data["multiple_n_reports"] = len(context.user_data["multiple_queue"])
+    context.user_data["multiple_current_index"] = len(
+        context.user_data["multiple_queue"]
+    )
+
+    # We must mark multiple_mode as false so confirm() doesn't try to append the
+    # current (incomplete) user_data to the queue again
+    context.user_data["multiple_mode"] = False
+
+    return await confirm(update, context)

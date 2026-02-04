@@ -12,7 +12,7 @@ from tg.handler_functions.helpers.utilities import get_pair_precision
 
 async def get_exchange(update, context):
     # Gets the exchange and also sets the precision for the report's prices
-    from tg.handler_functions.multiple import start_multiple
+    from tg.handler_functions.multiple import start_multiple, finish_multiple
 
     if update.callback_query:
         await update.callback_query.answer()
@@ -20,6 +20,9 @@ async def get_exchange(update, context):
     callback_data = update.callback_query.data
     if callback_data == "start_multiple":
         return await start_multiple(update, context)
+
+    if callback_data == "finish_multiple":
+        return await finish_multiple(update, context)
 
     context.user_data["exchange"] = callback_data
 

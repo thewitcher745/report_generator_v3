@@ -67,6 +67,13 @@ async def confirm(update, context):
             await prompt_get_exchange(update, context)
             return GET_EXCHANGE
 
+    # Generation logic (either finishing multiple mode or single mode)
+    if "multiple_queue" in context.user_data:
+        queue = context.user_data.get("multiple_queue", [])
+        leverage_counters = context.user_data.setdefault(
+            "multiple_leverage_counters", {}
+        )
+
         for queued in list(queue):
             image_id = str(queued.get("image_id") or "")
             destination_chat_id, rule = get_mass_sending_destination(
