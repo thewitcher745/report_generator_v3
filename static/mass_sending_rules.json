@@ -223,6 +223,13 @@
       "template": "Extra 1",
       "user_id": 171978461,
       "message_body": "@Tiegomacha"
+    },
+    {
+      "channel": "Turk",
+      "exchange": "mexc",
+      "template": "Board Free",
+      "user_id": 171978461,
+      "message_body": "@Lukas65b"
     }
   ],
   "default": {
