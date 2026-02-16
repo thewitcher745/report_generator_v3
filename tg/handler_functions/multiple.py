@@ -58,6 +58,25 @@ async def start_multiple(update, context):
     ]:
         context.user_data.pop(key, None)
 
+    await send_message(
+        context,
+        update,
+        strings.MULTIPLE_GET_CHANNEL_ONCE,
+        keyboard=keyboards.GET_CHANNELS(),
+    )
+    return GET_CHANNEL
+
+
+async def get_channel(update, context):
+    await update.callback_query.answer()
+    channel = update.callback_query.data
+
+    if channel not in CHANNELS:
+        await send_message(context, update, strings.MULTIPLE_INVALID_CHANNEL)
+        return GET_CHANNEL
+
+    context.user_data["channel"] = channel
+
     await send_message(context, update, strings.MULTIPLE_GET_N_REPORTS)
     return GET_N_REPORTS
 
@@ -77,24 +96,12 @@ async def get_n_reports(update, context):
     context.user_data["multiple_n_reports"] = n_reports
     context.user_data["multiple_current_index"] = 0
 
+    # Indicate which report is being prompted for
     await send_message(
         context,
         update,
-        strings.MULTIPLE_GET_CHANNEL(1, n_reports),
-        keyboard=keyboards.GET_CHANNELS(),
+        strings.MULTIPLE_REPORT_PROGRESS(1, n_reports),
     )
-    return GET_CHANNEL
-
-
-async def get_channel(update, context):
-    await update.callback_query.answer()
-    channel = update.callback_query.data
-
-    if channel not in CHANNELS:
-        await send_message(context, update, strings.MULTIPLE_INVALID_CHANNEL)
-        return GET_CHANNEL
-
-    context.user_data["channel"] = channel
 
     await prompt_get_exchange(update, context)
     return GET_EXCHANGE

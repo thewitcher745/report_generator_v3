@@ -34,6 +34,13 @@ MULTIPLE_GET_N_REPORTS = "❓ Enter total number of images to generate:"
 MULTIPLE_INVALID_N_REPORTS = "❌ Invalid number. Please enter a valid integer."
 
 
+def MULTIPLE_REPORT_PROGRESS(current: int, total: int) -> str:
+    return f"📝 **Report {current}/{total}**"
+
+
+MULTIPLE_GET_CHANNEL_ONCE = "❓ Select the channel for this mass sending session:"
+
+
 def MULTIPLE_GET_CHANNEL(current_index: int, n_reports: int) -> str:
     return f"❓ Select channel for report {current_index}/{n_reports}:"
 

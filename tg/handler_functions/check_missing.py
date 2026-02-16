@@ -7,6 +7,7 @@ import datetime
 from tg.handler_functions.confirm import confirm
 from tg.handler_functions.helpers.conversation_stages import GET_EXTRA_FEATURE
 from tg.handler_functions.helpers.extra_features import get_extra_features
+from tg.handler_functions.helpers.utilities import send_message
 from tg.handler_functions.helpers.prompts import prompt_get_feature
 
 
@@ -20,6 +21,19 @@ async def check_missing(update, context):
     # Auto-set current date if required
     if "date" in required and not context.user_data.get("date"):
         context.user_data["date"] = datetime.datetime.now()
+
+    # If in multiple mode, ensure channel is present (it should be set once at the start)
+    if context.user_data.get("multiple_mode") and not context.user_data.get("channel"):
+        from tg.handler_functions.helpers import strings, keyboards
+        from tg.handler_functions.helpers.conversation_stages import GET_CHANNEL
+
+        await send_message(
+            context,
+            update,
+            strings.MULTIPLE_GET_CHANNEL_ONCE,
+            keyboard=keyboards.GET_CHANNELS(),
+        )
+        return GET_CHANNEL
 
     # Prompt for the first missing feature using the generic system
     for feature in required:
