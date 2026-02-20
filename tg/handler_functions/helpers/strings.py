@@ -1,6 +1,4 @@
-"""
-This file contains the strings returned by the bot to the user, collected in a single file for brevity.
-"""
+from tg.handler_functions.helpers.multiple_config import LEVERAGE_SEQUENCE
 
 # Welcome message
 
@@ -35,7 +33,12 @@ MULTIPLE_INVALID_N_REPORTS = "❌ Invalid number. Please enter a valid integer."
 
 
 def MULTIPLE_REPORT_PROGRESS(current: int, total: int) -> str:
-    return f"📝 **Report {current}/{total}**"
+    msg = f"📝 **Report {current}/{total}**"
+    if LEVERAGE_SEQUENCE:
+        # current is 1-indexed, so we use (current - 1) to get the correct leverage from the sequence
+        leverage = LEVERAGE_SEQUENCE[(current - 1) % len(LEVERAGE_SEQUENCE)]
+        msg += f" (Leverage: {leverage}x)"
+    return msg
 
 
 MULTIPLE_GET_CHANNEL_ONCE = "❓ Select the channel for this mass sending session:"
