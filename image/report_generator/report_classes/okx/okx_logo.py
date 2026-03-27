@@ -1,3 +1,4 @@
+import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support import expected_conditions as EC
@@ -21,14 +22,24 @@ def get_okx_logo(symbol: str) -> str | None:
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--window-size=2000,2000")
     driver = webdriver.Chrome(options=chrome_options)
+
+    # Number of waits for the page to load before admitting the logo isn't there
+    tries = 0
+
+    logo_url = None
+    is_logo_element_img = False
     try:
         driver.get(f"https://www.okx.com/trade-spot/{symbol}-usdt")
 
-        logo_element = WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, ".ticker-logo"))
-        )
+        while logo_url is None and tries < 5 and not is_logo_element_img:
+            logo_element = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, ".ticker-logo"))
+            )
+            is_logo_element_img = logo_element.tag_name == "img"
 
-        logo_url = logo_element.get_attribute("src")
+            logo_url = logo_element.get_attribute("src")
+            tries += 1
+            time.sleep(1)
     except:
         return None
 
