@@ -479,7 +479,7 @@ styling_dict = {
             separator_color="#464646",
             separator_length=33,
             separator_width=2,
-            short_color="#34b785",
+            short_color="#d95374",
             long_color="#34b785",
             leverage_color="#737373",
         ),
@@ -1573,7 +1573,9 @@ styling_dict = {
             font_size=30,
             color="white",
         ),
-        "qr": ElementStyling(position=Position(x=0.8059308273591949, y=0.8606115107913669), size=93),
+        "qr": ElementStyling(
+            position=Position(x=0.8059308273591949, y=0.8606115107913669), size=93
+        ),
     },
     "lbank_2": {
         "symbol_perp_futures": ElementStyling(
