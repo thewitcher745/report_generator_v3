@@ -662,6 +662,50 @@ styling_dict = {
             position=Position(x=0.7746236821656586, y=0.8460546851158142), size=161
         ),
     },
+    "bybit_6": {
+        "symbol_signal_type_leverage": ElementStyling(
+            position=Position(x=0.1323180997432186, y=0.28476074119182043),
+            symbol_font="IBMPlexSans-SemiBold.ttf",
+            symbol_font_size=31,
+            gap=12,
+            signal_type_leverage_font="IBMPlexSans-Regular.ttf",
+            signal_type_leverage_font_size=17,
+            box_padding_x=4,
+            box_padding_y=3,
+            box_radius=5,
+            short_font_color="#dc425a",
+            long_font_color="#21b672",
+            short_box_color="#40262755",
+            long_box_color="#2f483355",
+        ),
+        "roi": ElementStyling(
+            position=Position(x=0.1335307474668861, y=0.3579118986892078),
+            font="IBMPlexSans-SemiBold.ttf",
+            font_size=49,
+            color="#21b672",
+        ),
+        "entry": ElementStyling(
+            position=Position(x=0.13152848968247674, y=0.4516856829843941),
+            font="IBMPlexSans-SemiBold.ttf",
+            font_size=23,
+            color="white",
+        ),
+        "target": ElementStyling(
+            position=Position(x=0.13152848968247674, y=0.5084149110181102),
+            font="IBMPlexSans-SemiBold.ttf",
+            font_size=23,
+            color="white",
+        ),
+        "referral": ElementStyling(
+            position=Position(x=0.43513821829394034, y=0.7048803830419046),
+            font="IBMPlexSans-SemiBold.ttf",
+            font_size=26,
+            color="black",
+        ),
+        "qr": ElementStyling(
+            position=Position(x=0.729808207090736, y=0.6621261646463665), size=85
+        ),
+    },
     "bybit_todays_pnl": {
         "input_date": ElementStyling(
             position=Position(x=0.06262084108674308, y=0.5987239599227905),
