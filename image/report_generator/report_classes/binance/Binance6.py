@@ -14,7 +14,7 @@ class Binance6(BaseReport):
             string_function=lambda x: x.strftime("%Y-%m-%d %H:%M:%S"),
             additional_styles={"letter-spacing": "1px"},
         )
-        self.draw_symbol()
+        self.draw_symbol(string_function=lambda symbol: f"{symbol.upper()} Perpetual")
         self.draw_signal_type_leverage()
         self.draw_roi_dollars(additional_styles={"letter-spacing": "9px"})
         self.draw_entry(string_function=separate_price)
