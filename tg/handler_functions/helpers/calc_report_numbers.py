@@ -68,9 +68,19 @@ def _compute_bingx_misc_position_2(user_data):
 
     opening_fee = position * commission_fee_rate
     margin = position / leverage - opening_fee
-    qty = position / entry_price
-    pnl = qty * abs(mark_price - entry_price)
-    pnl_percent = (pnl / margin) * 10
+
+    signal_type = user_data.get("input_signal_type", "").lower()
+
+    # The commission fee is being baked into the entry instead of acting as a fee on the position size.
+    if signal_type == "long":
+        adjusted_entry = entry_price * (1 + commission_fee_rate)
+    elif signal_type == "short":
+        adjusted_entry = entry_price * (1 - commission_fee_rate)
+    else:
+        adjusted_entry = entry_price
+
+    pnl_percent = (abs(mark_price - adjusted_entry) / adjusted_entry) * leverage * 100
+    pnl = (pnl_percent / 100) * margin
     displayed_position = position + pnl
 
     report_data_item = {
@@ -88,7 +98,6 @@ def _compute_bingx_misc_position_2(user_data):
         "position_amount": round(displayed_position, 4),
         "risk_percent": user_data.get("risk_percent"),
     }
-
     return [report_data_item]
 
 
