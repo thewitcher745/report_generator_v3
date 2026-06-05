@@ -17,6 +17,7 @@ from image.report_generator.report_classes.bitget.Bitget6 import Bitget6
 from image.report_generator.report_classes.bingx.Bingx2 import Bingx2
 from image.report_generator.report_classes.bingx.Bingx3 import Bingx3
 from image.report_generator.report_classes.bingx.Bingx10 import Bingx10
+from image.report_generator.report_classes.bingx.Bingx11 import Bingx11
 from image.report_generator.report_classes.bingx.BingxMiscPosition1 import (
     BingxMiscPosition1,
 )
@@ -54,6 +55,7 @@ MAPPING: dict[str, type[BaseReport]] = {
     "bingx_2": Bingx2,
     "bingx_3": Bingx3,
     "bingx_10": Bingx10,
+    "bingx_11": Bingx11,
     "bingx_misc_position_1": BingxMiscPosition1,
     "bingx_misc_position_2": BingxMiscPosition2,
     "mexc_5": Mexc5,

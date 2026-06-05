@@ -11,6 +11,7 @@ extra_features = {
     "bingx_2": ["date"],
     "bingx_3": ["date"],
     "bingx_10": ["date"],
+    "bingx_11": ["date"],
     "bybit_5": ["margin"],
     "mexc_5": ["date"],
     "mexc_6": ["date"],
