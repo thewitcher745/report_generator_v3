@@ -1465,6 +1465,72 @@ styling_dict = {
             color="white",
         ),
     },
+    "bingx_11": {
+        "symbol": ElementStyling(
+            position=Position(x=0.05643229484558106, y=0.2575781226158142),
+            font="RobertoSans-Medium.ttf",
+            font_size=61,
+            gap_1=56,
+            gap_2=68,
+            separator_color="#515151",
+            separator_length=38,
+            separator_width=2,
+            color="white",
+        ),
+        "signal_type": ElementStyling(
+            font="RobertoSans-Medium.ttf",
+            font_size=60,
+            short_color="#f90167",
+            long_color="#34b785",
+        ),
+        "leverage": ElementStyling(
+            font="Inter-Bold.ttf",
+            font_size=60,
+            color="white",
+        ),
+        "roi": ElementStyling(
+            position=Position(x=0.057213544845581055, y=0.33125),
+            font="RobertoSans-Medium.ttf",
+            font_size=168,
+            color="#00ff9d",
+        ),
+        "entry": ElementStyling(
+            position=Position(x=0.3412499904632568, y=0.6114843845367431),
+            font="Inter-Medium.ttf",
+            font_size=41,
+            color="white",
+        ),
+        "target": ElementStyling(
+            position=Position(x=0.26864583492279054, y=0.5480729222297669),
+            font="Inter-Medium.ttf",
+            font_size=41,
+            color="white",
+        ),
+        "referral": ElementStyling(
+            position=Position(x=0.6745052337646484, y=0.8775911331176758),
+            font="Inter-Medium.ttf",
+            font_size=43,
+            color="white",
+        ),
+        "qr": ElementStyling(
+            position=Position(x=0.8409635066986084, y=0.835546863079071), size=120
+        ),
+        "date": ElementStyling(
+            position=Position(x=0.18934895992279052, y=0.8768098831176758),
+            font="Inter-Medium.ttf",
+            font_size=42,
+            color="#7d7d7d",
+        ),
+        "avatar": ElementStyling(
+            position=Position(x=0.055026042461395266, y=0.827343738079071), size=145
+        ),
+        "username": ElementStyling(
+            position=Position(x=0.19169270992279053, y=0.8283723831176758),
+            font="Inter-Medium.ttf",
+            font_size=42,
+            color="white",
+        ),
+    },
     "okx_1": {
         "symbol": ElementStyling(
             position=Position(0.0545, 0.234),

@@ -17,6 +17,7 @@ from image.report_generator.report_classes.bitget.Bitget6 import Bitget6
 from image.report_generator.report_classes.bingx.Bingx2 import Bingx2
 from image.report_generator.report_classes.bingx.Bingx3 import Bingx3
 from image.report_generator.report_classes.bingx.Bingx10 import Bingx10
+from image.report_generator.report_classes.bingx.Bingx11 import Bingx11
 from image.report_generator.report_classes.bingx.BingxMiscPosition1 import (
     BingxMiscPosition1,
 )
