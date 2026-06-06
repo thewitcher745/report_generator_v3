@@ -7,6 +7,7 @@ EXCHANGE_LIST = [
     {"label": "OKX", "callback_query": "okx"},
     {"label": "LBANK", "callback_query": "lbank"},
     {"label": "KCEX", "callback_query": "kcex"},
+    {"label": "Blofin", "callback_query": "blofin"},
 ]
 
 IMAGE_LIST = {
@@ -71,7 +72,7 @@ IMAGE_LIST = {
             "label": "M2 - Misc Position 2",
             "callback_query": "bingx_misc_position_2",
             "image_list_label": "M2",
-        }
+        },
         # {
         #     "label": "BingX Pos - 1",
         #     "callback_query": "bingx_pos_1",
@@ -89,6 +90,9 @@ IMAGE_LIST = {
     ],
     "kcex": [
         {"label": "KCEX 1", "callback_query": "kcex_1", "image_list_label": 1},
+    ],
+    "blofin": [
+        {"label": "Blofin 1", "callback_query": "blofin_1", "image_list_label": 1},
     ],
 }
 
