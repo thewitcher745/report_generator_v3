@@ -26,6 +26,7 @@ extra_features = {
     "binance_7": ["date"],
     "binance_8": ["date"],
     "kcex_1": ["date"],
+    "blofin_1": ["date"],
     # Fully manual images
     "bingx_misc_position_1": [
         "input_symbol",

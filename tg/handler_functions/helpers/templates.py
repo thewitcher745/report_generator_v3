@@ -162,6 +162,9 @@ TEMPLATES = {
         "Turk Main": {"qr": "kcex_1", "referral": "276OLN"},
         "Turk Free": {"qr": "kcex_2", "referral": "962HRN"},
     },
+    "blofin": {
+        "CAN Main": {"qr": "blofin_1", "referral": "tCM8se"},
+    },
 }
 
 
