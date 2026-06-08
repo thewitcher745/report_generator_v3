@@ -24,10 +24,10 @@ class Blofin1(BaseReport):
         self.draw_signal_type_leverage()
         self.draw_roi(string_function=lambda x: f"+{x:.2f}%")
         self.draw_entry(
-            string_function=separate_price, additional_styles={"letter-spacing": "-1px"}
+            string_function=separate_price, additional_styles={"letter-spacing": "0px"}
         )
         self.draw_target(
-            string_function=separate_price, additional_styles={"letter-spacing": "-1px"}
+            string_function=separate_price, additional_styles={"letter-spacing": "0px"}
         )
         self.draw_referral()
         self.draw_qr()
