@@ -23,8 +23,10 @@ def html_to_image(html_path, output_path="image_outputs/image_lists/image_list.p
         str: Path to the generated image.
     """
     chrome_options = Options()
-    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--headless=new")
     chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("--no-sandbox")  # Linux related fix
+    chrome_options.add_argument("--disable-dev-shm-usage")  # Linux related fix
     chrome_options.add_argument("--allow-file-access-from-files")
     chrome_options.add_argument("--enable-local-file-accesses")
 

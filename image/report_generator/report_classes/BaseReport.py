@@ -337,6 +337,8 @@ class BaseReport:
         chrome_options.add_argument("--log-level=3")
         chrome_options.add_argument("--headless")
         chrome_options.add_argument("--disable-gpu")
+        chrome_options.add_argument("--no-sandbox")  # Linux related fix
+        chrome_options.add_argument("--disable-dev-shm-usage")  # Linux related fix
         chrome_options.add_argument("--allow-file-access-from-files")
         chrome_options.add_argument("--enable-local-file-accesses")
         chrome_options.add_argument("--window-size=2000,2000")
