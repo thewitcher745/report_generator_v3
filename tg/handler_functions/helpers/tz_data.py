@@ -13,6 +13,7 @@ tz_deltas = {
     "mexc": datetime.timedelta(hours=-1),
     "okx": datetime.timedelta(hours=-2),
     "kcex": datetime.timedelta(hours=3),
+    "blofin": datetime.timedelta(hours=3),
 }
 
 
