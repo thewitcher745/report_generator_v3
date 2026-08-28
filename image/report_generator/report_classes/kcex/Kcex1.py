@@ -1,5 +1,3 @@
-import string
-from tkinter.constants import X
 from image.report_generator.utils.generic import separate_price
 from ..BaseReport import BaseReport
 
