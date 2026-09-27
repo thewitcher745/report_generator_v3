@@ -1,5 +1,6 @@
 */__pycache__
 .env.secret
+.env.local
 venv/
 image_outputs/
 __pycache__
