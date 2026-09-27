@@ -9,9 +9,16 @@ from tg.handler_objects import (
 
 if __name__ == "__main__":
     token = dotenv_values(".env.secret").get("BOT_TOKEN")
+    proxy_server = dotenv_values(".env.local").get("PROXY_SERVER")
+
     if not token:
         raise ValueError("BOT_TOKEN is missing from .env.secret")
-    application = Application.builder().token(token).build()
+
+    application_builder = Application.builder().token(token)
+    if proxy_server:
+        application_builder.proxy(proxy_server).get_updates_proxy(proxy_server)
+
+    application = application_builder.build()
 
     application.add_handlers([welcome_handler, automatic_signal_handler])
 
