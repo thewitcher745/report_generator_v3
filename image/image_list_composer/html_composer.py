@@ -56,7 +56,7 @@ def compose_html_collage(
                 """
             )
 
-        images_html.append(f"{'\n'.join(row_images_html)}")
+        images_html.append("\n".join(row_images_html))
 
     collage_html = f"""
         <!DOCTYPE html>
