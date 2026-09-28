@@ -8,7 +8,7 @@ import json
 
 
 def get_okx_logo(symbol: str) -> str | None:
-    symbol = symbol.replace(" Perpetual", "").replace("USDT", "").lower()
+    symbol = symbol.replace(" Perpetual", "").replace("USDT", "")
 
     with open("image/report_generator/report_classes/okx/okx_logos.json", "r") as fs:
         okx_logo_links: dict[str, str] = json.load(fs)
