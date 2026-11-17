@@ -76,13 +76,13 @@ TEMPLATES = {
             "qr": "bitget_4",
             "referral": "1HN38KYX",
             "username": "BGUSER-1HN38KYX",
-            "avatar": "bitget_can_main",
+            "avatar": "bitget_default",
         },
         "CAN Free": {
             "qr": "bitget_5",
             "referral": "1WC67QCZ",
             "username": "BGUSER-1WC67QCZ",
-            "avatar": "bitget_can_free",
+            "avatar": "bitget_default",
         },
         "Turk Main": {
             "qr": "bitget_5",
