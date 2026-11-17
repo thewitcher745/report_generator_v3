@@ -1,4 +1,4 @@
-from image.report_generator.report_classes.okx.okx_logo import get_okx_logo
+from image.report_generator.utils.coin_logo import get_coin_logo
 from ..BaseReport import BaseReport
 
 
@@ -71,7 +71,7 @@ class Okx2(BaseReport):
         logo_styling = self._get_element_styling("logo")
 
         additional_styles.update({"aspect-ratio": "1/1"})
-        logo_link = get_okx_logo(self.symbol)
+        logo_link = get_coin_logo(self.symbol)
         if logo_link:
             self.report_html.add_img(
                 additional_styles=additional_styles,

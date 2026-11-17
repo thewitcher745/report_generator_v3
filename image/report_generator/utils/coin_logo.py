@@ -1,4 +1,5 @@
 import time
+from pathlib import Path
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support import expected_conditions as EC
@@ -7,21 +8,27 @@ from selenium.webdriver.support.ui import WebDriverWait
 import json
 
 
-def get_okx_logo(symbol: str) -> str | None:
-    symbol = symbol.replace(" Perpetual", "").replace("USDT", "")
+def get_coin_logo(symbol: str) -> str | None:
+    symbol = symbol.upper().removesuffix(" PERPETUAL").removesuffix("USDT")
+    cache_path = Path(__file__).with_name("coin_logos.json")
 
-    with open("image/report_generator/report_classes/okx/okx_logos.json", "r") as fs:
-        okx_logo_links: dict[str, str] = json.load(fs)
-        if symbol in okx_logo_links:
-            if okx_logo_links[symbol]:
-                return okx_logo_links[symbol]
+    if not symbol:
+        return None
+
+    with cache_path.open(encoding="utf-8") as fs:
+        logo_links: dict[str, str] = json.load(fs)
+    if logo_links.get(symbol):
+        return logo_links[symbol]
 
     chrome_options = Options()
     chrome_options.add_argument("--log-level=3")
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--window-size=2000,2000")
-    driver = webdriver.Chrome(options=chrome_options)
+    try:
+        driver = webdriver.Chrome(options=chrome_options)
+    except Exception:
+        return None
 
     # Number of waits for the page to load before admitting the logo isn't there
     tries = 0
@@ -40,17 +47,16 @@ def get_okx_logo(symbol: str) -> str | None:
             logo_url = logo_element.get_attribute("src")
             tries += 1
             time.sleep(1)
-    except:
+    except Exception:
         return None
+    finally:
+        driver.quit()
 
     # Cache the logo once received in the json file
     if logo_url:
-        okx_logo_links[symbol] = logo_url
+        logo_links[symbol] = logo_url
 
-        with open(
-            "image/report_generator/report_classes/okx/okx_logos.json", "w"
-        ) as fs:
-            json.dump(okx_logo_links, fs)
+        with cache_path.open("w", encoding="utf-8") as fs:
+            json.dump(logo_links, fs)
 
-    driver.quit()
     return logo_url
