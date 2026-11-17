@@ -1,3 +1,4 @@
+from image.report_generator.utils.coin_logo import get_coin_logo
 from image.report_generator.utils.generic import separate_price
 from ..BaseReport import BaseReport
 
@@ -11,7 +12,9 @@ class Bitget6(BaseReport):
     ) -> None:
         super().__init__(report_data, extra_features, drag_and_drop)
 
+        self.draw_avatar()
         self.draw_username(additional_styles={"letter-spacing": "-1px"})
+        self.draw_logo()
         self.draw_symbol(string_function=lambda x: x.replace(" Perpetual", "").upper())
         self.draw_signal_type_leverage()
         self.draw_roi(string_function=lambda x: str(x) + "%")
@@ -22,6 +25,36 @@ class Bitget6(BaseReport):
         self.draw_date(
             string_function=lambda x: f"{x.strftime('%Y-%m-%d %H:%M')} (UTC{self._format_utc_offset()})"
         )
+
+    def draw_background(self):
+        super().draw_background()
+        self.report_html.body += (
+            "<div style='position:absolute; left:30px; top:190px; width:90px;"
+            " height:90px; background:#070908; pointer-events:none'></div>\n"
+        )
+
+    def draw_avatar(self):
+        avatar = self.avatar or "bitget_default"
+        avatar_style = self._get_element_styling("avatar")
+        self.report_html.add_img(
+            img_src=f"../../../avatars/{avatar}.png",
+            position=avatar_style.position,
+            width=avatar_style.size,
+            height=avatar_style.size,
+            additional_styles={"object-fit": "cover", "border-radius": "16%"},
+        )
+
+    def draw_logo(self):
+        logo_link = get_coin_logo(self.symbol)
+        if logo_link:
+            logo_style = self._get_element_styling("logo")
+            self.report_html.add_img(
+                img_src=logo_link,
+                position=logo_style.position,
+                width=logo_style.size,
+                height=logo_style.size,
+                additional_styles={"border-radius": "50%"},
+            )
 
     def _format_utc_offset(self) -> str:
         if not self.tz_delta:

@@ -64,31 +64,37 @@ TEMPLATES = {
             "qr": "bitget_1",
             "referral": "2BI76BMK",
             "username": "BGUSER-2BI76BMK",
+            "avatar": "bitget_default",
         },
         "Board Free": {
             "qr": "bitget_1",
             "referral": "8LR12MLD",
             "username": "BGUSER-8LR12MLD",
+            "avatar": "bitget_default",
         },
         "CAN Main": {
             "qr": "bitget_4",
             "referral": "1HN38KYX",
             "username": "BGUSER-1HN38KYX",
+            "avatar": "bitget_can_main",
         },
         "CAN Free": {
             "qr": "bitget_5",
             "referral": "1WC67QCZ",
             "username": "BGUSER-1WC67QCZ",
+            "avatar": "bitget_can_free",
         },
         "Turk Main": {
             "qr": "bitget_5",
             "referral": "SOV2XR",
             "username": "ta***1@gmail.com",
+            "avatar": "bitget_default",
         },
         "Turk Free": {
             "qr": "bitget_4",
             "referral": "3VH98ACX",
             "username": "BGUSER-3VH98ACX",
+            "avatar": "bitget_default",
         },
     },
     "mexc": {

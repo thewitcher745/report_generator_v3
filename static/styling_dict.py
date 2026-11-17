@@ -897,6 +897,8 @@ styling_dict = {
         ),
     },
     "bitget_6": {
+        "avatar": ElementStyling(position=Position(x=0.051, y=0.055), size=67),
+        "logo": ElementStyling(position=Position(x=0.051, y=0.234), size=67),
         "symbol": ElementStyling(
             position=Position(x=0.1505388784078197, y=0.22282524196985962),
             font="Switzer-Medium.otf",
